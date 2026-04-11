@@ -2,8 +2,8 @@
 
 A modern, professional portfolio website built by **Siratim Mustakim Chowdhury**, a Full Stack Web & Android Developer specializing in the MERN stack. Designed with a clean dark/light aesthetic, smooth animations, and a fully responsive layout.
 
-🌐 **Live:** [https://siratimmchy.github.io]([https://siratimmchy.github.io](https://smcportfolio-f0aae.web.app/))
-
+🌐 **Live:** [[https://siratimmchy.github.io]([https://siratimmchy.github.io](https://smcportfolio-f0aae.web.app/))
+](https://smcportfolio-f0aae.web.app/)
 ---
 
 ## About
