@@ -56,42 +56,6 @@ This portfolio showcases my skills, education, work experience, and projects as 
 
 ---
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js 16+
-- npm or yarn
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/SiratimMChy/My-Modern-Portfolio.git
-cd My-Modern-Portfolio
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
-
-Open `http://localhost:5173` in your browser.
-
-### Environment Variables
-
-Create a `.env` file in the root directory:
-
-```env
-VITE_EMAILJS_SERVICE_ID=your_service_id
-VITE_EMAILJS_TEMPLATE_ID=your_template_id
-VITE_EMAILJS_PUBLIC_KEY=your_public_key
-```
-
-See `EMAILJS_SETUP.md` for detailed EmailJS configuration instructions.
-
----
 
 ## Available Scripts
 
