@@ -1,10 +1,15 @@
-# Smc.dev — Personal Portfolio
+# Smc.dev - Personal Portfolio
 
 A modern, professional portfolio website built by **Siratim Mustakim Chowdhury**, a Full Stack Web & Android Developer specializing in the MERN stack. Designed with a clean dark/light aesthetic, smooth animations, and a fully responsive layout.
 
+<<<<<<< HEAD
 🌐 **Live:** [https://siratimmchy.github.io](https://siratimmchy.github.io)
 📅 **Last Updated:** April 15, 2026
 
+=======
+🌐 **Live:** [[https://siratimmchy.github.io]([https://siratimmchy.github.io](https://smcportfolio-f0aae.web.app/))
+](https://smcportfolio-f0aae.web.app/)
+>>>>>>> e0b5c46dd87b7e53f65c9362ecbcd038a8a8ce88
 ---
 
 ## About
@@ -57,42 +62,6 @@ This portfolio showcases my skills, education, work experience, and projects as 
 
 ---
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js 16+
-- npm or yarn
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/SiratimMChy/My-Modern-Portfolio.git
-cd My-Modern-Portfolio
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
-
-Open `http://localhost:5173` in your browser.
-
-### Environment Variables
-
-Create a `.env` file in the root directory:
-
-```env
-VITE_EMAILJS_SERVICE_ID=your_service_id
-VITE_EMAILJS_TEMPLATE_ID=your_template_id
-VITE_EMAILJS_PUBLIC_KEY=your_public_key
-```
-
-See `EMAILJS_SETUP.md` for detailed EmailJS configuration instructions.
-
----
 
 ## Available Scripts
 
