@@ -118,7 +118,11 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
             <a 
               href="/My_resume_1.pdf" 
               download="Siratim_Mustakim_Chowdhury_CV.pdf"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-105 transform duration-200"
+              className={`${
+                darkMode 
+                  ? 'bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 shadow-sm shadow-cyan-500/20 hover:shadow-cyan-500/30' 
+                  : 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-sm shadow-blue-500/20 hover:shadow-blue-500/30'
+              } text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 hover:scale-105 transform duration-200`}
             >
               <Download className="w-4 h-4" />
               Resume
@@ -213,7 +217,11 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
               <a 
                 href="/My_resume_1.pdf" 
                 download="Siratim_Mustakim_Chowdhury_CV.pdf"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 hover:scale-105 transform duration-200"
+                className={`${
+                  darkMode 
+                    ? 'bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600' 
+                    : 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700'
+                } text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 hover:scale-105 transform duration-200`}
               >
                 <Download className="w-4 h-4" />
                 Resume
