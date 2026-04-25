@@ -8,7 +8,7 @@ const PROJECTS = [
   {
     id: 'pawmart',
     name: 'PawMart',
-    category: 'Full Stack',
+    category: 'Web',
     image: 'https://i.ibb.co.com/LhrzQqyd/pawmart.png',
     tech: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Firebase', 'Tailwind CSS'],
     description: 'PawMart is a full-stack MERN marketplace that promotes responsible pet adoption while enabling buying and selling of pet care products. The platform connects adopters, pet owners, breeders, and shop owners through secure Firebase authentication and role-protected routes.',
@@ -24,7 +24,7 @@ const PROJECTS = [
   {
     id: 'hemovia',
     name: 'Hemovia',
-    category: 'Full Stack',
+    category: 'Web',
     image: 'https://i.ibb.co.com/Y4YFtMBB/hemovia.png',
     tech: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Express.js', 'Tailwind CSS'],
     description: 'Hemovia is a MERN-based blood donation management platform designed to connect donors, volunteers, and administrators efficiently. It enables donor registration, blood request creation, tracking, and quick donor search by blood group and location.',
@@ -54,25 +54,9 @@ const PROJECTS = [
     color: '#818cf8',
   },
   {
-    id: 'gamehub',
-    name: 'GameHub',
-    category: 'Frontend',
-    image: 'https://i.ibb.co.com/Q7YVts7J/gamehub.png',
-    tech: ['React', 'Firebase', 'Tailwind CSS', 'React Router', 'Framer Motion'],
-    description: 'Gaming platform for discovering indie games with user reviews, ratings, and developer support.',
-    shortDesc: 'Gaming platform for indie game discovery with reviews, ratings, and developer support.',
-    features: ['Game Discovery', 'User Reviews', 'Rating System', 'Profile Management'],
-    challenges: ['Firebase authentication and data structuring', 'Media upload and storage handling', 'Real-time data synchronization', 'UI consistency across devices'],
-    futureImprovements: ['Role-based access (admin/student)', 'Real-time chat and notifications', 'Advanced search and tagging', 'Performance and scalability improvements'],
-    liveLink: 'https://gamehub-e4f1a.web.app',
-    githubLink: 'https://github.com/SiratimMChy/GameHub',
-    status: 'Live',
-    color: '#34d399',
-  },
-  {
     id: 'classmate',
     name: 'ClassMate',
-    category: 'Frontend',
+    category: 'Web',
     image: 'https://i.ibb.co.com/21zn0wSr/CLASSMATE.png',
     tech: ['HTML5', 'Bootstrap', 'JavaScript', 'CSS3'],
     description: 'CLASSMATE is a web-based academic collaboration platform developed as a final-year university project. It helps students share study materials, manage class resources, and collaborate efficiently in a centralized environment.',
@@ -80,34 +64,109 @@ const PROJECTS = [
     features: ['Student Collaboration', 'Academic Resources', 'Project Management', 'Communication Tools'],
     challenges: ['Firebase authentication and data structuring', 'Media upload and storage handling', 'Real-time data synchronization', 'UI consistency across devices'],
     futureImprovements: ['Role-based access (admin/student)', 'Real-time chat and notifications', 'Advanced search and tagging', 'Performance and scalability improvements'],
-    liveLink: 'https://siratimmchy.github.io/ClassMate',
+    liveLink: 'https://classmate-2c272.web.app',
     githubLink: 'https://github.com/SiratimMChy/ClassMate',
     status: 'Live',
     color: '#fb923c',
   },
   {
-    id: 'smc-photography',
-    name: 'SMC Photography',
-    category: 'Full Stack',
-    image: 'https://i.ibb.co.com/KSCdKvt/SMC.png',
-    tech: ['HTML5', 'Bootstrap', 'MySQL', 'CSS3', 'PHP'],
-    description: 'Professional photography portfolio website with dynamic galleries and client management system.',
-    shortDesc: 'Professional photography portfolio with dynamic galleries and client management system.',
-    features: ['Photo Galleries', 'Client Booking', 'Admin Dashboard', 'Content Management'],
-    challenges: ['Dynamic gallery management', 'Client booking system integration', 'Responsive image optimization', 'Admin panel functionality'],
-    futureImprovements: ['Online payment integration', 'Real-time booking notifications', 'Advanced photo editing tools', 'Mobile app development'],
-    liveLink: 'https://gleaming-jalebi-54e188.netlify.app',
-    githubLink: 'https://github.com/SiratimMChy/SMC-Photography',
-    status: 'Live',
-    color: '#c084fc',
-  },
+  id: 'navora',
+  name: 'Navora',
+  category: 'Web',
+  image: 'https://i.ibb.co.com/35RNLPKW/image.png',
+  tech: [
+    'Next.js',
+    'React',
+    'TypeScript',
+    'MongoDB',
+    'Mongoose',
+    'NextAuth.js',
+    'Stripe',
+    'Tailwind CSS',
+    'Groq AI',
+  ],
+  description:
+    'Navora is an AI-powered travel booking platform designed for modern travelers. It offers smart destination recommendations, seamless trip planning, secure booking, payments, and complete admin management across multiple travel categories.',
+  shortDesc:
+    'AI-powered travel booking platform with smart recommendations, Stripe payments, and admin dashboard.',
+  features: [
+    'AI Travel Recommendations',
+    'Destination Search & Filtering',
+    'Complete Booking System',
+    'Stripe Payment Integration',
+    'Admin Dashboard',
+    'Blog & Reviews System',
+  ],
+  challenges: [
+    'Integrating AI recommendation',
+    'Role-based dashboard architecture',
+    'Booking workflow & status tracking',
+    'Secure payment processing',
+    'SEO optimization with SSR',
+  ],
+  futureImprovements: [
+    'Multi-language support',
+    'Live chat with travel agents',
+    'Flight & hotel API integration',
+    'Personalized travel itineraries',
+  ],
+  liveLink: 'https://navora-five.vercel.app',
+  githubLink: 'https://github.com/SiratimMChy/Navora-AI-Travel-Guide',
+  status: 'Live',
+  color: '#06b6d4',
+},
+{
+  id: 'orvella',
+  name: 'Orvella',
+  category: 'Web',
+  image: 'https://i.ibb.co.com/XZhYcM5G/image.png',
+  tech: [
+    'Next.js',
+    'React',
+    'MongoDB',
+    'NextAuth.js',
+    'Stripe',
+    'Tailwind CSS',
+    'DaisyUI',
+    'Nodemailer',
+  ],
+  description:
+    'Orvella is a premium fashion e-commerce platform built for men, women, and kids. It provides a modern shopping experience with secure payments, real-time cart management, order tracking, and admin management tools.',
+  shortDesc:
+    'Premium fashion e-commerce platform with Stripe payments, cart system, and admin dashboard.',
+  features: [
+    'Multi-category Product Catalog',
+    'Advanced Search & Filtering',
+    'Real-time Shopping Cart',
+    'Stripe + COD Payments',
+    'Order Tracking System',
+    'Admin Dashboard',
+    'Email Notifications',
+  ],
+  challenges: [
+    'Payment verification workflow',
+    'Persistent cart state management',
+    'Secure authentication system',
+    'Admin product/order controls',
+    'Responsive e-commerce UX',
+  ],
+  futureImprovements: [
+    'Wishlist feature',
+    'Product recommendations with AI',
+    'Multi-vendor marketplace support',
+    'Inventory analytics dashboard',
+  ],
+  liveLink: 'https://orvella-zeta.vercel.app',
+  githubLink: 'https://github.com/SiratimMChy/Orvella',
+  status: 'Live',
+  color: '#ec4899',
+}
 ]
 
 const CATEGORIES = [
-  { id: 'all',        label: 'All',        icon: 'bx-grid-alt' },
-  { id: 'Full Stack', label: 'Full Stack', icon: 'bx-layer' },
-  { id: 'Frontend',   label: 'Frontend',   icon: 'bx-palette' },
-  { id: 'Mobile',     label: 'Mobile',     icon: 'bx-mobile' },
+  { id: 'all',    label: 'All',    icon: 'bx-grid-alt' },
+  { id: 'Web',    label: 'Web',    icon: 'bx-globe' },
+  { id: 'Mobile', label: 'Mobile', icon: 'bx-mobile' },
 ]
 
 const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } }
@@ -116,7 +175,7 @@ const cardVar = {
   show:   { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16,1,0.3,1] } },
 }
 
-export default function Projects({ onNavigateToSourceCode }) {
+export default function Projects() {
   const [filter, setFilter] = useState('all')
   const [selected, setSelected] = useState(null)
 
@@ -251,11 +310,16 @@ export default function Projects({ onNavigateToSourceCode }) {
                         </a>
                       </Button>
                     )}
-                    <Button size="sm" variant="outline"
-                      className="flex-1 text-[10px] h-8"
-                      onClick={e => { e.stopPropagation(); onNavigateToSourceCode && onNavigateToSourceCode(project.id) }}>
-                      <i className="bx bxl-github text-xs mr-1" /> Source Code
-                    </Button>
+                    {project.githubLink && project.githubLink !== '#' && (
+                      <Button size="sm" variant="outline"
+                        className="flex-1 text-[10px] h-8"
+                        asChild>
+                        <a href={project.githubLink} target="_blank" rel="noopener noreferrer"
+                          onClick={e => e.stopPropagation()}>
+                          <i className="bx bxl-github text-xs mr-1" /> Source Code
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </div>
               </motion.div>

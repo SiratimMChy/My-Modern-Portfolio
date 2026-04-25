@@ -47,9 +47,9 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-slate-50 dark:bg-[#07090f] border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
 
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-sky-400/25 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sky-400/25 to-transparent" />
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-12 flex flex-col items-center gap-8">
+      <div className="flex flex-col items-center gap-8 px-6 py-8 mx-auto max-w-7xl sm:px-12 lg:px-20">
 
         {/* logo + badge */}
         <motion.div
@@ -87,7 +87,7 @@ export default function Footer() {
         >
           {NAV.map(n => (
             <Button key={n.label} variant="link" size="sm" asChild
-              className="text-slate-500 dark:text-slate-400 hover:text-sky-500 dark:hover:text-sky-400 h-auto py-1 px-3 text-xs">
+              className="h-auto px-3 py-1 text-xs text-slate-500 dark:text-slate-400 hover:text-sky-500 dark:hover:text-sky-400">
               <a href={n.href}>{n.label}</a>
             </Button>
           ))}
