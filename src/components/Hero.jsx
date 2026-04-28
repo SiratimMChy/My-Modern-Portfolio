@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
+import { Button } from './ui/button'
 
 function useParallax(strength = 0.012) {
   const x = useMotionValue(0)
@@ -76,12 +77,6 @@ export default function Hero() {
       {/* top border */}
       <div className="absolute top-0 inset-x-0 h-px
         bg-gradient-to-r from-transparent via-sky-400/30 dark:via-sky-500/25 to-transparent" />
-
-      {/* watermark */}
-      <div className="pointer-events-none absolute right-8 bottom-10 text-[120px] font-black leading-none select-none hidden lg:block
-        text-slate-100 dark:text-white/[0.025]">
-        01
-      </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-28 pt-36">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-0">
@@ -200,22 +195,35 @@ export default function Hero() {
               transition={{ delay: 0.85 }}
             >
               <div className="flex items-center gap-2">
-                {SOCIALS.map(s => (
-                  <a
+                {SOCIALS.map((s, index) => (
+                  <motion.div
                     key={s.label}
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={s.label}
-                    className="w-9 h-9 flex items-center justify-center rounded-sm transition-all duration-200 hover:-translate-y-0.5
-                      border border-slate-200 dark:border-slate-800
-                      text-slate-400 dark:text-slate-600
-                      hover:text-slate-700 dark:hover:text-slate-200
-                      hover:border-slate-400 dark:hover:border-slate-600
-                      bg-white dark:bg-transparent"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.85 + index * 0.1, duration: 0.3 }}
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
                   >
-                    <i className={`bx ${s.icon} text-[17px]`} />
-                  </a>
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="w-11 h-11 rounded-sm group hover:bg-transparent dark:hover:bg-transparent transition-all duration-300 hover:shadow-sm"
+                      asChild
+                    >
+                      <a
+                        href={s.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={s.label}
+                      >
+                        <i className={`bx ${s.icon} text-xl transition-all duration-300 ${
+                          s.icon === 'bxl-linkedin' ? 'group-hover:text-[#0077b5]' :
+                          s.icon === 'bxl-github' ? 'group-hover:text-slate-900 dark:group-hover:text-white' :
+                          'group-hover:text-sky-500'
+                        } group-hover:scale-110 group-hover:rotate-12`} />
+                      </a>
+                    </Button>
+                  </motion.div>
                 ))}
               </div>
 

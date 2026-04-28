@@ -1,5 +1,7 @@
 import { useState, useEffect, Suspense, lazy } from 'react'
 import Navbar from './components/Navbar'
+import Lenis from 'lenis'
+import 'lenis/dist/lenis.css'
 
 // Lazy load components for better code splitting
 const Hero = lazy(() => import('./components/Hero'))
@@ -29,6 +31,33 @@ function App() {
     } else {
       setDarkMode(false)
       document.documentElement.classList.remove('dark')
+    }
+
+    // Initialize Lenis smooth scrolling
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+    })
+
+    // Add lenis class to html
+    document.documentElement.classList.add('lenis')
+
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+
+    // Store lenis instance globally for modal access
+    window.lenis = lenis
+
+    // Cleanup
+    return () => {
+      lenis.destroy()
+      document.documentElement.classList.remove('lenis')
+      window.lenis = null
     }
   }, [])
 

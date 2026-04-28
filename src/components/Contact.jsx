@@ -2,8 +2,6 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import emailjs from '@emailjs/browser'
 import { Button } from './ui/button'
-import { Badge } from './ui/badge'
-import { Card, CardContent } from './ui/card'
 
 const CONTACT_INFO = [
   {
@@ -149,15 +147,9 @@ export default function Contact() {
                     <div className="h-[2px] w-5 rounded-full mt-1" style={{ background: '#38bdf8' }} />
                   </div>
                 </div>
-                <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-3">
-                  I'm currently available for freelance projects and full-time opportunities. Feel free to reach out — I typically respond within 24 hours.
+                <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                  Have a project in mind or want to discuss a collaboration? I'd love to hear from you. Feel free to reach out - I typically respond within 24 hours.
                 </p>
-                <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <Badge variant="outline" className="text-emerald-600 dark:text-emerald-400 border-emerald-300 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-500/5 text-[10px]">
-                    Available for opportunities
-                  </Badge>
-                </div>
               </div>
 
               {/* contact info */}
@@ -188,14 +180,35 @@ export default function Contact() {
               <div className="p-5">
                 <p className="text-[9px] font-bold tracking-[0.15em] uppercase text-slate-400 dark:text-slate-600 mb-3">Connect with me</p>
                 <div className="flex gap-3">
-                  {SOCIALS.map(s => (
-                    <Button key={s.label} variant="outline" size="icon" className="w-11 h-11 rounded-xl" asChild>
-                      <motion.a href={s.href} target="_blank" rel="noopener noreferrer"
-                        aria-label={s.label}
-                        whileHover={{ y: -3, transition: { duration: 0.2 } }}>
-                        <i className={`bx ${s.icon} text-xl`} style={{ color: s.color }} />
-                      </motion.a>
-                    </Button>
+                  {SOCIALS.map((s, index) => (
+                    <motion.div
+                      key={s.label}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.85 + index * 0.1, duration: 0.3 }}
+                      whileHover={{ scale: 1.1, y: -2 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        className="w-11 h-11 rounded-sm group hover:bg-transparent dark:hover:bg-transparent transition-all duration-300 hover:shadow-sm"
+                        asChild
+                      >
+                        <a
+                          href={s.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={s.label}
+                        >
+                          <i className={`bx ${s.icon} text-xl transition-all duration-300 ${
+                            s.icon === 'bxl-linkedin' ? 'group-hover:text-[#0077b5]' :
+                            s.icon === 'bxl-github' ? 'group-hover:text-slate-900 dark:group-hover:text-white' :
+                            'group-hover:text-sky-500'
+                          } group-hover:scale-110 group-hover:rotate-12`} />
+                        </a>
+                      </Button>
+                    </motion.div>
                   ))}
                 </div>
               </div>

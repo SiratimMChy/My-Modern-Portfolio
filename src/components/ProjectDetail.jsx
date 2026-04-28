@@ -1,9 +1,29 @@
 import { motion } from 'framer-motion'
 import { Button } from './ui/button'
 import { Badge } from './ui/badge'
+import { SiNextdotjs, SiExpress } from 'react-icons/si'
+import { useEffect } from 'react'
 
 const ProjectDetail = ({ project, onClose }) => {
   if (!project) return null
+
+  // Stop Lenis when modal opens, restart when it closes
+  useEffect(() => {
+    if (window.lenis) {
+      window.lenis.stop()
+    }
+    
+    // Prevent body scroll
+    document.body.style.overflow = 'hidden'
+
+    return () => {
+      if (window.lenis) {
+        window.lenis.start()
+      }
+      // Restore body scroll
+      document.body.style.overflow = ''
+    }
+  }, [])
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -30,26 +50,35 @@ const ProjectDetail = ({ project, onClose }) => {
 
   const getTechConfig = (tech) => {
     const configs = {
-      'React': { icon: 'bxl-react', color: 'text-blue-500', bg: 'bg-blue-50 dark:bg-blue-900/20', border: 'border-blue-200 dark:border-blue-800' },
-      'Node.js': { icon: 'bxl-nodejs', color: 'text-green-600', bg: 'bg-green-50 dark:bg-green-900/20', border: 'border-green-200 dark:border-green-800' },
-      'MongoDB': { icon: 'bxl-mongodb', color: 'text-green-500', bg: 'bg-green-50 dark:bg-green-900/20', border: 'border-green-200 dark:border-green-800' },
-      'Firebase': { icon: 'bxl-firebase', color: 'text-orange-500', bg: 'bg-orange-50 dark:bg-orange-900/20', border: 'border-orange-200 dark:border-orange-800' },
-      'Java': { icon: 'bxl-java', color: 'text-red-600', bg: 'bg-red-50 dark:bg-red-900/20', border: 'border-red-200 dark:border-red-800' },
-      'Android SDK': { icon: 'bxl-android', color: 'text-green-500', bg: 'bg-green-50 dark:bg-green-900/20', border: 'border-green-200 dark:border-green-800' },
-      'Express.js': { icon: 'bx-server', color: 'text-gray-600', bg: 'bg-gray-50 dark:bg-gray-900/20', border: 'border-gray-200 dark:border-gray-800' },
-      'Stripe': { icon: 'bx-credit-card', color: 'text-purple-600', bg: 'bg-purple-50 dark:bg-purple-900/20', border: 'border-purple-200 dark:border-purple-800' },
-      'HTML5': { icon: 'bxl-html5', color: 'text-orange-600', bg: 'bg-orange-50 dark:bg-orange-900/20', border: 'border-orange-200 dark:border-orange-800' },
-      'CSS3': { icon: 'bxl-css3', color: 'text-blue-600', bg: 'bg-blue-50 dark:bg-blue-900/20', border: 'border-blue-200 dark:border-blue-800' },
-      'JavaScript': { icon: 'bxl-javascript', color: 'text-yellow-500', bg: 'bg-yellow-50 dark:bg-yellow-900/20', border: 'border-yellow-200 dark:border-yellow-800' },
-      'PHP': { icon: 'bxl-php', color: 'text-indigo-600', bg: 'bg-indigo-50 dark:bg-indigo-900/20', border: 'border-indigo-200 dark:border-indigo-800' },
-      'MySQL': { icon: 'bx-data', color: 'text-blue-700', bg: 'bg-blue-50 dark:bg-blue-900/20', border: 'border-blue-200 dark:border-blue-800' },
-      'Bootstrap': { icon: 'bxl-bootstrap', color: 'text-purple-600', bg: 'bg-purple-50 dark:bg-purple-900/20', border: 'border-purple-200 dark:border-purple-800' },
-      'Tailwind CSS': { icon: 'bxl-tailwind-css', color: 'text-cyan-500', bg: 'bg-cyan-50 dark:bg-cyan-900/20', border: 'border-cyan-200 dark:border-cyan-800' },
-      'Framer Motion': { icon: 'bx-play-circle', color: 'text-pink-500', bg: 'bg-pink-50 dark:bg-pink-900/20', border: 'border-pink-200 dark:border-pink-800' },
-      'React Router': { icon: 'bx-sitemap', color: 'text-red-500', bg: 'bg-red-50 dark:bg-red-900/20', border: 'border-red-200 dark:border-red-800' },
-      'Google Maps API': { icon: 'bx-map', color: 'text-blue-500', bg: 'bg-blue-50 dark:bg-blue-900/20', border: 'border-blue-200 dark:border-blue-800' }
+      'React': { icon: 'bxl-react', iconType: 'boxicon', color: 'text-blue-500', bg: 'bg-blue-50 dark:bg-blue-900/20', border: 'border-blue-200 dark:border-blue-800' },
+      'Node.js': { icon: 'bxl-nodejs', iconType: 'boxicon', color: 'text-green-600', bg: 'bg-green-50 dark:bg-green-900/20', border: 'border-green-200 dark:border-green-800' },
+      'MongoDB': { icon: 'bxl-mongodb', iconType: 'boxicon', color: 'text-green-500', bg: 'bg-green-50 dark:bg-green-900/20', border: 'border-green-200 dark:border-green-800' },
+      'Firebase': { icon: 'bxl-firebase', iconType: 'boxicon', color: 'text-orange-500', bg: 'bg-orange-50 dark:bg-orange-900/20', border: 'border-orange-200 dark:border-orange-800' },
+      'Java': { icon: 'bxl-java', iconType: 'boxicon', color: 'text-red-600', bg: 'bg-red-50 dark:bg-red-900/20', border: 'border-red-200 dark:border-red-800' },
+      'Android SDK': { icon: 'bxl-android', iconType: 'boxicon', color: 'text-green-500', bg: 'bg-green-50 dark:bg-green-900/20', border: 'border-green-200 dark:border-green-800' },
+      'Express.js': { icon: 'express', iconType: 'react-icon', color: 'text-gray-600', bg: 'bg-gray-50 dark:bg-gray-900/20', border: 'border-gray-200 dark:border-gray-800' },
+      'Next.js': { icon: 'nextjs', iconType: 'react-icon', color: 'text-gray-900 dark:text-white', bg: 'bg-gray-50 dark:bg-gray-900/20', border: 'border-gray-200 dark:border-gray-800' },
+      'TypeScript': { icon: 'bxl-typescript', iconType: 'boxicon', color: 'text-blue-600', bg: 'bg-blue-50 dark:bg-blue-900/20', border: 'border-blue-200 dark:border-blue-800' },
+      'Mongoose': { icon: 'bxl-mongodb', iconType: 'boxicon', color: 'text-red-600', bg: 'bg-red-50 dark:bg-red-900/20', border: 'border-red-200 dark:border-red-800' },
+      'NextAuth.js': { icon: 'bx-lock-alt', iconType: 'boxicon', color: 'text-purple-600', bg: 'bg-purple-50 dark:bg-purple-900/20', border: 'border-purple-200 dark:border-purple-800' },
+      'Stripe': { icon: 'bxl-stripe', iconType: 'boxicon', color: 'text-purple-600', bg: 'bg-purple-50 dark:bg-purple-900/20', border: 'border-purple-200 dark:border-purple-800' },
+      'DaisyUI': { icon: 'bx-palette', iconType: 'boxicon', color: 'text-orange-500', bg: 'bg-orange-50 dark:bg-orange-900/20', border: 'border-orange-200 dark:border-orange-800' },
+      'Nodemailer': { icon: 'bx-envelope', iconType: 'boxicon', color: 'text-blue-500', bg: 'bg-blue-50 dark:bg-blue-900/20', border: 'border-blue-200 dark:border-blue-800' },
+      'HTML5': { icon: 'bxl-html5', iconType: 'boxicon', color: 'text-orange-600', bg: 'bg-orange-50 dark:bg-orange-900/20', border: 'border-orange-200 dark:border-orange-800' },
+      'CSS3': { icon: 'bxl-css3', iconType: 'boxicon', color: 'text-blue-600', bg: 'bg-blue-50 dark:bg-blue-900/20', border: 'border-blue-200 dark:border-blue-800' },
+      'JavaScript': { icon: 'bxl-javascript', iconType: 'boxicon', color: 'text-yellow-500', bg: 'bg-yellow-50 dark:bg-yellow-900/20', border: 'border-yellow-200 dark:border-yellow-800' },
+      'PHP': { icon: 'bxl-php', iconType: 'boxicon', color: 'text-indigo-600', bg: 'bg-indigo-50 dark:bg-indigo-900/20', border: 'border-indigo-200 dark:border-indigo-800' },
+      'MySQL': { icon: 'bx-data', iconType: 'boxicon', color: 'text-blue-700', bg: 'bg-blue-50 dark:bg-blue-900/20', border: 'border-blue-200 dark:border-blue-800' },
+      'Bootstrap': { icon: 'bxl-bootstrap', iconType: 'boxicon', color: 'text-purple-600', bg: 'bg-purple-50 dark:bg-purple-900/20', border: 'border-purple-200 dark:border-purple-800' },
+      'Tailwind CSS': { icon: 'bxl-tailwind-css', iconType: 'boxicon', color: 'text-cyan-500', bg: 'bg-cyan-50 dark:bg-cyan-900/20', border: 'border-cyan-200 dark:border-cyan-800' },
+      'Framer Motion': { icon: 'bx-play-circle', iconType: 'boxicon', color: 'text-pink-500', bg: 'bg-pink-50 dark:bg-pink-900/20', border: 'border-pink-200 dark:border-pink-800' },
+      'React Router': { icon: 'bx-sitemap', iconType: 'boxicon', color: 'text-red-500', bg: 'bg-red-50 dark:bg-red-900/20', border: 'border-red-200 dark:border-red-800' },
+      'Google Maps API': { icon: 'bx-map', iconType: 'boxicon', color: 'text-blue-500', bg: 'bg-blue-50 dark:bg-blue-900/20', border: 'border-blue-200 dark:border-blue-800' },
+      'Groq AI': { icon: 'bx-brain', iconType: 'boxicon', color: 'text-purple-500', bg: 'bg-purple-50 dark:bg-purple-900/20', border: 'border-purple-200 dark:border-purple-800' },
+      'GSAP': { icon: 'bx-play-circle', iconType: 'boxicon', color: 'text-green-500', bg: 'bg-green-50 dark:bg-green-900/20', border: 'border-green-200 dark:border-green-800' },
+      'shadcn/ui': { icon: 'bx-component', iconType: 'boxicon', color: 'text-slate-900 dark:text-white', bg: 'bg-slate-50 dark:bg-slate-900/20', border: 'border-slate-200 dark:border-slate-800' }
     }
-    return configs[tech] || { icon: 'bx-code', color: 'text-gray-500', bg: 'bg-gray-50 dark:bg-gray-900/20', border: 'border-gray-200 dark:border-gray-800' }
+    return configs[tech] || { icon: 'bx-code', iconType: 'boxicon', color: 'text-gray-500', bg: 'bg-gray-50 dark:bg-gray-900/20', border: 'border-gray-200 dark:border-gray-800' }
   }
 
   return (
@@ -60,6 +89,7 @@ const ProjectDetail = ({ project, onClose }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
+      data-lenis-prevent
     >
       <motion.div
         className="bg-background max-w-6xl w-full max-h-[95vh] overflow-y-auto shadow-2xl border border-border rounded-lg"
@@ -68,13 +98,14 @@ const ProjectDetail = ({ project, onClose }) => {
         initial="hidden"
         animate="visible"
         exit="hidden"
+        data-lenis-prevent
       >
         {/* Header */}
         <div className="sticky top-0 bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 p-6 text-white z-10">
-          <div className="flex items-start justify-between gap-4">
-            <div className="flex items-start gap-4 flex-1">
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex items-center gap-4 flex-1">
               <motion.div 
-                className="p-3 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg"
+                className="p-3 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg flex-shrink-0"
                 whileHover={{ scale: 1.05, rotate: 5 }}
               >
                 <i className="bx bx-code-alt text-2xl text-white"></i>
@@ -100,7 +131,7 @@ const ProjectDetail = ({ project, onClose }) => {
               onClick={onClose}
               variant="ghost"
               size="icon"
-              className="text-white hover:bg-white/20 rounded-lg"
+              className="text-white hover:bg-white/20 rounded-lg flex-shrink-0"
             >
               <i className="bx bx-x text-2xl"></i>
             </Button>
@@ -170,7 +201,17 @@ const ProjectDetail = ({ project, onClose }) => {
                     whileHover={{ scale: 1.05, y: -2 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <i className={`bx ${techConfig.icon} ${techConfig.color}`}></i>
+                    <div className="flex items-center justify-center">
+                      {techConfig.iconType === 'react-icon' ? (
+                        techConfig.icon === 'nextjs' ? (
+                          <SiNextdotjs className={`${techConfig.color} text-base`} />
+                        ) : techConfig.icon === 'express' ? (
+                          <SiExpress className={`${techConfig.color} text-base`} />
+                        ) : null
+                      ) : (
+                        <i className={`bx ${techConfig.icon} ${techConfig.color} text-base`}></i>
+                      )}
+                    </div>
                     <span className="text-foreground">{tech}</span>
                   </motion.span>
                 )
@@ -273,13 +314,13 @@ const ProjectDetail = ({ project, onClose }) => {
 
           {/* Action Buttons */}
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4 pt-6 border-t border-border"
+            className="flex flex-col gap-4 pt-6 border-t border-border"
             variants={itemVariants}
           >
             {project.liveLink && (
               <Button
                 onClick={() => window.open(project.liveLink, '_blank')}
-                className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg"
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg"
                 asChild
               >
                 <motion.button
@@ -295,7 +336,7 @@ const ProjectDetail = ({ project, onClose }) => {
             <Button
               onClick={() => window.open(project.githubLink, '_blank')}
               variant="outline"
-              className="flex-1 rounded-lg"
+              className="w-full rounded-lg"
               asChild
             >
               <motion.button

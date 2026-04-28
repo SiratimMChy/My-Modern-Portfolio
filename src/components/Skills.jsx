@@ -52,6 +52,7 @@ const CATEGORIES = [
       { name: 'Git',     icon: 'bxl-git',        color: '#f05032' },
       { name: 'GitHub',  icon: 'bxl-github',     color: '#d1d5db' },
       { name: 'Stripe',  icon: 'bx-credit-card', color: '#635bff' },
+      { name: 'Groq AI', icon: 'bx-brain',       color: '#f55036' },
     ],
   },
 ]

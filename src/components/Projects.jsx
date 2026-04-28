@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import ProjectDetail from './ProjectDetail'
 import { Button } from './ui/button'
 import { Badge } from './ui/badge'
+import { SiNextdotjs, SiExpress } from 'react-icons/si'
 
 const PROJECTS = [
    {
@@ -14,7 +15,6 @@ const PROJECTS = [
     'Next.js',
     'React',
     'TypeScript',
-    'MongoDB',
     'Mongoose',
     'NextAuth.js',
     'Stripe',
@@ -49,7 +49,7 @@ const PROJECTS = [
   liveLink: 'https://navora-five.vercel.app',
   githubLink: 'https://github.com/SiratimMChy/Navora-AI-Travel-Guide',
   status: 'Live',
-  color: '#06b6d4',
+  color: '#38bdf8',
 },
 {
   id: 'orvella',
@@ -95,7 +95,7 @@ const PROJECTS = [
   liveLink: 'https://orvella-zeta.vercel.app',
   githubLink: 'https://github.com/SiratimMChy/Orvella',
   status: 'Live',
-  color: '#ec4899',
+  color: '#38bdf8',
 },
   {
     id: 'hemovia',
@@ -111,7 +111,7 @@ const PROJECTS = [
     liveLink: 'https://blooddonation-f6367.web.app',
     githubLink: 'https://github.com/SiratimMChy/Hemovia-Client',
     status: 'Live',
-    color: '#f472b6',
+    color: '#38bdf8',
   },
   
   {
@@ -144,7 +144,7 @@ const PROJECTS = [
     liveLink: null,
     githubLink: 'https://github.com/SiratimMChy/She-WomenSafetyApp',
     status: 'Development',
-    color: '#818cf8',
+    color: '#38bdf8',
   },
   {
     id: 'classmate',
@@ -160,7 +160,7 @@ const PROJECTS = [
     liveLink: 'https://classmate-2c272.web.app',
     githubLink: 'https://github.com/SiratimMChy/ClassMate',
     status: 'Live',
-    color: '#fb923c',
+    color: '#38bdf8',
   },
 ]
 
@@ -220,21 +220,31 @@ export default function Projects() {
         </motion.div>
 
         {/* filter tabs */}
-        <motion.div className="flex justify-center mb-10"
+        <motion.div className="flex justify-center mb-10 px-0"
           initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}>
-          <div className="inline-flex items-center gap-1 p-1 rounded-xl bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-slate-800">
-            {CATEGORIES.map(cat => (
-              <Button
+          <div className="w-full sm:w-auto inline-flex flex-row items-center gap-1.5 sm:gap-1 p-2 sm:p-1 rounded-lg sm:rounded-sm bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-slate-800">
+            {CATEGORIES.map((cat, index) => (
+              <motion.div
                 key={cat.id}
-                variant={filter === cat.id ? 'default' : 'ghost'}
-                size="sm"
-                onClick={() => setFilter(cat.id)}
-                className={`gap-1.5 text-xs h-8 ${filter === cat.id ? 'bg-gradient-to-r from-sky-500 to-indigo-500 text-white hover:from-sky-400 hover:to-indigo-400 border-0' : 'text-slate-500 dark:text-slate-400'}`}
+                className="flex-1 sm:flex-none"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: 0.3 + index * 0.05 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <i className={`bx ${cat.icon} text-sm`} />
-                {cat.label}
-              </Button>
+                <Button
+                  variant={filter === cat.id ? 'default' : 'ghost'}
+                  size="sm"
+                  onClick={() => setFilter(cat.id)}
+                  className={`gap-1 text-[11px] sm:text-xs h-8 sm:h-8 w-full sm:w-24 rounded-md sm:rounded-sm ${filter === cat.id ? 'bg-gradient-to-r from-sky-500 to-indigo-500 text-white hover:from-sky-400 hover:to-indigo-400 border-0' : 'text-slate-500 dark:text-slate-400'}`}
+                >
+                  <i className={`bx ${cat.icon} text-xs`} />
+                  {cat.label}
+                </Button>
+              </motion.div>
             ))}
           </div>
         </motion.div>
@@ -245,12 +255,12 @@ export default function Projects() {
             variants={stagger} initial="hidden" animate="show">
             {filtered.map((project) => (
               <motion.div key={project.id} variants={cardVar}
-                className="group relative rounded-2xl overflow-hidden bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 flex flex-col cursor-pointer"
+                className="group relative rounded-xl overflow-hidden bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 flex flex-col cursor-pointer"
                 whileHover={{ borderColor: project.color + '55', y: -4, transition: { duration: 0.2 } }}
                 onClick={() => setSelected(project)}
               >
                 {/* image */}
-                <div className="relative h-44 overflow-hidden bg-slate-100 dark:bg-slate-900 flex-shrink-0">
+                <div className="relative h-52 overflow-hidden bg-slate-100 dark:bg-slate-900 flex-shrink-0">
                   <img src={project.image} alt={project.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                   {/* hover overlay */}
@@ -261,12 +271,16 @@ export default function Projects() {
                   </div>
                   {/* status */}
                   <Badge
-                    className={`absolute top-3 right-3 gap-1 text-[9px] px-2 py-0.5 ${project.status === 'Live' ? 'bg-emerald-500/90 hover:bg-emerald-500/90 text-white border-0' : 'bg-amber-500/90 hover:bg-amber-500/90 text-white border-0'}`}
+                    className={`absolute top-1 right-1 gap-1 text-[9px] px-2 py-0.5 font-semibold rounded-sm ${
+                      project.status === 'Live' 
+                        ? 'bg-emerald-500/95 hover:bg-emerald-500/95 text-white border-0 shadow-lg shadow-emerald-500/25' 
+                        : 'bg-amber-500/95 hover:bg-amber-500/95 text-white border-0 shadow-lg shadow-amber-500/25'
+                    }`}
                   >
                     <span className="w-1 h-1 rounded-full bg-white animate-pulse" />{project.status}
                   </Badge>
                   {/* category */}
-                  <Badge variant="secondary" className="absolute top-3 left-3 text-[9px] px-2 py-0.5 bg-black/40 hover:bg-black/40 text-white border-0 backdrop-blur-sm">
+                  <Badge variant="secondary" className="absolute top-1 left-1 text-[9px] px-2 py-0.5 font-semibold rounded-sm bg-black/60 hover:bg-black/60 text-white border-0 backdrop-blur-md shadow-lg">
                     {project.category}
                   </Badge>
                 </div>
@@ -277,50 +291,138 @@ export default function Projects() {
                     <h3 className="text-sm font-black text-slate-900 dark:text-white leading-tight">{project.name}</h3>
                     <div className="h-[2px] w-6 rounded-full mt-1.5" style={{ background: project.color }} />
                   </div>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4 flex-1">{project.shortDesc}</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4 line-clamp-2">{project.shortDesc}</p>
 
                   {/* features */}
-                  <div className="flex flex-wrap gap-1.5 mb-4">
-                    {project.features.map(f => (
-                      <span key={f} className="text-[9px] font-medium px-2 py-0.5 rounded-md"
+                  <div className="flex flex-wrap gap-1.5 mb-4 min-h-[44px]">
+                    {project.features.slice(0, 4).map(f => (
+                      <span key={f} className="inline-flex items-center text-[9px] font-medium px-2 py-1 rounded-md h-[20px]"
                         style={{ color: project.color, background: project.color + '12', border: `1px solid ${project.color}25` }}>
                         {f}
                       </span>
                     ))}
+                    {project.features.length > 4 && (
+                      <span className="inline-flex items-center justify-center text-[9px] font-medium px-2 py-1 rounded-md border border-slate-200 dark:border-slate-800 text-slate-400 dark:text-slate-500 h-[20px]">+{project.features.length - 4}</span>
+                    )}
                   </div>
 
                   {/* tech */}
-                  <div className="flex flex-wrap gap-1 mb-4">
-                    {project.tech.slice(0, 4).map(t => (
-                      <span key={t} className="text-[9px] font-medium px-2 py-0.5 rounded-md border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-white/[0.03] text-slate-500 dark:text-slate-400">{t}</span>
-                    ))}
+                  <div className="flex flex-wrap gap-1 mb-4 min-h-[44px]">
+                    {project.tech.slice(0, 4).map((t, index) => {
+                      const techIcons = {
+                        'React': 'bxl-react',
+                        'Node.js': 'bxl-nodejs',
+                        'MongoDB': 'bxl-mongodb',
+                        'Express.js': 'express',
+                        'Firebase': 'bxl-firebase',
+                        'Tailwind CSS': 'bxl-tailwind-css',
+                        'Next.js': 'nextjs',
+                        'TypeScript': 'bxl-typescript',
+                        'Mongoose': 'bxl-mongodb',
+                        'NextAuth.js': 'bx-lock-alt',
+                        'Stripe': 'bxl-stripe',
+                        'DaisyUI': 'bx-palette',
+                        'shadcn/ui': 'bx-component',
+                        'Nodemailer': 'bx-envelope',
+                        'Java': 'bxl-java',
+                        'Android SDK': 'bxl-android',
+                        'Google Maps API': 'bx-map',
+                        'HTML5': 'bxl-html5',
+                        'Bootstrap': 'bxl-bootstrap',
+                        'JavaScript': 'bxl-javascript',
+                        'CSS3': 'bxl-css3',
+                        'MySQL': 'bx-data',
+                        'PHP': 'bxl-php',
+                        'Groq AI': 'bx-brain',
+                        'React Router': 'bxl-react',
+                        'Framer Motion': 'bx-movie-play',
+                        'GSAP': 'bx-play-circle'
+                      }
+                      const icon = techIcons[t]
+                      return (
+                        <motion.span 
+                          key={t} 
+                          className="inline-flex items-center gap-1 text-[9px] font-medium px-2 py-1 rounded-md border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-white/[0.03] text-slate-500 dark:text-slate-400 h-[22px] cursor-default"
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.3, delay: index * 0.05 }}
+                          whileHover={{ scale: 1.05, y: -2, transition: { duration: 0.2 } }}
+                        >
+                          {icon === 'nextjs' && <SiNextdotjs className="text-xs flex-shrink-0" />}
+                          {icon === 'express' && <SiExpress className="text-xs flex-shrink-0" />}
+                          {icon && icon !== 'nextjs' && icon !== 'express' && <i className={`bx ${icon} text-xs flex-shrink-0`} />}
+                          <span className="leading-none">{t}</span>
+                        </motion.span>
+                      )
+                    })}
                     {project.tech.length > 4 && (
-                      <span className="text-[9px] font-medium px-2 py-0.5 rounded-md border border-slate-200 dark:border-slate-800 text-slate-400 dark:text-slate-500">+{project.tech.length - 4}</span>
+                      <motion.span 
+                        className="inline-flex items-center justify-center text-[9px] font-medium px-2 py-1 rounded-md border border-slate-200 dark:border-slate-800 text-slate-400 dark:text-slate-500 h-[22px]"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.3, delay: 0.2 }}
+                      >
+                        +{project.tech.length - 4}
+                      </motion.span>
                     )}
                   </div>
 
                   {/* buttons */}
                   <div className="flex gap-2 mt-auto">
-                    {project.liveLink && (
-                      <Button size="sm" className="flex-1 text-[10px] h-8 text-white border-0 hover:opacity-90"
-                        style={{ background: `linear-gradient(135deg,${project.color},${project.color}bb)` }}
-                        asChild>
-                        <a href={project.liveLink} target="_blank" rel="noopener noreferrer"
-                          onClick={e => e.stopPropagation()}>
-                          <i className="bx bx-link-external text-xs mr-1" /> Live Demo
-                        </a>
-                      </Button>
+                    {project.category !== 'Mobile' && (
+                      <motion.div 
+                        className="flex-1"
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.3, delay: 0.3 }}
+                        whileHover={{ scale: 1.03 }}
+                        whileTap={{ scale: 0.97 }}
+                      >
+                        <Button size="sm" className="w-full text-[10px] h-8 text-white border-0 hover:opacity-90 rounded-sm"
+                          style={{ background: `linear-gradient(135deg,${project.color},${project.color}bb)` }}
+                          asChild={!!project.liveLink}
+                          disabled={!project.liveLink}>
+                          {project.liveLink ? (
+                            <a href={project.liveLink} target="_blank" rel="noopener noreferrer"
+                              onClick={e => e.stopPropagation()}>
+                              <i className="bx bx-link-external text-xs mr-1" /> Live Demo
+                            </a>
+                          ) : (
+                            <>
+                              <i className="bx bx-link-external text-xs mr-1" /> Live Demo
+                            </>
+                          )}
+                        </Button>
+                      </motion.div>
                     )}
-                    {project.githubLink && project.githubLink !== '#' && (
+                    <motion.div 
+                      className={project.category === 'Mobile' ? 'w-full' : 'flex-1'}
+                      initial={{ opacity: 0, x: 10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: project.category === 'Mobile' ? 0.3 : 0.35 }}
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.97 }}
+                    >
                       <Button size="sm" variant="outline"
-                        className="flex-1 text-[10px] h-8"
-                        asChild>
-                        <a href={project.githubLink} target="_blank" rel="noopener noreferrer"
-                          onClick={e => e.stopPropagation()}>
-                          <i className="bx bxl-github text-xs mr-1" /> Source Code
-                        </a>
+                        className="w-full text-[10px] h-8 rounded-sm"
+                        asChild={!!(project.githubLink && project.githubLink !== '#')}
+                        disabled={!project.githubLink || project.githubLink === '#'}>
+                        {project.githubLink && project.githubLink !== '#' ? (
+                          <a href={project.githubLink} target="_blank" rel="noopener noreferrer"
+                            onClick={e => e.stopPropagation()}>
+                            <i className="bx bxl-github text-xs mr-1" /> Source Code
+                          </a>
+                        ) : (
+                          <>
+                            <i className="bx bxl-github text-xs mr-1" /> Source Code
+                          </>
+                        )}
                       </Button>
-                    )}
+                    </motion.div>
                   </div>
                 </div>
               </motion.div>

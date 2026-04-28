@@ -12,33 +12,9 @@ const NAV = [
 ]
 
 const SOCIALS = [
-  {
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/siratim-mustakim-chowdhury',
-    svg: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="fill-current">
-        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-      </svg>
-    ),
-  },
-  {
-    label: 'GitHub',
-    href: 'https://github.com/SiratimMChy',
-    svg: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="fill-current">
-        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-      </svg>
-    ),
-  },
-  {
-    label: 'Email',
-    href: 'mailto:chowdhurysiratimmustakim@gmail.com',
-    svg: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="fill-current">
-        <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/>
-      </svg>
-    ),
-  },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/siratim-mustakim-chowdhury', icon: 'bxl-linkedin', color: '#0077b5' },
+  { label: 'GitHub',   href: 'https://github.com/SiratimMChy',                         icon: 'bxl-github',   color: '#171515' },
+  { label: 'Email',    href: 'mailto:chowdhurysiratimmustakim@gmail.com',               icon: 'bx-envelope',  color: '#38bdf8' },
 ]
 
 export default function Footer() {
@@ -47,94 +23,174 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-slate-50 dark:bg-[#07090f] border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
 
+      {/* Animated background blobs */}
+      <div className="pointer-events-none absolute -top-20 -left-20 w-[300px] h-[300px] rounded-full bg-sky-200/10 dark:bg-sky-600/5 blur-[80px]" />
+      <div className="pointer-events-none absolute -bottom-20 -right-20 w-[300px] h-[300px] rounded-full bg-violet-200/10 dark:bg-violet-700/5 blur-[80px]" />
+
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sky-400/25 to-transparent" />
 
-      <div className="flex flex-col items-center gap-8 px-6 py-8 mx-auto max-w-7xl sm:px-12 lg:px-20">
+      <div className="relative flex flex-col items-center gap-8 px-6 py-12 mx-auto max-w-7xl sm:px-12 lg:px-20">
+        
+        {/* Back to Home Button */}
+        <motion.div
+          className="absolute bottom-2 right-6 sm:right-12 lg:right-20"
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <Button
+            asChild
+            className="group relative w-8 h-8 rounded-sm flex items-center justify-center overflow-hidden hover:bg-transparent dark:hover:bg-transparent transition-all duration-300"
+            variant="outline"
+          >
+            <a href="#home" aria-label="Back to home">
+              <span className="absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />
+              <i className="bx bx-chevron-up text-lg transition-all duration-300 relative z-10 group-hover:text-sky-500 group-hover:scale-125" />
+            </a>
+          </Button>
+        </motion.div>
 
         {/* logo + badge */}
         <motion.div
-          className="flex flex-col items-center gap-3"
-          initial={{ opacity: 0, y: 12 }}
+          className="flex flex-col items-center gap-4"
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          <a href="#home"
-            className="text-2xl font-black tracking-tight"
+          <motion.a 
+            href="#home"
+            className="text-3xl font-black tracking-tight"
             style={{ 
-              fontFamily: "'Space Grotesk', sans-serif",
+              fontFamily: 'Cursive, serif',
+              fontStyle: 'italic',
               background: 'linear-gradient(90deg,#38bdf8,#818cf8)',
               WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              paddingRight: '4px'
+              display: 'inline-block',
+              paddingRight: '4px',
             }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
           >
             Smc.dev
-          </a>
-          <Badge variant="outline" className="text-emerald-600 dark:text-emerald-400 border-emerald-300 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-500/5 text-[10px] gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            Available for opportunities
-          </Badge>
+          </motion.a>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1, duration: 0.4 }}
+          >
+            <Badge variant="outline" className="text-emerald-600 dark:text-emerald-400 border-emerald-300 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-500/5 text-[10px] gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              Available for opportunities
+            </Badge>
+          </motion.div>
         </motion.div>
 
-        {/* nav links using Button variant="link" */}
+        {/* nav links with enhanced animations */}
         <motion.nav
-          className="flex flex-wrap justify-center gap-1"
-          initial={{ opacity: 0, y: 12 }}
+          className="flex flex-wrap justify-center gap-2"
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
         >
-          {NAV.map(n => (
-            <Button key={n.label} variant="link" size="sm" asChild
-              className="h-auto px-3 py-1 text-xs text-slate-500 dark:text-slate-400 hover:text-sky-500 dark:hover:text-sky-400">
-              <a href={n.href}>{n.label}</a>
-            </Button>
-          ))}
-        </motion.nav>
-
-        {/* social icons using Button variant="ghost" size="icon" */}
-        <motion.nav
-          className="flex items-center gap-2"
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          {SOCIALS.map(s => (
-            <Button key={s.label} variant="ghost" size="icon" asChild
-              className="text-slate-400 dark:text-slate-500 hover:text-sky-500 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-white/[0.05] w-9 h-9">
-              <motion.a
-                href={s.href}
-                target={s.href.startsWith('http') ? '_blank' : undefined}
-                rel={s.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                aria-label={s.label}
-                whileHover={{ y: -3, transition: { duration: 0.15 } }}
+          {NAV.map((n, index) => (
+            <motion.div
+              key={n.label}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15 + index * 0.05, duration: 0.4 }}
+            >
+              <Button 
+                variant="link" 
+                size="sm" 
+                asChild
+                className="h-auto px-3 py-1.5 text-xs text-slate-500 dark:text-slate-400 hover:text-sky-500 dark:hover:text-sky-400 relative group transition-colors duration-200"
               >
-                {s.svg}
-              </motion.a>
-            </Button>
+                <a href={n.href}>
+                  {n.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-sky-400 to-violet-500 group-hover:w-full transition-all duration-300" />
+                </a>
+              </Button>
+            </motion.div>
           ))}
         </motion.nav>
 
-        {/* divider */}
-        <motion.div
-          className="w-full h-px bg-slate-200 dark:bg-slate-800"
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
+        {/* social icons with enhanced animations */}
+        <motion.nav
+          className="flex items-center gap-3"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-        />
-
-        {/* copyright */}
-        <motion.p
-          className="text-[11px] text-slate-400 dark:text-slate-600 text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         >
-          © {year} Siratim Mustakim Chowdhury. All rights reserved.
+          {SOCIALS.map((s, index) => (
+            <motion.div
+              key={s.label}
+              initial={{ opacity: 0, scale: 0.6, y: 10 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.25 + index * 0.1, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              whileHover={{ scale: 1.15, y: -4 }}
+              whileTap={{ scale: 0.92 }}
+            >
+              <Button
+                variant="outline"
+                size="icon"
+                className="w-11 h-11 rounded-sm group hover:bg-transparent dark:hover:bg-transparent transition-all duration-300 relative overflow-hidden"
+                asChild
+              >
+                <a
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                >
+                  {/* Shimmer effect background */}
+                  <span className="absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />
+                  
+                  <i className={`bx ${s.icon} text-xl transition-all duration-300 relative z-10 ${
+                    s.icon === 'bxl-linkedin' ? 'group-hover:text-[#0077b5]' :
+                    s.icon === 'bxl-github' ? 'group-hover:text-slate-900 dark:group-hover:text-white' :
+                    'group-hover:text-sky-500'
+                  } group-hover:scale-110 group-hover:rotate-12`} />
+                </a>
+              </Button>
+            </motion.div>
+          ))}
+        </motion.nav>
+
+        {/* divider with glow effect */}
+        <motion.div
+          className="w-full h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent relative"
+          initial={{ scaleX: 0, opacity: 0 }}
+          whileInView={{ scaleX: 1, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-sky-400 dark:via-sky-500 to-transparent blur-sm opacity-0"
+            animate={{ opacity: [0, 0.5, 0] }}
+            transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
+          />
+        </motion.div>
+
+        {/* copyright with staggered text animation */}
+        <motion.p
+          className="text-[11px] text-slate-400 dark:text-slate-600 font-medium text-center"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          © {year} <span className="font-bold text-slate-600 dark:text-slate-400">Siratim Mustakim Chowdhury</span>. All rights reserved.
         </motion.p>
 
       </div>
