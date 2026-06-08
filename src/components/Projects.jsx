@@ -115,21 +115,51 @@ const PROJECTS = [
   },
 
   {
-    id: 'pawmart',
-    name: 'PawMart',
+    id: 'cashnivo',
+    name: 'Cashnivo',
     category: 'Web',
-    image: 'https://i.ibb.co.com/LhrzQqyd/pawmart.png',
-    tech: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Firebase', 'Tailwind CSS'],
-    description: 'PawMart is a full-stack MERN marketplace that promotes responsible pet adoption while enabling buying and selling of pet care products. The platform connects adopters, pet owners, breeders, and shop owners through secure Firebase authentication and role-protected routes.',
-    shortDesc: 'Full-stack MERN marketplace for pet adoption and care products with secure authentication.',
-    features: ['Pet Adoption System', 'Product Marketplace', 'Order Management', 'Admin Dashboard'],
-    challenges: ['Role-based authentication & authorization', 'Secure listing ownership control', 'Efficient filtering and search', 'Responsive UI consistency'],
-    futureImprovements: ['Real-time chat system', 'Online payment integration', 'Admin moderation features'],
-    liveLink: 'https://pawmart-c9875.web.app',
-    githubLink: 'https://github.com/SiratimMChy/PawMart-Client',
+    image: 'https://i.ibb.co.com/G4BYmttW/image.png',
+    tech: [
+      'React',
+      'Express.js',
+      'MongoDB',
+      'Tailwind CSS',
+      'DaisyUI',
+      'Axios',
+      'Groq AI',
+    ],
+    description:
+      'Cashnivo is a robust, full-stack personal finance application designed to help users seamlessly manage their expenses. It features secure data management, dynamic transaction tracking, and an integrated, context-aware AI Financial Advisor that analyzes user spending habits to deliver customized financial guidance and insights.',
+    shortDesc:
+      'Full-stack personal finance dashboard with smart AI financial advisor.',
+    features: [
+
+      'Context-aware AI Financial Advisor',
+      'Income & Expense Tracking System',
+      'Real-time Dashboard Analytics',
+      'Chat History Persistence',
+      'Secure User Authentication',
+      'Dark/Light Theme Support',
+    ],
+    challenges: [
+      'Injecting dynamic transaction history into AI safely',
+      'Managing persistent chat state across sessions',
+      'Securely handling API keys and rate limits',
+      'Building a mobile-responsive floating chat widget',
+      'Optimizing database queries for real-time analytics',
+    ],
+    futureImprovements: [
+      'Receipt scanning with OCR',
+      'Automated budget limit alerts',
+      'Advanced data export (CSV/PDF reports)',
+      'Multi-currency conversion support',
+    ],
+    liveLink: 'https://expensetracker-2ab95.web.app',
+    githubLink: 'https://github.com/SiratimMChy/Expense-Tracker',
     status: 'Live',
-    color: '#38bdf8',
+    color: '#2563eb',
   },
+  ,
   {
     id: 'she-app',
     name: 'She — Safety App',
@@ -274,8 +304,8 @@ export default function Projects() {
                   {/* status */}
                   <Badge
                     className={`absolute top-1 right-1 gap-1 text-[9px] px-2 py-0.5 font-semibold rounded-sm ${project.status === 'Live'
-                        ? 'bg-emerald-500/95 hover:bg-emerald-500/95 text-white border-0 shadow-lg shadow-emerald-500/25'
-                        : 'bg-amber-500/95 hover:bg-amber-500/95 text-white border-0 shadow-lg shadow-amber-500/25'
+                      ? 'bg-emerald-500/95 hover:bg-emerald-500/95 text-white border-0 shadow-lg shadow-emerald-500/25'
+                      : 'bg-amber-500/95 hover:bg-amber-500/95 text-white border-0 shadow-lg shadow-amber-500/25'
                       }`}
                   >
                     <span className="w-1 h-1 bg-white rounded-full animate-pulse" />{project.status}
