@@ -12,7 +12,6 @@ const ProjectDetail = ({ project, onClose }) => {
     if (window.lenis) {
       window.lenis.stop()
     }
-    
     // Prevent body scroll
     document.body.style.overflow = 'hidden'
 

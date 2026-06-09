@@ -4,6 +4,11 @@ import ProjectDetail from './ProjectDetail'
 import { Button } from './ui/button'
 import { Badge } from './ui/badge'
 import { SiNextdotjs, SiExpress } from 'react-icons/si'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Pagination, Autoplay } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 const PROJECTS = [
   {
@@ -13,10 +18,9 @@ const PROJECTS = [
     image: 'https://i.ibb.co.com/35RNLPKW/image.png',
     tech: [
       'Next.js',
-      'React',
-      'TypeScript',
       'Mongoose',
       'NextAuth.js',
+      'TypeScript',
       'Stripe',
       'Tailwind CSS',
       'Groq AI',
@@ -26,12 +30,12 @@ const PROJECTS = [
     shortDesc:
       'AI-powered travel booking platform with smart recommendations, Stripe payments, and admin dashboard.',
     features: [
-      'AI Travel Recommendations',
-      'Destination Search & Filtering',
-      'Complete Booking System',
-      'Stripe Payment Integration',
-      'Admin Dashboard',
       'Blog & Reviews System',
+      'Complete Booking System',
+      'Admin Dashboard',
+      'AI Travel Recommendations',
+      'Stripe Payment Integration',
+      'Destination Search & Filtering',
     ],
     challenges: [
       'Integrating AI recommendation',
@@ -58,7 +62,6 @@ const PROJECTS = [
     image: 'https://i.ibb.co.com/XZhYcM5G/image.png',
     tech: [
       'Next.js',
-      'React',
       'MongoDB',
       'NextAuth.js',
       'Stripe',
@@ -71,13 +74,13 @@ const PROJECTS = [
     shortDesc:
       'Premium fashion e-commerce platform with Stripe payments, cart system, and admin dashboard.',
     features: [
-      'Multi-category Product Catalog',
-      'Advanced Search & Filtering',
-      'Real-time Shopping Cart',
       'Stripe + COD Payments',
       'Order Tracking System',
       'Admin Dashboard',
       'Email Notifications',
+      'Multi-category Product Catalog',
+      'Advanced Search & Filtering',
+      'Real-time Shopping Cart',
     ],
     challenges: [
       'Payment verification workflow',
@@ -118,28 +121,28 @@ const PROJECTS = [
     id: 'cashnivo',
     name: 'Cashnivo',
     category: 'Web',
-    image: 'https://i.ibb.co.com/G4BYmttW/image.png',
+    image: 'https://i.ibb.co.com/DgkjhLb3/image.png',
     tech: [
       'React',
-      'Express.js',
       'MongoDB',
+      'Express.js',
+      'Node.js', 
+      'Axios',
       'Tailwind CSS',
       'DaisyUI',
-      'Axios',
       'Groq AI',
     ],
     description:
       'Cashnivo is a robust, full-stack personal finance application designed to help users seamlessly manage their expenses. It features secure data management, dynamic transaction tracking, and an integrated, context-aware AI Financial Advisor that analyzes user spending habits to deliver customized financial guidance and insights.',
     shortDesc:
-      'Full-stack personal finance dashboard with smart AI financial advisor.',
+      'Full-stack personal finance tracker featuring real-time analytics and a smart AI financial advisor.',
     features: [
-
-      'Context-aware AI Financial Advisor',
-      'Income & Expense Tracking System',
-      'Real-time Dashboard Analytics',
+      'Dynamic Theme System',
+      'Secure Protected Routing',
+      'Smart AI Financial Advisor',
       'Chat History Persistence',
-      'Secure User Authentication',
-      'Dark/Light Theme Support',
+      'Real-Time Visual Analytics',
+      'Transaction Tracking System',
     ],
     challenges: [
       'Injecting dynamic transaction history into AI safely',
@@ -162,7 +165,7 @@ const PROJECTS = [
   ,
   {
     id: 'she-app',
-    name: 'She — Safety App',
+    name: 'She - Safety App',
     category: 'Mobile',
     image: 'https://i.ibb.co.com/20h6BJvk/she.png',
     tech: ['Java', 'Android SDK', 'Firebase', 'Google Maps API'],
@@ -181,7 +184,7 @@ const PROJECTS = [
     name: 'ClassMate',
     category: 'Web',
     image: 'https://i.ibb.co.com/21zn0wSr/CLASSMATE.png',
-    tech: ['HTML5', 'Bootstrap', 'JavaScript', 'CSS3'],
+    tech: ['HTML5', 'JavaScript', 'CSS3', 'Bootstrap'],
     description: 'CLASSMATE is a web-based academic collaboration platform developed as a final-year university project. It helps students share study materials, manage class resources, and collaborate efficiently in a centralized environment.',
     shortDesc: 'Academic collaboration platform for students to share materials and manage class resources.',
     features: ['Student Collaboration', 'Academic Resources', 'Project Management', 'Communication Tools'],
@@ -279,185 +282,209 @@ export default function Projects() {
           </div>
         </motion.div>
 
-        {/* grid */}
+        {/* slider */}
         <AnimatePresence mode="wait">
-          <motion.div key={filter} className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"
-            variants={stagger} initial="hidden" animate="show">
-            {filtered.map((project) => (
-              <motion.div key={project.id} variants={cardVar}
-                className="group relative rounded-xl overflow-hidden bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 flex flex-col cursor-pointer"
-                whileHover={{ borderColor: project.color + '55', y: -4, transition: { duration: 0.2 } }}
-                onClick={() => setSelected(project)}
-              >
-                {/* image */}
-                <div className="relative flex-shrink-0 overflow-hidden h-52 bg-slate-100 dark:bg-slate-900">
-                  <img src={project.image} alt={project.name}
-                    loading="lazy"
-                    decoding="async"
-                    className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" />
-                  {/* hover overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center gap-3 transition-opacity duration-300 opacity-0 bg-black/50 group-hover:opacity-100">
-                    <span className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white/20 backdrop-blur-sm text-white text-xs font-semibold">
-                      <i className="text-sm bx bx-show" /> View Details
-                    </span>
-                  </div>
-                  {/* status */}
-                  <Badge
-                    className={`absolute top-1 right-1 gap-1 text-[9px] px-2 py-0.5 font-semibold rounded-sm ${project.status === 'Live'
-                      ? 'bg-emerald-500/95 hover:bg-emerald-500/95 text-white border-0 shadow-lg shadow-emerald-500/25'
-                      : 'bg-amber-500/95 hover:bg-amber-500/95 text-white border-0 shadow-lg shadow-amber-500/25'
-                      }`}
+          <motion.div key={filter}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+            className="w-full pb-14"
+          >
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              spaceBetween={24}
+              slidesPerView={1}
+              pagination={{ clickable: true }}
+              navigation={false}
+              autoplay={{ delay: 5000, disableOnInteraction: false }}
+              breakpoints={{
+                640: { slidesPerView: 2 },
+                1280: { slidesPerView: 3 },
+              }}
+              style={{
+                '--swiper-pagination-color': '#38bdf8',
+              }}
+              className="px-2 pt-6 pb-6 [&_.swiper-wrapper]:items-stretch [&_.swiper-pagination]:!relative [&_.swiper-pagination]:!mt-0 sm:[&_.swiper-pagination]:!mt-6"
+            >
+              {filtered.map((project) => (
+                <SwiperSlide key={project.id} className="h-auto flex">
+                  <motion.div
+                    className="group h-full w-full relative rounded-xl overflow-hidden bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 flex flex-col cursor-pointer"
+                    whileHover={{ borderColor: project.color + '55', y: -4, transition: { duration: 0.2 } }}
+                    onClick={() => setSelected(project)}
                   >
-                    <span className="w-1 h-1 bg-white rounded-full animate-pulse" />{project.status}
-                  </Badge>
-                  {/* category */}
-                  <Badge variant="secondary" className="absolute top-1 left-1 text-[9px] px-2 py-0.5 font-semibold rounded-sm bg-black/60 hover:bg-black/60 text-white border-0 backdrop-blur-md shadow-lg">
-                    {project.category}
-                  </Badge>
-                </div>
-
-                {/* content */}
-                <div className="flex flex-col flex-1 p-5">
-                  <div className="mb-3">
-                    <h3 className="text-sm font-black leading-tight text-slate-900 dark:text-white">{project.name}</h3>
-                    <div className="h-[2px] w-6 rounded-full mt-1.5" style={{ background: project.color }} />
-                  </div>
-                  <p className="mb-4 text-xs leading-relaxed text-slate-500 dark:text-slate-400 line-clamp-2">{project.shortDesc}</p>
-
-                  {/* features */}
-                  <div className="flex flex-wrap gap-1.5 mb-4 min-h-[44px]">
-                    {project.features.slice(0, 4).map(f => (
-                      <span key={f} className="inline-flex items-center text-[9px] font-medium px-2 py-1 rounded-md h-[20px]"
-                        style={{ color: project.color, background: project.color + '12', border: `1px solid ${project.color}25` }}>
-                        {f}
-                      </span>
-                    ))}
-                    {project.features.length > 4 && (
-                      <span className="inline-flex items-center justify-center text-[9px] font-medium px-2 py-1 rounded-md border border-slate-200 dark:border-slate-800 text-slate-400 dark:text-slate-500 h-[20px]">+{project.features.length - 4}</span>
-                    )}
-                  </div>
-
-                  {/* tech */}
-                  <div className="flex flex-wrap gap-1 mb-4 min-h-[44px]">
-                    {project.tech.slice(0, 4).map((t, index) => {
-                      const techIcons = {
-                        'React': 'bxl-react',
-                        'Node.js': 'bxl-nodejs',
-                        'MongoDB': 'bxl-mongodb',
-                        'Express.js': 'express',
-                        'Firebase': 'bxl-firebase',
-                        'Tailwind CSS': 'bxl-tailwind-css',
-                        'Next.js': 'nextjs',
-                        'TypeScript': 'bxl-typescript',
-                        'Mongoose': 'bxl-mongodb',
-                        'NextAuth.js': 'bx-lock-alt',
-                        'Stripe': 'bxl-stripe',
-                        'DaisyUI': 'bx-palette',
-                        'shadcn/ui': 'bx-component',
-                        'Nodemailer': 'bx-envelope',
-                        'Java': 'bxl-java',
-                        'Android SDK': 'bxl-android',
-                        'Google Maps API': 'bx-map',
-                        'HTML5': 'bxl-html5',
-                        'Bootstrap': 'bxl-bootstrap',
-                        'JavaScript': 'bxl-javascript',
-                        'CSS3': 'bxl-css3',
-                        'MySQL': 'bx-data',
-                        'PHP': 'bxl-php',
-                        'Groq AI': 'bx-brain',
-                        'React Router': 'bxl-react',
-                        'Framer Motion': 'bx-movie-play',
-                        'GSAP': 'bx-play-circle'
-                      }
-                      const icon = techIcons[t]
-                      return (
-                        <motion.span
-                          key={t}
-                          className="inline-flex items-center gap-1 text-[9px] font-medium px-2 py-1 rounded-md border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-white/[0.03] text-slate-500 dark:text-slate-400 h-[22px] cursor-default"
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.3, delay: index * 0.05 }}
-                          whileHover={{ scale: 1.05, y: -2, transition: { duration: 0.2 } }}
-                        >
-                          {icon === 'nextjs' && <SiNextdotjs className="flex-shrink-0 text-xs" />}
-                          {icon === 'express' && <SiExpress className="flex-shrink-0 text-xs" />}
-                          {icon && icon !== 'nextjs' && icon !== 'express' && <i className={`bx ${icon} text-xs flex-shrink-0`} />}
-                          <span className="leading-none">{t}</span>
-                        </motion.span>
-                      )
-                    })}
-                    {project.tech.length > 4 && (
-                      <motion.span
-                        className="inline-flex items-center justify-center text-[9px] font-medium px-2 py-1 rounded-md border border-slate-200 dark:border-slate-800 text-slate-400 dark:text-slate-500 h-[22px]"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.3, delay: 0.2 }}
+                    {/* image */}
+                    <div className="relative flex-shrink-0 overflow-hidden h-52 bg-slate-100 dark:bg-slate-900">
+                      <img src={project.image} alt={project.name}
+                        loading="lazy"
+                        decoding="async"
+                        className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" />
+                      {/* hover overlay */}
+                      <div className="absolute inset-0 flex items-center justify-center gap-3 transition-opacity duration-300 opacity-0 bg-black/50 group-hover:opacity-100">
+                        <span className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white/20 backdrop-blur-sm text-white text-xs font-semibold">
+                          <i className="text-sm bx bx-show" /> View Details
+                        </span>
+                      </div>
+                      {/* status */}
+                      <Badge
+                        className={`absolute top-1 right-1 gap-1 text-[9px] px-2 py-0.5 font-semibold rounded-sm ${project.status === 'Live'
+                          ? 'bg-emerald-500/95 hover:bg-emerald-500/95 text-white border-0 shadow-lg shadow-emerald-500/25'
+                          : 'bg-amber-500/95 hover:bg-amber-500/95 text-white border-0 shadow-lg shadow-amber-500/25'
+                          }`}
                       >
-                        +{project.tech.length - 4}
-                      </motion.span>
-                    )}
-                  </div>
+                        <span className="w-1 h-1 bg-white rounded-full animate-pulse" />{project.status}
+                      </Badge>
+                      {/* category */}
+                      <Badge variant="secondary" className="absolute top-1 left-1 text-[9px] px-2 py-0.5 font-semibold rounded-sm bg-black/60 hover:bg-black/60 text-white border-0 backdrop-blur-md shadow-lg">
+                        {project.category}
+                      </Badge>
+                    </div>
 
-                  {/* buttons */}
-                  <div className="flex gap-2 mt-auto">
-                    {project.category !== 'Mobile' && (
-                      <motion.div
-                        className="flex-1"
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.3, delay: 0.3 }}
-                        whileHover={{ scale: 1.03 }}
-                        whileTap={{ scale: 0.97 }}
-                      >
-                        <Button size="sm" className="w-full text-[10px] h-8 text-white border-0 hover:opacity-90 rounded-sm"
-                          style={{ background: `linear-gradient(135deg,${project.color},${project.color}bb)` }}
-                          asChild={!!project.liveLink}
-                          disabled={!project.liveLink}>
-                          {project.liveLink ? (
-                            <a href={project.liveLink} target="_blank" rel="noopener noreferrer"
-                              onClick={e => e.stopPropagation()}>
-                              <i className="mr-1 text-xs bx bx-link-external" /> Live Demo
-                            </a>
-                          ) : (
-                            <>
-                              <i className="mr-1 text-xs bx bx-link-external" /> Live Demo
-                            </>
-                          )}
-                        </Button>
-                      </motion.div>
-                    )}
-                    <motion.div
-                      className={project.category === 'Mobile' ? 'w-full' : 'flex-1'}
-                      initial={{ opacity: 0, x: 10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: project.category === 'Mobile' ? 0.3 : 0.35 }}
-                      whileHover={{ scale: 1.03 }}
-                      whileTap={{ scale: 0.97 }}
-                    >
-                      <Button size="sm" variant="outline"
-                        className="w-full text-[10px] h-8 rounded-sm"
-                        asChild={!!(project.githubLink && project.githubLink !== '#')}
-                        disabled={!project.githubLink || project.githubLink === '#'}>
-                        {project.githubLink && project.githubLink !== '#' ? (
-                          <a href={project.githubLink} target="_blank" rel="noopener noreferrer"
-                            onClick={e => e.stopPropagation()}>
-                            <i className="mr-1 text-xs bx bxl-github" /> Source Code
-                          </a>
-                        ) : (
-                          <>
-                            <i className="mr-1 text-xs bx bxl-github" /> Source Code
-                          </>
+                    {/* content */}
+                    <div className="flex flex-col flex-1 p-5">
+                      <div className="mb-3">
+                        <h3 className="text-sm font-black leading-tight text-slate-900 dark:text-white">{project.name}</h3>
+                        <div className="h-[2px] w-6 rounded-full mt-1.5" style={{ background: project.color }} />
+                      </div>
+                      <p className="mb-4 text-xs leading-relaxed text-slate-500 dark:text-slate-400 line-clamp-2">{project.shortDesc}</p>
+
+                      {/* features */}
+                      <div className="flex flex-wrap gap-1.5 mb-4 min-h-[44px]">
+                        {project.features.slice(0, 3).map(f => (
+                          <span key={f} className="inline-flex items-center text-[9px] font-medium px-2 py-1 rounded-md h-[20px]"
+                            style={{ color: project.color, background: project.color + '12', border: `1px solid ${project.color}25` }}>
+                            {f}
+                          </span>
+                        ))}
+                        {project.features.length > 3 && (
+                          <span className="inline-flex items-center justify-center text-[9px] font-medium px-2 py-1 rounded-md border border-slate-200 dark:border-slate-800 text-slate-400 dark:text-slate-500 h-[20px]">+{project.features.length - 3}</span>
                         )}
-                      </Button>
-                    </motion.div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+                      </div>
+
+                      {/* tech */}
+                      <div className="flex flex-wrap gap-1 mb-4 min-h-[44px]">
+                        {project.tech.slice(0, 3).map((t, index) => {
+                          const techIcons = {
+                            'React': 'bxl-react',
+                            'Node.js': 'bxl-nodejs',
+                            'MongoDB': 'bxl-mongodb',
+                            'Express.js': 'express',
+                            'Firebase': 'bxl-firebase',
+                            'Tailwind CSS': 'bxl-tailwind-css',
+                            'Next.js': 'nextjs',
+                            'TypeScript': 'bxl-typescript',
+                            'Mongoose': 'bxl-mongodb',
+                            'NextAuth.js': 'bx-lock-alt',
+                            'Stripe': 'bxl-stripe',
+                            'DaisyUI': 'bx-palette',
+                            'shadcn/ui': 'bx-component',
+                            'Nodemailer': 'bx-envelope',
+                            'Java': 'bxl-java',
+                            'Android SDK': 'bxl-android',
+                            'Google Maps API': 'bx-map',
+                            'HTML5': 'bxl-html5',
+                            'Bootstrap': 'bxl-bootstrap',
+                            'JavaScript': 'bxl-javascript',
+                            'CSS3': 'bxl-css3',
+                            'MySQL': 'bx-data',
+                            'PHP': 'bxl-php',
+                            'Groq AI': 'bx-brain',
+                            'React Router': 'bxl-react',
+                            'Framer Motion': 'bx-movie-play',
+                            'GSAP': 'bx-play-circle'
+                          }
+                          const icon = techIcons[t]
+                          return (
+                            <motion.span
+                              key={t}
+                              className="inline-flex items-center gap-1 text-[9px] font-medium px-2 py-1 rounded-md border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-white/[0.03] text-slate-500 dark:text-slate-400 h-[22px] cursor-default"
+                              initial={{ opacity: 0, scale: 0.8 }}
+                              whileInView={{ opacity: 1, scale: 1 }}
+                              viewport={{ once: true }}
+                              transition={{ duration: 0.3, delay: index * 0.05 }}
+                              whileHover={{ scale: 1.05, y: -2, transition: { duration: 0.2 } }}
+                            >
+                              {icon === 'nextjs' && <SiNextdotjs className="flex-shrink-0 text-xs" />}
+                              {icon === 'express' && <SiExpress className="flex-shrink-0 text-xs" />}
+                              {icon && icon !== 'nextjs' && icon !== 'express' && <i className={`bx ${icon} text-xs flex-shrink-0`} />}
+                              <span className="leading-none">{t}</span>
+                            </motion.span>
+                          )
+                        })}
+                        {project.tech.length > 3 && (
+                          <motion.span
+                            className="inline-flex items-center justify-center text-[9px] font-medium px-2 py-1 rounded-md border border-slate-200 dark:border-slate-800 text-slate-400 dark:text-slate-500 h-[22px]"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.3, delay: 0.2 }}
+                          >
+                            +{project.tech.length - 3}
+                          </motion.span>
+                        )}
+                      </div>
+
+                      {/* buttons */}
+                      <div className="flex gap-2 mt-auto">
+                        {project.category !== 'Mobile' && (
+                          <motion.div
+                            className="flex-1"
+                            initial={{ opacity: 0, x: -10 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.3, delay: 0.3 }}
+                            whileHover={{ scale: 1.03 }}
+                            whileTap={{ scale: 0.97 }}
+                          >
+                            <Button size="sm" className="w-full text-[10px] h-8 text-white border-0 hover:opacity-90 rounded-sm"
+                              style={{ background: `linear-gradient(135deg,${project.color},${project.color}bb)` }}
+                              asChild={!!project.liveLink}
+                              disabled={!project.liveLink}>
+                              {project.liveLink ? (
+                                <a href={project.liveLink} target="_blank" rel="noopener noreferrer"
+                                  onClick={e => e.stopPropagation()}>
+                                  <i className="mr-1 text-xs bx bx-link-external" /> Live Demo
+                                </a>
+                              ) : (
+                                <>
+                                  <i className="mr-1 text-xs bx bx-link-external" /> Live Demo
+                                </>
+                              )}
+                            </Button>
+                          </motion.div>
+                        )}
+                        <motion.div
+                          className={project.category === 'Mobile' ? 'w-full' : 'flex-1'}
+                          initial={{ opacity: 0, x: 10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.3, delay: project.category === 'Mobile' ? 0.3 : 0.35 }}
+                          whileHover={{ scale: 1.03 }}
+                          whileTap={{ scale: 0.97 }}
+                        >
+                          <Button size="sm" variant="outline"
+                            className="w-full text-[10px] h-8 rounded-sm"
+                            asChild={!!(project.githubLink && project.githubLink !== '#')}
+                            disabled={!project.githubLink || project.githubLink === '#'}>
+                            {project.githubLink && project.githubLink !== '#' ? (
+                              <a href={project.githubLink} target="_blank" rel="noopener noreferrer"
+                                onClick={e => e.stopPropagation()}>
+                                <i className="mr-1 text-xs bx bxl-github" /> Source Code
+                              </a>
+                            ) : (
+                              <>
+                                <i className="mr-1 text-xs bx bxl-github" /> Source Code
+                              </>
+                            )}
+                          </Button>
+                        </motion.div>
+                      </div>
+                    </div>
+                  </motion.div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </motion.div>
         </AnimatePresence>
       </div>
