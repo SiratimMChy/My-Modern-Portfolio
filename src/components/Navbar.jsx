@@ -74,8 +74,8 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:block">
-            <div ref={menuRef} className="ml-10 flex items-baseline space-x-8">
+          <div className="hidden xl:block">
+            <div ref={menuRef} className="ml-4 lg:ml-10 flex items-baseline space-x-4 xl:space-x-8">
               <a href="#home" className="text-blue-600 dark:text-blue-400 font-medium px-3 py-2 rounded-md text-sm transition-colors">
                 Home
               </a>
@@ -101,7 +101,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
           </div>
 
           {/* Right side buttons */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden xl:flex items-center gap-4">
             {/* Theme Toggle */}
             <button 
               onClick={toggleDarkMode}
@@ -130,7 +130,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="-mr-2 flex md:hidden">
+          <div className="-mr-2 flex xl:hidden">
             <button 
               type="button"
               onClick={toggleMobileMenu}
@@ -149,7 +149,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden">
+        <div className="xl:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-700">
             <a 
               href="#home" 
