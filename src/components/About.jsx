@@ -2,17 +2,17 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
 const HIGHLIGHTS = [
-  { icon: 'bx-code-alt',     label: 'Full Stack',    desc: 'MERN Stack',         color: '#38bdf8' },
-  { icon: 'bxl-android',     label: 'Android',       desc: 'Java Development',   color: '#a3e635' },
-  { icon: 'bx-shield-alt-2', label: 'Secure APIs',   desc: 'JWT & Firebase',     color: '#818cf8' },
-  { icon: 'bx-devices',      label: 'Responsive',    desc: 'UI/UX Design',       color: '#f472b6' },
+  { icon: 'bx-code-alt', label: 'Full Stack', desc: 'MERN Stack', color: '#38bdf8' },
+  { icon: 'bxl-android', label: 'Android', desc: 'Java Development', color: '#a3e635' },
+  { icon: 'bx-shield-alt-2', label: 'Secure APIs', desc: 'JWT & Firebase', color: '#818cf8' },
+  { icon: 'bx-devices', label: 'Responsive', desc: 'UI/UX Design', color: '#f472b6' },
 ]
 
 const HOBBIES = [
   { icon: 'bx-cricket-ball', label: 'Cricket' },
-  { icon: 'bx-heart',        label: 'Animal Lover' },
-  { icon: 'bx-code-curly',   label: 'Coding' },
-  { icon: 'bx-book-open',    label: 'Learning' },
+  { icon: 'bx-heart', label: 'Animal Lover' },
+  { icon: 'bx-code-curly', label: 'Coding' },
+  { icon: 'bx-book-open', label: 'Learning' },
 ]
 
 const fade = (delay = 0) => ({
@@ -75,7 +75,7 @@ export default function About() {
 
           {/* LEFT — image + highlight cards */}
           <motion.div
-            className="relative flex justify-center order-2 lg:order-1"
+            className="relative flex justify-center lg:justify-start lg:pl-5 order-2 lg:order-1"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -126,31 +126,31 @@ export default function About() {
               >
                 <i className="bx bx-code-alt text-white text-xl" />
               </motion.div>
-            </div>
 
-            {/* highlight cards — 2×2 grid below image on mobile, absolute on lg */}
-            <div className="absolute -right-6 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-3">
-              {HIGHLIGHTS.slice(0, 2).map((h, i) => (
-                <motion.div
-                  key={h.label}
-                  className="flex items-center gap-3 px-4 py-3 rounded-xl shadow-lg w-44
-                    bg-white dark:bg-[#0d1117]
-                    border border-slate-200 dark:border-slate-800"
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4 + i * 0.1 }}
-                >
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ background: `${h.color}18` }}>
-                    <i className={`bx ${h.icon} text-base`} style={{ color: h.color }} />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-slate-800 dark:text-slate-200 leading-none">{h.label}</p>
-                    <p className="text-[9px] text-slate-400 mt-0.5">{h.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
+              {/* highlight cards — 2×2 grid below image on mobile, absolute on lg */}
+              <div className="absolute -right-32 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-3">
+                {HIGHLIGHTS.slice(0, 2).map((h, i) => (
+                  <motion.div
+                    key={h.label}
+                    className="flex items-center gap-3 px-4 py-3 rounded-xl shadow-lg w-44
+                      bg-white dark:bg-[#0d1117]
+                      border border-slate-200 dark:border-slate-800"
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 + i * 0.1 }}
+                  >
+                    <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+                      style={{ background: `${h.color}18` }}>
+                      <i className={`bx ${h.icon} text-base`} style={{ color: h.color }} />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-slate-800 dark:text-slate-200 leading-none">{h.label}</p>
+                      <p className="text-[9px] text-slate-400 mt-0.5">{h.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </motion.div>
 
@@ -164,33 +164,37 @@ export default function About() {
               Full Stack Web & Android Developer
             </motion.h3>
 
-            <motion.div className="space-y-4 text-slate-500 dark:text-slate-400 text-sm leading-[1.9]" {...fade(0.2)}>
+            <motion.div className="space-y-4 text-slate-500 dark:text-slate-400 text-sm leading-[1.9] text-justify tracking-tight" {...fade(0.2)}>
               <p>
-                I am a B.Sc. graduate in Computer Science and Engineering with strong expertise in{' '}
-                <span className="text-slate-700 dark:text-slate-300 font-medium">Java and JavaScript</span>,
-                specializing in building scalable, secure, and high-performance applications across both web and mobile platforms.
-                I develop modern solutions using the{' '}
-                <span className="text-slate-700 dark:text-slate-300 font-medium">MERN stack</span>,
-                Android (Java), Firebase, JWT-secured REST APIs, and responsive UI/UX design principles.
+                I recently graduated with a B.Sc. in Computer Science and Engineering from{' '}
+                <span className="text-slate-700 dark:text-slate-300 font-medium">Leading University, Sylhet</span> (December 2025). I have a strong foundation in{' '}
+                <span className="text-slate-700 dark:text-slate-300 font-medium">JavaScript and Java</span>.
+                I specialize in building scalable, secure, and user-friendly applications across both web and mobile platforms, utilizing modern technologies like the{' '}
+                <span className="text-slate-700 dark:text-slate-300 font-medium">MERN stack</span>,{' '}
+                Next.js, Android, Firebase, and RESTful APIs.
               </p>
               <p>
-                I have successfully designed and developed multiple real-world projects, including{' '}
-                <span className="text-sky-600 dark:text-sky-400 font-medium">Navora</span>,{' '}
-                <span className="text-violet-600 dark:text-violet-400 font-medium">Orvella</span>,{' '}
-                <span className="text-sky-600 dark:text-sky-400 font-medium">PawMart</span>,{' '}
-                <span className="text-violet-600 dark:text-violet-400 font-medium">Hemovia</span>,{' '}
-                <span className="text-sky-600 dark:text-sky-400 font-medium">CLASSMATE</span>, and a{' '}
-                <span className="text-violet-600 dark:text-violet-400 font-medium">Women's Safety Android</span> application.
-                These projects demonstrate my ability to architect full-stack systems, implement secure authentication
-                and payment workflows, and deliver user-focused, production-ready applications.
+                Recently, I worked as a Web Developer at{' '}
+                <span className="text-sky-600 dark:text-sky-400 font-medium">Javed Paribahan</span>,
+                where I built a system to help digitize their billing process. Along with this, I have built several full-stack projects, such as a{' '}
+                <span className="text-violet-600 dark:text-violet-400 font-medium">personal finance tracker with a smart AI advisor</span>,
+                an{' '}
+                <span className="text-sky-600 dark:text-sky-400 font-medium">AI-powered travel booking site</span>,{' '}
+                and a{' '}
+                <span className="text-violet-600 dark:text-violet-400 font-medium">blood donation platform</span>.
+                As a third-year academic project, I developed a{' '}
+                <span className="text-sky-600 dark:text-sky-400 font-medium">women's safety Android app</span>{' '}
+                featuring real-time location sharing and emergency SOS alerts.
+                Through these experiences, I learned how to integrate AI features, handle databases securely, and build reliable cross-platform solutions.
               </p>
               <p>
-                I am passionate about problem-solving, clean architecture, and continuously improving my skills
-                while building impactful digital products that solve real-world problems.
+                Outside of web development, I actively solve problems on platforms like{' '}
+                <span className="text-slate-700 dark:text-slate-300 font-medium">HackerRank, Codeforces, CodeChef, and LeetCode</span>{' '}
+                because I always want to make my problem-solving skills sharper and better. Right now, I'm looking for a great team where I can bring my skills, learn from experienced developers, and grow as a software engineer.
               </p>
             </motion.div>
 
-            {/* highlight cards — mobile/tablet (shown below lg) */}
+            {/* highlight cards —  */}
             <motion.div className="grid grid-cols-2 gap-3 lg:hidden" {...fade(0.3)}>
               {HIGHLIGHTS.map(h => (
                 <div key={h.label}

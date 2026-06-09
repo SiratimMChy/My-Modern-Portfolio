@@ -2,6 +2,10 @@ import { useState, useEffect, Suspense, lazy } from 'react'
 import Navbar from './components/Navbar'
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 // Lazy load components for better code splitting
 const Hero = lazy(() => import('./components/Hero'))
@@ -35,20 +39,29 @@ function App() {
 
     // Initialize Lenis smooth scrolling
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 0.9,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
       smoothWheel: true,
+      wheelMultiplier: 0.8, 
+      touchMultiplier: 2,
+      infinite: false,
     })
 
     // Add lenis class to html
     document.documentElement.classList.add('lenis')
 
-    function raf(time) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
+    // Synchronize Lenis with GSAP ScrollTrigger
+    lenis.on('scroll', ScrollTrigger.update)
+
+    // Integrate with GSAP ticker for high-performance RAF
+    const update = (time) => {
+      lenis.raf(time * 1000)
     }
 
-    requestAnimationFrame(raf)
+    gsap.ticker.add(update)
+    gsap.ticker.lagSmoothing(0)
 
     // Store lenis instance globally for modal access
     window.lenis = lenis
@@ -56,6 +69,7 @@ function App() {
     // Cleanup
     return () => {
       lenis.destroy()
+      gsap.ticker.remove(update)
       document.documentElement.classList.remove('lenis')
       window.lenis = null
     }
