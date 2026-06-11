@@ -163,6 +163,16 @@ This portfolio prioritizes a seamless user experience through rigorous performan
 
 ---
 
+---
+
+## ⚖️ License & Copyright
+
+**© 2024 Siratim Mustakim Chowdhury. All Rights Reserved.**
+
+This is a personal portfolio project. It is **not open source** and cannot be copied, cloned, or used for personal or commercial purposes. The repository is public strictly for demonstration purposes only.
+
+---
+
 ## 👨‍💻 Author
 
 **Siratim Mustakim Chowdhury**  
