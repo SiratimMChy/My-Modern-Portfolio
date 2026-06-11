@@ -63,21 +63,15 @@ export default function Footer() {
         >
           <motion.a 
             href="#home"
-            className="text-3xl font-black tracking-tight"
-            style={{ 
-              fontFamily: 'Cursive, serif',
-              fontStyle: 'italic',
-              background: 'linear-gradient(90deg,#38bdf8,#818cf8)',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              display: 'inline-block',
-              paddingRight: '4px',
-            }}
+            className="flex items-center justify-center"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
           >
-            Smc.dev
+            <img 
+              src="/logo.png" 
+              alt="SMC Logo" 
+              className="h-[100px] w-auto object-contain rounded-md"
+            />
           </motion.a>
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
