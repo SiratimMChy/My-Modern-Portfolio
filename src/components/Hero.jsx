@@ -171,7 +171,7 @@ export default function Hero() {
               </a>
 
               <a
-                href="/My_resume_1.pdf"
+                href="/SIRATIM MUSTAKIM CHOWDHURY_MERN Stack Developer.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 px-6 py-3 text-sm font-semibold rounded-sm transition-all duration-200

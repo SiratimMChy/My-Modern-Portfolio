@@ -109,8 +109,8 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
 
             {/* Resume Button */}
             <a
-              href="/My_resume_1.pdf"
-              download="Siratim_Mustakim_Chowdhury_CV.pdf"
+              href="/SIRATIM MUSTAKIM CHOWDHURY_MERN Stack Developer.pdf"
+              download="SIRATIM_MUSTAKIM_CHOWDHURY_MERN_Stack_Developer.pdf"
               className={`${darkMode
                 ? 'bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 shadow-sm shadow-cyan-500/20 hover:shadow-cyan-500/30'
                 : 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-sm shadow-blue-500/20 hover:shadow-blue-500/30'
@@ -207,8 +207,8 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
               </button>
 
               <a
-                href="/My_resume_1.pdf"
-                download="Siratim_Mustakim_Chowdhury_CV.pdf"
+                href="/SIRATIM MUSTAKIM CHOWDHURY_MERN Stack Developer.pdf"
+                download="SIRATIM_MUSTAKIM_CHOWDHURY_MERN_Stack_Developer.pdf"
                 className={`${darkMode
                   ? 'bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600'
                   : 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700'
