@@ -310,7 +310,7 @@ export default function Projects() {
               {filtered.map((project) => (
                 <SwiperSlide key={project.id} className="h-auto flex">
                   <motion.div
-                    className="group h-full w-full relative rounded-xl overflow-hidden bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 flex flex-col cursor-pointer"
+                    className="group h-full w-full relative rounded-xl overflow-hidden bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 flex flex-col cursor-pointer"
                     whileHover={{ borderColor: project.color + '55', y: -4, transition: { duration: 0.2 } }}
                     onClick={() => setSelected(project)}
                   >

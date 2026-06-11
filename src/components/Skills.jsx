@@ -196,7 +196,7 @@ export default function Skills() {
       ref={sectionRef}
       id="skills"
       className="relative py-28 overflow-hidden
-        bg-white dark:bg-[#060810]
+        bg-slate-50/50 dark:bg-[#060810]
         transition-colors duration-300"
     >
       {/* Animated background particles */}
@@ -267,7 +267,7 @@ export default function Skills() {
             <motion.div
               key={ci}
               className="skill-card rounded-2xl p-6 flex flex-col gap-5
-                bg-slate-50 dark:bg-white/[0.03]
+                bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03]
                 border border-slate-200 dark:border-slate-800
                 hover:border-slate-300 dark:hover:border-slate-700
                 transition-all duration-300 cursor-default
@@ -335,7 +335,7 @@ export default function Skills() {
                   <motion.div
                     key={si}
                     className="chip flex flex-col items-center justify-center gap-1.5 py-3.5 rounded-xl cursor-default select-none
-                      bg-white dark:bg-white/[0.04]
+                      bg-white shadow-sm shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.04]
                       border border-slate-200 dark:border-slate-800
                       hover:border-slate-300 dark:hover:border-slate-700
                       transition-all duration-150 relative overflow-hidden group/chip"
@@ -396,7 +396,7 @@ export default function Skills() {
               border border-slate-300 dark:border-slate-800
               text-slate-600 dark:text-slate-400
               hover:text-slate-900 dark:hover:text-white
-              hover:border-slate-500 dark:hover:border-slate-500
+              hover:border-slate-500 dark:hover:border-slate-500 shadow-md shadow-slate-200/60 dark:shadow-none
               bg-white dark:bg-white/[0.02]"
           >
             <i className="bx bx-folder text-base" />

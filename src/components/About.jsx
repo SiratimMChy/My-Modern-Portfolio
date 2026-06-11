@@ -102,7 +102,7 @@ export default function About() {
 
               {/* experience badge */}
               <motion.div
-                className="absolute -bottom-4 -right-4 px-4 py-3 rounded-2xl shadow-xl
+                className="absolute -bottom-4 -right-4 px-4 py-3 rounded-2xl shadow-xl shadow-slate-200/60 dark:shadow-xl
                   bg-white dark:bg-[#0d1117]
                   border border-slate-200 dark:border-slate-800"
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -132,7 +132,7 @@ export default function About() {
                 {HIGHLIGHTS.slice(0, 2).map((h, i) => (
                   <motion.div
                     key={h.label}
-                    className="flex items-center gap-3 px-4 py-3 rounded-xl shadow-lg w-44
+                    className="flex items-center gap-3 px-4 py-3 rounded-xl shadow-lg shadow-slate-200/60 dark:shadow-lg w-44
                       bg-white dark:bg-[#0d1117]
                       border border-slate-200 dark:border-slate-800"
                     initial={{ opacity: 0, x: 20 }}
@@ -198,7 +198,7 @@ export default function About() {
             <motion.div className="grid grid-cols-2 gap-3 lg:hidden" {...fade(0.3)}>
               {HIGHLIGHTS.map(h => (
                 <div key={h.label}
-                  className="flex items-center gap-3 px-3 py-3 rounded-xl
+                  className="flex items-center gap-3 px-3 py-3 rounded-xl shadow-md shadow-slate-200/60 dark:shadow-none
                     bg-white dark:bg-white/[0.03]
                     border border-slate-200 dark:border-slate-800">
                   <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
@@ -221,7 +221,7 @@ export default function About() {
               <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
                 {HOBBIES.map(h => (
                   <span key={h.label}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold shadow-sm shadow-slate-200/60 dark:shadow-none
                       bg-white dark:bg-white/[0.04]
                       border border-slate-200 dark:border-slate-800
                       text-slate-600 dark:text-slate-400">
@@ -250,7 +250,7 @@ export default function About() {
                   border border-slate-300 dark:border-slate-800
                   text-slate-600 dark:text-slate-400
                   hover:text-slate-900 dark:hover:text-white
-                  hover:border-slate-500 dark:hover:border-slate-500
+                  hover:border-slate-500 dark:hover:border-slate-500 shadow-md shadow-slate-200/60 dark:shadow-none
                   bg-white dark:bg-white/[0.02]"
               >
                 <i className="bx bx-folder text-base" />

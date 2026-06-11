@@ -91,7 +91,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="relative py-28 overflow-hidden bg-white dark:bg-[#060810] transition-colors duration-300">
+    <section id="contact" className="relative py-28 overflow-hidden bg-slate-50/50 dark:bg-[#060810] transition-colors duration-300">
 
       <div className="pointer-events-none absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-sky-200/25 dark:bg-sky-600/8 blur-[110px]" />
       <div className="pointer-events-none absolute -bottom-32 -right-32 w-[400px] h-[400px] rounded-full bg-violet-200/25 dark:bg-violet-700/8 blur-[100px]" />
@@ -133,7 +133,7 @@ export default function Contact() {
 
           {/* LEFT — info: single card, full height */}
           <motion.div className="h-full" {...fade(0.1)}>
-            <div className="rounded-2xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 h-full flex flex-col">
+            <div className="rounded-2xl bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 h-full flex flex-col">
 
               {/* intro */}
               <div className="p-5 border-b border-slate-200 dark:border-slate-800">
@@ -218,7 +218,7 @@ export default function Contact() {
 
           {/* RIGHT — form */}
           <motion.div
-            className="rounded-2xl p-6 sm:p-8 bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 h-full"
+            className="rounded-2xl p-6 sm:p-8 bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 h-full"
             {...fade(0.2)}
           >
             <p className="text-sm font-black text-slate-900 dark:text-white mb-1">Send a Message</p>

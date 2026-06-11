@@ -60,7 +60,7 @@ const EXP = [
 function Card({ exp, i }) {
   return (
     <motion.div
-      className="rounded-2xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 overflow-hidden w-full"
+      className="rounded-2xl bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 overflow-hidden w-full"
       initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
@@ -143,7 +143,7 @@ function Card({ exp, i }) {
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative py-28 overflow-hidden bg-white dark:bg-[#060810] transition-colors duration-300">
+    <section id="experience" className="relative py-28 overflow-hidden bg-slate-50/50 dark:bg-[#060810] transition-colors duration-300">
       <div className="pointer-events-none absolute -top-40 -right-40 w-96 h-96 rounded-full bg-sky-200/20 dark:bg-sky-500/5 blur-[100px]" />
       <div className="pointer-events-none absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-violet-200/20 dark:bg-violet-600/5 blur-[100px]" />
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-sky-400/20 to-transparent" />

@@ -57,14 +57,14 @@ export default function Hero() {
 
   return (
     <main className="relative min-h-screen flex items-center overflow-hidden
-      bg-white dark:bg-[#060810]
+      bg-slate-50/50 dark:bg-[#060810]
       transition-colors duration-300">
 
       {/* blobs */}
       <div className="pointer-events-none absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full
-        bg-sky-200/40 dark:bg-sky-600/10 blur-[120px] transition-colors duration-300" />
+        bg-sky-300/40 dark:bg-sky-600/10 blur-[120px] transition-colors duration-300" />
       <div className="pointer-events-none absolute -bottom-40 -right-20 w-[500px] h-[500px] rounded-full
-        bg-violet-200/40 dark:bg-violet-700/10 blur-[100px] transition-colors duration-300" />
+        bg-violet-300/40 dark:bg-violet-700/10 blur-[100px] transition-colors duration-300" />
 
       {/* noise */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.025] dark:opacity-[0.03]"
@@ -280,7 +280,7 @@ export default function Hero() {
 
               {/* ── floating stat chips ── */}
               <motion.div
-                className="absolute -top-5 -left-10 flex items-center gap-2 px-3 py-2 rounded-xl shadow-xl
+                className="absolute -top-5 -left-10 flex items-center gap-2 px-3 py-2 rounded-xl shadow-xl shadow-slate-200/60 dark:shadow-xl
                   bg-white dark:bg-[#0d1117] border border-slate-200 dark:border-slate-800"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: [0, -6, 0] }}
@@ -298,7 +298,7 @@ export default function Hero() {
 
               {/* top-right: 10+ Technologies */}
               <motion.div
-                className="absolute -top-5 -right-10 flex items-center gap-2 px-3 py-2 rounded-xl shadow-xl
+                className="absolute -top-5 -right-10 flex items-center gap-2 px-3 py-2 rounded-xl shadow-xl shadow-slate-200/60 dark:shadow-xl
                   bg-white dark:bg-[#0d1117] border border-slate-200 dark:border-slate-800"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: [0, 6, 0] }}
@@ -314,7 +314,7 @@ export default function Hero() {
               </motion.div>
 
               <motion.div
-                className="absolute -bottom-5 -left-10 flex items-center gap-2 px-3 py-2 rounded-xl shadow-xl
+                className="absolute -bottom-5 -left-10 flex items-center gap-2 px-3 py-2 rounded-xl shadow-xl shadow-slate-200/60 dark:shadow-xl
                   bg-white dark:bg-[#0d1117] border border-slate-200 dark:border-slate-800"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: [0, 5, 0] }}
@@ -329,7 +329,7 @@ export default function Hero() {
 
               {/* ── tech stack row ── */}
               <motion.div
-                className="absolute -bottom-5 -right-4 flex items-center gap-1.5 px-3 py-2 rounded-xl shadow-xl
+                className="absolute -bottom-5 -right-4 flex items-center gap-1.5 px-3 py-2 rounded-xl shadow-xl shadow-slate-200/60 dark:shadow-xl
                   bg-white dark:bg-[#0d1117] border border-slate-200 dark:border-slate-800"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

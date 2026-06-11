@@ -109,7 +109,7 @@ export default function Education() {
 
         {/* degree card */}
         <motion.div
-          className="mb-10 rounded-2xl p-6 sm:p-8 bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800"
+          className="mb-10 rounded-2xl p-6 sm:p-8 bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -174,7 +174,7 @@ export default function Education() {
 
           {/* Key Projects */}
           <motion.div
-            className="rounded-2xl p-6 bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800"
+            className="rounded-2xl p-6 bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -242,7 +242,7 @@ export default function Education() {
 
           {/* Key Subjects */}
           <motion.div
-            className="rounded-2xl p-6 bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800"
+            className="rounded-2xl p-6 bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}

@@ -90,7 +90,7 @@ function App() {
 
 
   return (
-    <div className="bg-white dark:bg-slate-900 text-gray-900 dark:text-white min-h-screen">
+    <div className="bg-slate-50 dark:bg-slate-900 text-gray-900 dark:text-white min-h-screen">
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       
       <Suspense fallback={<LoadingSpinner />}>
