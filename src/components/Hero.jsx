@@ -57,7 +57,7 @@ export default function Hero() {
 
   return (
     <main className="relative min-h-screen flex items-center overflow-hidden
-      bg-slate-50/50 dark:bg-[#060810]
+      bg-[#F5F5F0]/80 dark:bg-[#060810]
       transition-colors duration-300">
 
       {/* blobs */}
@@ -84,20 +84,7 @@ export default function Hero() {
           {/* ── LEFT ── */}
           <div className="flex-1 space-y-8 text-center lg:text-left">
 
-            {/* status chip */}
-            <motion.div
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border
-                border-emerald-400/30 dark:border-emerald-500/20
-                bg-emerald-50 dark:bg-emerald-500/5
-                text-emerald-600 dark:text-emerald-400
-                text-[10px] font-bold tracking-[0.18em] uppercase"
-              initial={{ opacity: 0, x: -16 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse" />
-              Available for opportunities
-            </motion.div>
+
 
             {/* name */}
             <div className="overflow-hidden">
@@ -106,7 +93,7 @@ export default function Hero() {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               >
-                <p className="text-slate-400 dark:text-slate-600 text-[10px] font-bold tracking-[0.25em] uppercase mb-2">
+                <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-bold tracking-widest uppercase mb-2">
                   Hello, I'm
                 </p>
                 <h1 className="font-black leading-[0.95] tracking-tighter" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -162,8 +149,7 @@ export default function Hero() {
             >
               <a
                 href="#contact"
-                className="group relative inline-flex items-center gap-2.5 px-6 py-3 text-sm font-semibold text-white overflow-hidden rounded-sm"
-                style={{ background: 'linear-gradient(135deg,#0ea5e9,#6366f1)' }}
+                className="group relative inline-flex items-center gap-2.5 px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-[#0ea5e9] to-[#6366f1] hover:opacity-90 overflow-hidden rounded-sm"
               >
                 <span className="absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />
                 <i className="bx bx-send text-base relative z-10 group-hover:translate-x-0.5 transition-transform duration-200" />
@@ -179,8 +165,8 @@ export default function Hero() {
                   text-slate-600 dark:text-slate-400
                   hover:text-slate-900 dark:hover:text-white
                   hover:border-slate-500 dark:hover:border-slate-500
-                  bg-slate-50 dark:bg-white/[0.02]
-                  hover:bg-slate-100 dark:hover:bg-white/[0.05]"
+                  bg-[#F5F5F0] dark:bg-white/[0.02]
+                  hover:bg-[#EBE8E0] dark:hover:bg-white/[0.05]"
               >
                 <i className="bx bx-file text-base" />
                 View Resume
@@ -344,7 +330,7 @@ export default function Hero() {
               {/* background card (depth effect) */}
               <div
                 className="absolute inset-0 rounded-2xl -z-10 border border-slate-200 dark:border-slate-800
-                  bg-slate-100 dark:bg-slate-900"
+                  bg-[#EBE8E0] dark:bg-slate-900"
                 style={{ transform: 'rotate(6deg) translate(8px, 8px)' }}
               />
             </div>

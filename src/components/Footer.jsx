@@ -21,7 +21,7 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="relative overflow-hidden bg-slate-50 dark:bg-[#07090f] border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
+    <footer className="relative overflow-hidden bg-[#F5F5F0] dark:bg-[#07090f] border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
 
       {/* Animated background blobs */}
       <div className="pointer-events-none absolute -top-20 -left-20 w-[300px] h-[300px] rounded-full bg-sky-200/10 dark:bg-sky-600/5 blur-[80px]" />
@@ -29,7 +29,7 @@ export default function Footer() {
 
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sky-400/25 to-transparent" />
 
-      <div className="relative flex flex-col items-center gap-8 px-6 py-12 mx-auto max-w-7xl sm:px-12 lg:px-20">
+      <div className="relative flex flex-col items-center gap-5 sm:gap-6 px-6 py-6 sm:py-8 mx-auto max-w-7xl sm:px-12 lg:px-20">
         
         {/* Back to Home Button */}
         <motion.div
@@ -70,20 +70,9 @@ export default function Footer() {
             <img 
               src="/logo.png" 
               alt="SMC Logo" 
-              className="h-[100px] w-auto object-contain rounded-md"
+              className="h-[60px] sm:h-[75px] w-auto object-contain rounded-md"
             />
           </motion.a>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1, duration: 0.4 }}
-          >
-            <Badge variant="outline" className="text-emerald-600 dark:text-emerald-400 border-emerald-300 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-500/5 text-[10px] gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              Available for opportunities
-            </Badge>
-          </motion.div>
         </motion.div>
 
         {/* nav links with enhanced animations */}

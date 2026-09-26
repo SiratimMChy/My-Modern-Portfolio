@@ -174,7 +174,7 @@ export default function Skills() {
     cards?.forEach((card) => {
       card.addEventListener('mouseenter', () => {
         gsap.to(card, {
-          boxShadow: '0 15px 30px rgba(59, 130, 246, 0.15)',
+          boxShadow: '0 8px 16px rgba(59, 130, 246, 0.08)',
           duration: 0.3,
         })
       })
@@ -195,8 +195,8 @@ export default function Skills() {
     <section
       ref={sectionRef}
       id="skills"
-      className="relative py-28 overflow-hidden
-        bg-slate-50/50 dark:bg-[#060810]
+      className="relative py-12 sm:py-16 overflow-hidden
+        bg-[#F5F5F0]/50 dark:bg-[#060810]
         transition-colors duration-300"
     >
       {/* Animated background particles */}
@@ -238,7 +238,7 @@ export default function Skills() {
             Technical Expertise
           </span>
           <h2
-            className="text-4xl sm:text-5xl font-black tracking-tight leading-[1.05]
+            className="text-3xl sm:text-4xl font-black tracking-tight leading-[1.05]
               text-slate-900 dark:text-white"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
@@ -267,7 +267,7 @@ export default function Skills() {
             <motion.div
               key={ci}
               className="skill-card rounded-2xl p-6 flex flex-col gap-5
-                bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03]
+                bg-white shadow-md shadow-slate-200/40 dark:shadow-none dark:bg-white/[0.03]
                 border border-slate-200 dark:border-slate-800
                 hover:border-slate-300 dark:hover:border-slate-700
                 transition-all duration-300 cursor-default
@@ -275,7 +275,7 @@ export default function Skills() {
               variants={cardVariants}
               whileHover={{ 
                 y: -3,
-                boxShadow: '0 15px 30px rgba(59, 130, 246, 0.1)'
+                boxShadow: '0 8px 16px rgba(59, 130, 246, 0.08)'
               }}
             >
               {/* Animated gradient overlay on hover */}
@@ -382,8 +382,7 @@ export default function Skills() {
         >
           <a
             href="#contact"
-            className="group relative inline-flex items-center gap-2.5 px-6 py-3 text-sm font-semibold text-white rounded-sm overflow-hidden"
-            style={{ background: 'linear-gradient(135deg,#0ea5e9,#6366f1)' }}
+            className="group relative inline-flex items-center gap-2.5 px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-[#0ea5e9] to-[#6366f1] hover:opacity-90 rounded-sm overflow-hidden"
           >
             <span className="absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-700
               bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />

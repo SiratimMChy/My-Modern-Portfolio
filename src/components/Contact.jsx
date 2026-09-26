@@ -83,7 +83,8 @@ export default function Contact() {
       }, pubKey)
       setStatus({ type: 'success', msg: "Message sent! I'll get back to you within 24 hours." })
       setForm({ name: '', email: '', subject: '', message: '' })
-    } catch {
+    } catch (error) {
+      console.error('EmailJS Error:', error)
       setStatus({ type: 'error', msg: 'Failed to send. Please email me directly at chowdhurysiratimmustakim@gmail.com' })
     } finally {
       setLoading(false)
@@ -91,7 +92,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="relative py-28 overflow-hidden bg-slate-50/50 dark:bg-[#060810] transition-colors duration-300">
+    <section id="contact" className="relative py-12 sm:py-16 overflow-hidden bg-[#F5F5F0]/50 dark:bg-[#060810] transition-colors duration-300">
 
       <div className="pointer-events-none absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-sky-200/25 dark:bg-sky-600/8 blur-[110px]" />
       <div className="pointer-events-none absolute -bottom-32 -right-32 w-[400px] h-[400px] rounded-full bg-violet-200/25 dark:bg-violet-700/8 blur-[100px]" />
@@ -109,7 +110,7 @@ export default function Contact() {
             <i className="bx bx-chat text-sm" /> Get In Touch
           </motion.span>
           <motion.h2
-            className="text-4xl sm:text-5xl font-black tracking-tight leading-[1.05] text-slate-900 dark:text-white"
+            className="text-3xl sm:text-4xl font-black tracking-tight leading-[1.05] text-slate-900 dark:text-white"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.15 }}
@@ -297,8 +298,7 @@ export default function Contact() {
               <Button
                 type="submit"
                 disabled={loading}
-                className="group relative w-full gap-2.5 text-sm font-semibold text-white overflow-hidden"
-                style={{ background: 'linear-gradient(135deg,#0ea5e9,#6366f1)' }}
+                className="group relative w-full gap-2.5 text-sm font-semibold text-white bg-gradient-to-r from-[#0ea5e9] to-[#6366f1] hover:opacity-90 overflow-hidden"
                 asChild
               >
                 <motion.button

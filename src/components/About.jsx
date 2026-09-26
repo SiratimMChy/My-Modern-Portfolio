@@ -30,8 +30,8 @@ export default function About() {
     <section
       ref={ref}
       id="about"
-      className="relative py-28 overflow-hidden
-        bg-slate-50 dark:bg-[#07090f]
+      className="relative py-12 sm:py-16 overflow-hidden
+        bg-[#F5F5F0] dark:bg-[#07090f]
         transition-colors duration-300"
     >
       {/* background blobs */}
@@ -47,7 +47,7 @@ export default function About() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
 
         {/* ── section label ── */}
-        <motion.div className="flex flex-col items-center text-center mb-16" {...fade(0)}>
+        <motion.div className="flex flex-col items-center text-center mb-6 lg:mb-10" {...fade(0)}>
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border
             border-violet-400/25 dark:border-violet-500/20
             bg-violet-50 dark:bg-violet-500/5
@@ -56,7 +56,7 @@ export default function About() {
             <i className="bx bx-user text-sm" />
             About Me
           </span>
-          <h2 className="text-4xl sm:text-5xl font-black tracking-tight leading-[1.05]
+          <h2 className="text-3xl sm:text-4xl font-black tracking-tight leading-[1.05]
             text-slate-900 dark:text-white"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Who I{' '}
@@ -90,7 +90,7 @@ export default function About() {
               <div className="w-full h-full rounded-3xl p-[2.5px]"
                 style={{ background: 'linear-gradient(135deg,#38bdf8,#818cf8,#c084fc)' }}>
                 <div className="w-full h-full rounded-[22px] overflow-hidden
-                  bg-slate-100 dark:bg-slate-900">
+                  bg-[#EBE8E0] dark:bg-slate-900">
                   <img
                     src="/profile-image.jpg"
                     alt="Siratim Mustakim Chowdhury"

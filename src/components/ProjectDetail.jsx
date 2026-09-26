@@ -75,7 +75,7 @@ const ProjectDetail = ({ project, onClose }) => {
       'Google Maps API': { icon: 'bx-map', iconType: 'boxicon', color: 'text-blue-500', bg: 'bg-blue-50 dark:bg-blue-900/20', border: 'border-blue-200 dark:border-blue-800' },
       'Groq AI': { icon: 'bx-brain', iconType: 'boxicon', color: 'text-purple-500', bg: 'bg-purple-50 dark:bg-purple-900/20', border: 'border-purple-200 dark:border-purple-800' },
       'GSAP': { icon: 'bx-play-circle', iconType: 'boxicon', color: 'text-green-500', bg: 'bg-green-50 dark:bg-green-900/20', border: 'border-green-200 dark:border-green-800' },
-      'shadcn/ui': { icon: 'bx-component', iconType: 'boxicon', color: 'text-slate-900 dark:text-white', bg: 'bg-slate-50 dark:bg-slate-900/20', border: 'border-slate-200 dark:border-slate-800' }
+      'shadcn/ui': { icon: 'bx-component', iconType: 'boxicon', color: 'text-slate-900 dark:text-white', bg: 'bg-[#F5F5F0] dark:bg-slate-900/20', border: 'border-slate-200 dark:border-slate-800' }
     }
     return configs[tech] || { icon: 'bx-code', iconType: 'boxicon', color: 'text-gray-500', bg: 'bg-gray-50 dark:bg-gray-900/20', border: 'border-gray-200 dark:border-gray-800' }
   }

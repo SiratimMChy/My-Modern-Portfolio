@@ -216,7 +216,7 @@ export default function Projects() {
   const filtered = filter === 'all' ? PROJECTS : PROJECTS.filter(p => p.category === filter)
 
   return (
-    <section id="projects" className="relative py-28 overflow-hidden bg-slate-50 dark:bg-[#07090f] transition-colors duration-300">
+    <section id="projects" className="relative py-12 sm:py-16 overflow-hidden bg-[#F5F5F0] dark:bg-[#07090f] transition-colors duration-300">
 
       <div className="pointer-events-none absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-sky-200/25 dark:bg-sky-600/8 blur-[110px]" />
       <div className="pointer-events-none absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full bg-violet-200/25 dark:bg-violet-700/8 blur-[100px]" />
@@ -236,7 +236,7 @@ export default function Projects() {
             <i className="text-sm bx bx-folder-open" /> Portfolio Showcase
           </motion.span>
           <motion.h2
-            className="text-4xl sm:text-5xl font-black tracking-tight leading-[1.05] text-slate-900 dark:text-white"
+            className="text-3xl sm:text-4xl font-black tracking-tight leading-[1.05] text-slate-900 dark:text-white"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.15 }}
@@ -315,7 +315,7 @@ export default function Projects() {
                     onClick={() => setSelected(project)}
                   >
                     {/* image */}
-                    <div className="relative flex-shrink-0 overflow-hidden h-52 bg-slate-100 dark:bg-slate-900">
+                    <div className="relative flex-shrink-0 overflow-hidden h-52 bg-[#EBE8E0] dark:bg-slate-900">
                       <img src={project.image} alt={project.name}
                         loading="lazy"
                         decoding="async"
@@ -398,7 +398,7 @@ export default function Projects() {
                           return (
                             <motion.span
                               key={t}
-                              className="inline-flex items-center gap-1 text-[9px] font-medium px-2 py-1 rounded-md border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-white/[0.03] text-slate-500 dark:text-slate-400 h-[22px] cursor-default"
+                              className="inline-flex items-center gap-1 text-[9px] font-medium px-2 py-1 rounded-md border border-slate-200 dark:border-slate-800 bg-[#F5F5F0] dark:bg-white/[0.03] text-slate-500 dark:text-slate-400 h-[22px] cursor-default"
                               initial={{ opacity: 0, scale: 0.8 }}
                               whileInView={{ opacity: 1, scale: 1 }}
                               viewport={{ once: true }}

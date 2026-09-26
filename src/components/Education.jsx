@@ -55,7 +55,7 @@ export default function Education() {
   return (
     <section
       id="education"
-      className="relative py-28 overflow-hidden bg-slate-50 dark:bg-[#07090f] transition-colors duration-300"
+      className="relative py-12 sm:py-16 overflow-hidden bg-[#F5F5F0] dark:bg-[#07090f] transition-colors duration-300"
     >
       {/* blobs */}
       <div className="pointer-events-none absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-sky-200/25 dark:bg-sky-600/8 blur-[110px]" />
@@ -84,7 +84,7 @@ export default function Education() {
           </motion.span>
 
           <motion.h2
-            className="text-4xl sm:text-5xl font-black tracking-tight leading-[1.05] text-slate-900 dark:text-white"
+            className="text-3xl sm:text-4xl font-black tracking-tight leading-[1.05] text-slate-900 dark:text-white"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -157,7 +157,7 @@ export default function Education() {
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: 0.35 }}
             >
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-white/[0.05] text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#EBE8E0] dark:bg-white/[0.05] text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800">
                 <i className="bx bx-calendar text-sm" />
                 {EDUCATION.duration}
               </span>
@@ -211,7 +211,7 @@ export default function Education() {
                   <motion.div
                     key={i}
                     variants={fadeUp}
-                    className="flex items-start gap-4 p-4 rounded-xl cursor-default bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 transition-colors duration-150"
+                    className="flex items-start gap-4 p-4 rounded-xl cursor-default bg-[#F5F5F0] dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 transition-colors duration-150"
                     whileHover={{ borderColor: p.color + '55', x: 4, transition: { duration: 0.2 } }}
                   >
                     <motion.div
@@ -279,7 +279,7 @@ export default function Education() {
                   <motion.div
                     key={i}
                     variants={fadeRight}
-                    className="flex items-center gap-3 px-4 py-3 rounded-xl cursor-default bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 transition-colors duration-150"
+                    className="flex items-center gap-3 px-4 py-3 rounded-xl cursor-default bg-[#F5F5F0] dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 transition-colors duration-150"
                     whileHover={{ borderColor: s.color + '55', x: 4, transition: { duration: 0.2 } }}
                   >
                     <motion.div

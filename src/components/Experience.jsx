@@ -143,7 +143,7 @@ function Card({ exp, i }) {
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative py-28 overflow-hidden bg-slate-50/50 dark:bg-[#060810] transition-colors duration-300">
+    <section id="experience" className="relative py-12 sm:py-16 overflow-hidden bg-[#F5F5F0]/50 dark:bg-[#060810] transition-colors duration-300">
       <div className="pointer-events-none absolute -top-40 -right-40 w-96 h-96 rounded-full bg-sky-200/20 dark:bg-sky-500/5 blur-[100px]" />
       <div className="pointer-events-none absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-violet-200/20 dark:bg-violet-600/5 blur-[100px]" />
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-sky-400/20 to-transparent" />
@@ -157,7 +157,7 @@ export default function Experience() {
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border border-sky-400/25 dark:border-sky-500/20 bg-sky-50 dark:bg-sky-500/5 text-sky-600 dark:text-sky-400 text-[10px] font-bold tracking-[0.18em] uppercase mb-5">
             <i className="bx bx-briefcase text-sm" /> Professional Journey
           </span>
-          <h2 className="text-4xl sm:text-5xl font-black tracking-tight text-slate-900 dark:text-white"
+          <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 dark:text-white"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Work{' '}
             <span style={{ background: 'linear-gradient(90deg,#38bdf8,#818cf8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
