@@ -389,7 +389,33 @@ export default function Projects() {
                             'Framer Motion': 'bx-movie-play',
                             'GSAP': 'bx-play-circle'
                           }
+                          const techColors = {
+                            'React': '#05b4ffff',
+                            'Node.js': '#339933',
+                            'MongoDB': '#47A248',
+                            'Firebase': '#FFCA28',
+                            'Tailwind CSS': '#06B6D4',
+                            'TypeScript': '#3178C6',
+                            'Mongoose': '#05ff05ff',
+                            'Stripe': '#008CDD',
+                            'DaisyUI': '#1ad1a5',
+                            'Java': '#056dffff',
+                            'Android SDK': '#3DDC84',
+                            'Google Maps API': '#4285F4',
+                            'HTML5': '#E34F26',
+                            'Bootstrap': '#7952B3',
+                            'JavaScript': '#F7DF1E',
+                            'CSS3': '#1572B6',
+                            'MySQL': '#4479A1',
+                            'PHP': '#777BB4',
+                            'Groq AI': '#f55036',
+                            'React Router': '#CA4245',
+                            'Framer Motion': '#0055FF',
+                            'GSAP': '#88CE02'
+                          }
                           const icon = techIcons[t]
+                          const color = techColors[t]
+
                           return (
                             <motion.span
                               key={t}
@@ -400,9 +426,11 @@ export default function Projects() {
                               transition={{ duration: 0.3, delay: index * 0.05 }}
                               whileHover={{ scale: 1.05, y: -2, transition: { duration: 0.2 } }}
                             >
-                              {icon === 'nextjs' && <SiNextdotjs className="flex-shrink-0 text-xs" />}
-                              {icon === 'express' && <SiExpress className="flex-shrink-0 text-xs" />}
-                              {icon && icon !== 'nextjs' && icon !== 'express' && <i className={`bx ${icon} text-xs flex-shrink-0`} />}
+                              {icon === 'nextjs' && <SiNextdotjs className="flex-shrink-0 text-xs" style={color ? { color } : {}} />}
+                              {icon === 'express' && <SiExpress className="flex-shrink-0 text-xs" style={color ? { color } : {}} />}
+                              {icon && icon !== 'nextjs' && icon !== 'express' && (
+                                <i className={`bx ${icon} text-xs flex-shrink-0`} style={color ? { color } : {}} />
+                              )}
                               <span className="leading-none">{t}</span>
                             </motion.span>
                           )
