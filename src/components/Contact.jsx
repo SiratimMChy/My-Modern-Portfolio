@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import emailjs from '@emailjs/browser'
 import { Button } from './ui/button'
+import { ModernButton } from './ui/modern-button'
 
 const CONTACT_INFO = [
   {
@@ -193,7 +194,7 @@ export default function Contact() {
                       <Button
                         variant="outline"
                         size="icon"
-                        className="w-11 h-11 rounded-sm group hover:bg-transparent dark:hover:bg-transparent transition-all duration-300 hover:shadow-sm"
+                        className="w-11 h-11 rounded-md group hover:bg-transparent dark:hover:bg-transparent transition-all duration-300 hover:shadow-sm"
                         asChild
                       >
                         <a
@@ -295,10 +296,11 @@ export default function Contact() {
                 />
               </div>
 
-              <Button
+              <ModernButton
                 type="submit"
                 disabled={loading}
-                className="group relative w-full gap-2.5 text-sm font-semibold text-white bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-400 hover:to-indigo-400 overflow-hidden transition-all duration-300"
+                variant="gradient"
+                className="group relative w-full overflow-hidden"
                 asChild
               >
                 <motion.button
@@ -307,21 +309,21 @@ export default function Contact() {
                 >
                   <span className="absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />
                   {loading ? (
-                    <>
+                    <span className="gap-2 flex items-center">
                       <svg className="w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none">
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
                       </svg>
                       <span className="relative z-10">Sending...</span>
-                    </>
+                    </span>
                   ) : (
-                    <>
+                    <span className="gap-2 flex items-center">
                       <i className="bx bx-send text-base relative z-10 group-hover:translate-x-0.5 transition-transform duration-200" />
                       <span className="relative z-10">Send Message</span>
-                    </>
+                    </span>
                   )}
                 </motion.button>
-              </Button>
+              </ModernButton>
             </form>
           </motion.div>
 

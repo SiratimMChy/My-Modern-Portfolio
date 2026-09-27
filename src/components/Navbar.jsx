@@ -111,7 +111,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
             <a
               href="/SIRATIM MUSTAKIM CHOWDHURY_MERN Stack Developer.pdf"
               download="SIRATIM_MUSTAKIM_CHOWDHURY_MERN_Stack_Developer.pdf"
-              className={`bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-400 hover:to-indigo-400 shadow-sm shadow-sky-500/20 hover:shadow-sky-500/30 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 hover:scale-105 transform duration-200`}
+              className={`bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-400 hover:to-indigo-400 shadow-sm shadow-sky-500/20 hover:shadow-sky-500/30 text-white px-5 py-2.5 rounded-md text-sm font-medium transition-colors flex items-center gap-2 hover:scale-105 transform duration-200`}
             >
               <Download className="w-4 h-4" />
               Resume
@@ -123,7 +123,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
             <button
               type="button"
               onClick={toggleMobileMenu}
-              className="inline-flex items-center justify-center p-2 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-600 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
             >
               <span className="sr-only">Open main menu</span>
               {isMobileMenuOpen ? (

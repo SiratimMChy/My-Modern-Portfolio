@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
 import { Button } from './ui/button'
+import { ModernButton } from './ui/modern-button'
 
 function useParallax(strength = 0.012) {
   const x = useMotionValue(0)
@@ -78,7 +79,7 @@ export default function Hero() {
       <div className="absolute top-0 inset-x-0 h-px
         bg-gradient-to-r from-transparent via-sky-400/30 dark:via-sky-500/25 to-transparent" />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-28 pt-36">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-28 pt-28">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-0">
 
           {/* ── LEFT ── */}
@@ -147,30 +148,25 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
             >
-              <a
-                href="#contact"
-                className="group relative inline-flex items-center gap-2.5 px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-400 hover:to-indigo-400 overflow-hidden rounded-sm transition-all duration-300"
-              >
-                <span className="absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />
-                <i className="bx bx-send text-base relative z-10 group-hover:translate-x-0.5 transition-transform duration-200" />
-                <span className="relative z-10">Get In Touch</span>
-              </a>
+              <ModernButton variant="gradient" className="group relative overflow-hidden" asChild>
+                <a href="#contact">
+                  <span className="absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />
+                  <i className="bx bx-send text-base relative z-10 group-hover:translate-x-0.5 transition-transform duration-200" />
+                  <span className="relative z-10 gap-2 flex items-center">Get In Touch</span>
+                </a>
+              </ModernButton>
 
-              <a
-                href="/SIRATIM MUSTAKIM CHOWDHURY_MERN Stack Developer.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-6 py-3 text-sm font-semibold rounded-sm transition-all duration-200
-                  border border-slate-300 dark:border-slate-800
-                  text-slate-600 dark:text-slate-400
-                  hover:text-slate-900 dark:hover:text-white
-                  hover:border-slate-500 dark:hover:border-slate-500
-                  bg-[#F5F5F0] dark:bg-white/[0.02]
-                  hover:bg-[#EBE8E0] dark:hover:bg-white/[0.05]"
-              >
-                <i className="bx bx-file text-base" />
-                View Resume
-              </a>
+              <ModernButton variant="outline" asChild>
+                <a
+                  href="/SIRATIM MUSTAKIM CHOWDHURY_MERN Stack Developer.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="gap-2"
+                >
+                  <i className="bx bx-file text-base" />
+                  View Resume
+                </a>
+              </ModernButton>
             </motion.div>
 
             {/* socials + stats */}
@@ -193,7 +189,7 @@ export default function Hero() {
                     <Button
                       variant="outline"
                       size="icon"
-                      className="w-11 h-11 rounded-sm group hover:bg-transparent dark:hover:bg-transparent transition-all duration-300 hover:shadow-sm"
+                      className="w-11 h-11 rounded-md group hover:bg-transparent dark:hover:bg-transparent transition-all duration-300 hover:shadow-sm"
                       asChild
                     >
                       <a

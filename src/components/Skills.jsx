@@ -2,6 +2,8 @@ import { useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { gsap } from 'gsap'
 import { Badge } from './ui/badge'
+import { Card, CardHeader, CardTitle, CardContent } from './ui/card'
+import { ModernButton } from './ui/modern-button'
 
 const CATEGORIES = [
   {
@@ -266,62 +268,65 @@ export default function Skills() {
           {CATEGORIES.map((cat, ci) => (
             <motion.div
               key={ci}
-              className="skill-card rounded-2xl p-6 flex flex-col gap-5
-                bg-white shadow-md shadow-slate-200/40 dark:shadow-none dark:bg-white/[0.03]
-                border border-slate-200 dark:border-slate-800
-                hover:border-slate-300 dark:hover:border-slate-700
-                transition-all duration-300 cursor-default
-                relative overflow-hidden group"
+              className="group"
               variants={cardVariants}
               whileHover={{ 
                 y: -3,
                 boxShadow: '0 8px 16px rgba(59, 130, 246, 0.08)'
               }}
             >
-              {/* Animated gradient overlay on hover */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300
-                bg-gradient-to-br from-sky-500/5 to-violet-500/5 pointer-events-none" />
+              <Card className="relative overflow-hidden h-full rounded-2xl
+                bg-white shadow-md shadow-slate-200/40 dark:shadow-none dark:bg-white/[0.03]
+                border border-slate-200 dark:border-slate-800
+                hover:border-slate-300 dark:hover:border-slate-700
+                transition-all duration-300 cursor-default">
+                
+                {/* Animated gradient overlay on hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                  bg-gradient-to-br from-sky-500/5 to-violet-500/5 pointer-events-none" />
 
-              {/* card header */}
-              <div className="flex items-center gap-3 relative z-10">
-                <motion.div 
-                  className="flex-shrink-0"
-                  whileHover={{ scale: 1.08 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Badge 
-                    className="category-badge-icon w-10 h-10 rounded-xl flex items-center justify-center p-0 border-2 cursor-pointer"
-                    style={{ 
-                      borderColor: cat.color,
-                      background: `${cat.color}15`,
-                    }}
-                    data-color={cat.color}
-                  >
-                    <i className={`bx ${cat.icon} text-lg`} style={{ color: cat.color }} />
-                  </Badge>
-                </motion.div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-sm font-bold text-slate-800 dark:text-slate-200 leading-tight">
-                    {cat.title}
-                  </h3>
+                {/* card header */}
+                <CardHeader className="flex flex-row items-center gap-3 relative z-10 p-6 pb-2 space-y-0">
                   <motion.div 
-                    className="h-[2px] w-6 rounded-full mt-1.5" 
-                    style={{ background: cat.color }}
-                    initial={{ width: 0 }}
-                    whileInView={{ width: 24 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                  />
-                </div>
-                <motion.span 
-                  className="text-[10px] font-bold px-2 py-0.5 rounded-md flex-shrink-0"
-                  style={{ color: cat.color, background: `${cat.color}12` }}
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ duration: 0.4, delay: 0.3 }}
-                >
-                  {cat.skills.length}
-                </motion.span>
-              </div>
+                    className="flex-shrink-0"
+                    whileHover={{ scale: 1.08 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Badge 
+                      className="category-badge-icon w-10 h-10 rounded-xl flex items-center justify-center p-0 border-2 cursor-pointer"
+                      style={{ 
+                        borderColor: cat.color,
+                        background: `${cat.color}15`,
+                      }}
+                      data-color={cat.color}
+                    >
+                      <i className={`bx ${cat.icon} text-lg`} style={{ color: cat.color }} />
+                    </Badge>
+                  </motion.div>
+                  <div className="flex-1 min-w-0">
+                    <CardTitle className="text-sm font-bold text-slate-800 dark:text-slate-200 leading-tight">
+                      {cat.title}
+                    </CardTitle>
+                    <motion.div 
+                      className="h-[2px] w-6 rounded-full mt-1.5" 
+                      style={{ background: cat.color }}
+                      initial={{ width: 0 }}
+                      whileInView={{ width: 24 }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                    />
+                  </div>
+                  <motion.span 
+                    className="text-[10px] font-bold px-2 py-0.5 rounded-md flex-shrink-0"
+                    style={{ color: cat.color, background: `${cat.color}12` }}
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ duration: 0.4, delay: 0.3 }}
+                  >
+                    {cat.skills.length}
+                  </motion.span>
+                </CardHeader>
+
+                <CardContent className="p-6 pt-4">
 
               {/* skill chips */}
               <motion.div 
@@ -371,6 +376,8 @@ export default function Skills() {
                   </motion.div>
                 ))}
               </motion.div>
+              </CardContent>
+            </Card>
             </motion.div>
           ))}
         </motion.div>
@@ -380,27 +387,23 @@ export default function Skills() {
           className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4"
           {...fade(0.2)}
         >
-          <a
-            href="#contact"
-            className="group relative inline-flex items-center gap-2.5 px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-400 hover:to-indigo-400 rounded-sm overflow-hidden transition-all duration-300"
-          >
-            <span className="absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-700
-              bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />
-            <i className="bx bx-chat text-base relative z-10" />
-            <span className="relative z-10">Let's Work Together</span>
-          </a>
-          <a
-            href="#projects"
-            className="inline-flex items-center gap-2.5 px-6 py-3 text-sm font-semibold rounded-sm transition-all duration-200
-              border border-slate-300 dark:border-slate-800
-              text-slate-600 dark:text-slate-400
-              hover:text-slate-900 dark:hover:text-white
-              hover:border-slate-500 dark:hover:border-slate-500 shadow-md shadow-slate-200/60 dark:shadow-none
-              bg-white dark:bg-white/[0.02]"
-          >
-            <i className="bx bx-folder text-base" />
-            View Projects
-          </a>
+          <ModernButton variant="gradient" className="group relative overflow-hidden" asChild>
+            <a href="#contact">
+              <span className="absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-700
+                bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />
+              <i className="bx bx-chat text-base relative z-10" />
+              <span className="relative z-10 gap-2 flex items-center">Let's Work Together</span>
+            </a>
+          </ModernButton>
+          <ModernButton variant="outline" asChild>
+            <a
+              href="#projects"
+              className="gap-2"
+            >
+              <i className="bx bx-folder text-base" />
+              View Projects
+            </a>
+          </ModernButton>
         </motion.div>
 
       </div>

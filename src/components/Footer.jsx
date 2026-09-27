@@ -127,7 +127,7 @@ export default function Footer() {
               <Button
                 variant="outline"
                 size="icon"
-                className="w-11 h-11 rounded-sm group hover:bg-transparent dark:hover:bg-transparent transition-all duration-300 relative overflow-hidden"
+                className="w-11 h-11 rounded-md group hover:bg-transparent dark:hover:bg-transparent transition-all duration-300 relative overflow-hidden"
                 asChild
               >
                 <a

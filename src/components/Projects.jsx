@@ -272,7 +272,7 @@ export default function Projects() {
                   variant={filter === cat.id ? 'default' : 'ghost'}
                   size="sm"
                   onClick={() => setFilter(cat.id)}
-                  className={`gap-1 text-[11px] sm:text-xs h-8 sm:h-8 w-full sm:w-24 rounded-md sm:rounded-sm ${filter === cat.id ? 'bg-gradient-to-r from-sky-500 to-indigo-500 text-white hover:from-sky-400 hover:to-indigo-400 border-0' : 'text-slate-500 dark:text-slate-400'}`}
+                  className={`gap-1 text-[11px] sm:text-xs h-8 sm:h-8 w-full sm:w-24 rounded-md ${filter === cat.id ? 'bg-gradient-to-r from-sky-500 to-indigo-500 text-white hover:from-sky-400 hover:to-indigo-400 border-0' : 'text-slate-500 dark:text-slate-400'}`}
                 >
                   <i className={`bx ${cat.icon} text-xs`} />
                   {cat.label}
@@ -437,7 +437,7 @@ export default function Projects() {
                             whileHover={{ scale: 1.03 }}
                             whileTap={{ scale: 0.97 }}
                           >
-                            <Button size="sm" className="w-full text-[10px] h-8 text-white border-0 rounded-sm bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-400 hover:to-indigo-400 transition-all duration-300"
+                            <Button size="sm" className="w-full text-[10px] h-8 text-white border-0 rounded-md bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-400 hover:to-indigo-400 transition-all duration-300"
                               asChild={!!project.liveLink}
                               disabled={!project.liveLink}>
                               {project.liveLink ? (
@@ -463,7 +463,7 @@ export default function Projects() {
                           whileTap={{ scale: 0.97 }}
                         >
                           <Button size="sm" variant="outline"
-                            className="w-full text-[10px] h-8 rounded-sm"
+                            className="w-full text-[10px] h-8 rounded-md"
                             asChild={!!(project.githubLink && project.githubLink !== '#')}
                             disabled={!project.githubLink || project.githubLink === '#'}>
                             {project.githubLink && project.githubLink !== '#' ? (

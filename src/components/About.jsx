@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { ModernButton } from './ui/modern-button'
 
 const HIGHLIGHTS = [
   { icon: 'bx-code-alt', label: 'Full Stack', desc: 'MERN Stack', color: '#38bdf8' },
@@ -234,28 +235,23 @@ export default function About() {
 
             {/* CTA */}
             <motion.div className="flex flex-wrap gap-3 justify-center lg:justify-start" {...fade(0.45)}>
-              <a
-                href="#contact"
-                className="group relative inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white rounded-sm overflow-hidden"
-                style={{ background: 'linear-gradient(135deg,#818cf8,#38bdf8)' }}
-              >
-                <span className="absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-700
-                  bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />
-                <i className="bx bx-send text-base relative z-10" />
-                <span className="relative z-10">Let's Connect</span>
-              </a>
-              <a
-                href="#projects"
-                className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-sm transition-all duration-200
-                  border border-slate-300 dark:border-slate-800
-                  text-slate-600 dark:text-slate-400
-                  hover:text-slate-900 dark:hover:text-white
-                  hover:border-slate-500 dark:hover:border-slate-500 shadow-md shadow-slate-200/60 dark:shadow-none
-                  bg-white dark:bg-white/[0.02]"
-              >
-                <i className="bx bx-folder text-base" />
-                View Projects
-              </a>
+              <ModernButton variant="gradient" className="group relative overflow-hidden" asChild>
+                <a href="#contact">
+                  <span className="absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-700
+                    bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />
+                  <i className="bx bx-send text-base relative z-10" />
+                  <span className="relative z-10 gap-2 flex items-center">Let's Connect</span>
+                </a>
+              </ModernButton>
+              <ModernButton variant="outline" asChild>
+                <a
+                  href="#projects"
+                  className="gap-2"
+                >
+                  <i className="bx bx-folder text-base" />
+                  View Projects
+                </a>
+              </ModernButton>
             </motion.div>
           </div>
         </div>

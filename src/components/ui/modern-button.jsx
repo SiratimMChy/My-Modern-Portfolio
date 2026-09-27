@@ -4,7 +4,7 @@ import { cva } from "class-variance-authority"
 import { cn } from "../../lib/utils"
 
 const modernButtonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 transform hover:-translate-y-1 active:translate-y-0",
+  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 transform hover:-translate-y-1 active:translate-y-0",
   {
     variants: {
       variant: {
@@ -19,8 +19,8 @@ const modernButtonVariants = cva(
       },
       size: {
         default: "h-12 px-6 py-3",
-        sm: "h-10 rounded-full px-4",
-        lg: "h-14 rounded-full px-8 text-base",
+        sm: "h-10 rounded-md px-4",
+        lg: "h-14 rounded-md px-8 text-base",
         icon: "h-12 w-12",
         social: "h-12 w-12",
       },
