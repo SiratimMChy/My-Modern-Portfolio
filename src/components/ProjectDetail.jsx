@@ -100,7 +100,7 @@ const ProjectDetail = ({ project, onClose }) => {
         data-lenis-prevent
       >
         {/* Header */}
-        <div className="sticky top-0 bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 p-6 text-white z-10">
+        <div className="sticky top-0 bg-gradient-to-r from-sky-500 via-sky-600 to-indigo-600 p-6 text-white z-10">
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-4 flex-1">
               <motion.div 
@@ -319,7 +319,7 @@ const ProjectDetail = ({ project, onClose }) => {
             {project.liveLink && (
               <Button
                 onClick={() => window.open(project.liveLink, '_blank')}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg"
+                className="w-full bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-400 hover:to-indigo-400 text-white rounded-lg"
                 asChild
               >
                 <motion.button

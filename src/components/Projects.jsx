@@ -216,7 +216,7 @@ export default function Projects() {
   const filtered = filter === 'all' ? PROJECTS : PROJECTS.filter(p => p.category === filter)
 
   return (
-    <section id="projects" className="relative py-12 sm:py-16 overflow-hidden bg-[#F5F5F0] dark:bg-[#07090f] transition-colors duration-300">
+    <section id="projects" className="relative py-8 sm:py-12 overflow-hidden bg-[#F5F5F0] dark:bg-[#07090f] transition-colors duration-300">
 
       <div className="pointer-events-none absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-sky-200/25 dark:bg-sky-600/8 blur-[110px]" />
       <div className="pointer-events-none absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full bg-violet-200/25 dark:bg-violet-700/8 blur-[100px]" />
@@ -225,7 +225,7 @@ export default function Projects() {
       <div className="relative z-10 px-6 mx-auto max-w-7xl sm:px-12 lg:px-20">
 
         {/* header */}
-        <motion.div className="flex flex-col items-center mb-12 text-center"
+        <motion.div className="flex flex-col items-center mb-6 text-center"
           initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.6 }}>
           <motion.span
@@ -289,7 +289,7 @@ export default function Projects() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
-            className="w-full pb-14"
+            className="w-full "
           >
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
@@ -305,7 +305,7 @@ export default function Projects() {
               style={{
                 '--swiper-pagination-color': '#38bdf8',
               }}
-              className="px-2 pt-6 pb-6 [&_.swiper-wrapper]:items-stretch [&_.swiper-pagination]:!relative [&_.swiper-pagination]:!mt-0 sm:[&_.swiper-pagination]:!mt-6"
+              className="px-2 pt-6 pb-6 [&_.swiper-wrapper]:items-stretch [&_.swiper-pagination]:!relative [&_.swiper-pagination]:!mt-6 sm:[&_.swiper-pagination]:!mt-8"
             >
               {filtered.map((project) => (
                 <SwiperSlide key={project.id} className="h-auto flex">
@@ -437,8 +437,7 @@ export default function Projects() {
                             whileHover={{ scale: 1.03 }}
                             whileTap={{ scale: 0.97 }}
                           >
-                            <Button size="sm" className="w-full text-[10px] h-8 text-white border-0 hover:opacity-90 rounded-sm"
-                              style={{ background: `linear-gradient(135deg,${project.color},${project.color}bb)` }}
+                            <Button size="sm" className="w-full text-[10px] h-8 text-white border-0 rounded-sm bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-400 hover:to-indigo-400 transition-all duration-300"
                               asChild={!!project.liveLink}
                               disabled={!project.liveLink}>
                               {project.liveLink ? (

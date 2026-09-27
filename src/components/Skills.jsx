@@ -195,7 +195,7 @@ export default function Skills() {
     <section
       ref={sectionRef}
       id="skills"
-      className="relative py-12 sm:py-16 overflow-hidden
+      className="relative py-8 sm:py-12 overflow-hidden
         bg-[#F5F5F0]/50 dark:bg-[#060810]
         transition-colors duration-300"
     >
@@ -382,7 +382,7 @@ export default function Skills() {
         >
           <a
             href="#contact"
-            className="group relative inline-flex items-center gap-2.5 px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-[#0ea5e9] to-[#6366f1] hover:opacity-90 rounded-sm overflow-hidden"
+            className="group relative inline-flex items-center gap-2.5 px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-400 hover:to-indigo-400 rounded-sm overflow-hidden transition-all duration-300"
           >
             <span className="absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-700
               bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />

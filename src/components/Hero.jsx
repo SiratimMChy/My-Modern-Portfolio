@@ -87,7 +87,7 @@ export default function Hero() {
 
 
             {/* name */}
-            <div className="overflow-hidden">
+            <div className="overflow-hidden pb-4 -mb-4">
               <motion.div
                 initial={{ y: '100%' }}
                 animate={{ y: 0 }}
@@ -101,7 +101,7 @@ export default function Hero() {
                     Siratim Mustakim
                   </span>
                   <span
-                    className="block text-[clamp(2.4rem,5.5vw,4rem)]"
+                    className="block text-[clamp(2.4rem,5.5vw,4rem)] pb-4 -mb-4"
                     style={{
                       background: 'linear-gradient(90deg,#38bdf8 0%,#818cf8 50%,#c084fc 100%)',
                       WebkitBackgroundClip: 'text',
@@ -149,7 +149,7 @@ export default function Hero() {
             >
               <a
                 href="#contact"
-                className="group relative inline-flex items-center gap-2.5 px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-[#0ea5e9] to-[#6366f1] hover:opacity-90 overflow-hidden rounded-sm"
+                className="group relative inline-flex items-center gap-2.5 px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-400 hover:to-indigo-400 overflow-hidden rounded-sm transition-all duration-300"
               >
                 <span className="absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />
                 <i className="bx bx-send text-base relative z-10 group-hover:translate-x-0.5 transition-transform duration-200" />

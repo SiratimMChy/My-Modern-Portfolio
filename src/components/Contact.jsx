@@ -92,7 +92,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="relative py-12 sm:py-16 overflow-hidden bg-[#F5F5F0]/50 dark:bg-[#060810] transition-colors duration-300">
+    <section id="contact" className="relative py-8 sm:py-12 overflow-hidden bg-[#F5F5F0]/50 dark:bg-[#060810] transition-colors duration-300">
 
       <div className="pointer-events-none absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-sky-200/25 dark:bg-sky-600/8 blur-[110px]" />
       <div className="pointer-events-none absolute -bottom-32 -right-32 w-[400px] h-[400px] rounded-full bg-violet-200/25 dark:bg-violet-700/8 blur-[100px]" />
@@ -298,7 +298,7 @@ export default function Contact() {
               <Button
                 type="submit"
                 disabled={loading}
-                className="group relative w-full gap-2.5 text-sm font-semibold text-white bg-gradient-to-r from-[#0ea5e9] to-[#6366f1] hover:opacity-90 overflow-hidden"
+                className="group relative w-full gap-2.5 text-sm font-semibold text-white bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-400 hover:to-indigo-400 overflow-hidden transition-all duration-300"
                 asChild
               >
                 <motion.button

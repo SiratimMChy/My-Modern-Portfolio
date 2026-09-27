@@ -92,14 +92,14 @@ export default function Footer() {
               transition={{ delay: 0.15 + index * 0.05, duration: 0.4 }}
             >
               <Button 
-                variant="link" 
+                variant="ghost" 
                 size="sm" 
                 asChild
-                className="h-auto px-3 py-1.5 text-xs text-slate-500 dark:text-slate-400 hover:text-sky-500 dark:hover:text-sky-400 relative group transition-colors duration-200"
+                className="h-auto px-3 py-1.5 text-xs text-slate-500 dark:text-slate-400 hover:text-sky-500 dark:hover:text-sky-400 hover:bg-transparent relative group transition-colors duration-200"
               >
                 <a href={n.href}>
                   {n.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-sky-400 to-violet-500 group-hover:w-full transition-all duration-300" />
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-sky-500 to-indigo-500 group-hover:w-full transition-all duration-300" />
                 </a>
               </Button>
             </motion.div>

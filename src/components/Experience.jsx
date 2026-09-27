@@ -143,7 +143,7 @@ function Card({ exp, i }) {
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative py-12 sm:py-16 overflow-hidden bg-[#F5F5F0]/50 dark:bg-[#060810] transition-colors duration-300">
+    <section id="experience" className="relative py-8 sm:py-12 overflow-hidden bg-[#F5F5F0]/50 dark:bg-[#060810] transition-colors duration-300">
       <div className="pointer-events-none absolute -top-40 -right-40 w-96 h-96 rounded-full bg-sky-200/20 dark:bg-sky-500/5 blur-[100px]" />
       <div className="pointer-events-none absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-violet-200/20 dark:bg-violet-600/5 blur-[100px]" />
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-sky-400/20 to-transparent" />

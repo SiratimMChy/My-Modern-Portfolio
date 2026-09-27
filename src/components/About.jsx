@@ -30,7 +30,7 @@ export default function About() {
     <section
       ref={ref}
       id="about"
-      className="relative py-12 sm:py-16 overflow-hidden
+      className="relative py-8 sm:py-12 overflow-hidden
         bg-[#F5F5F0] dark:bg-[#07090f]
         transition-colors duration-300"
     >

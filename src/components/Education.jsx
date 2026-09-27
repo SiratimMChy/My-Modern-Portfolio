@@ -55,12 +55,12 @@ export default function Education() {
   return (
     <section
       id="education"
-      className="relative py-12 sm:py-16 overflow-hidden bg-[#F5F5F0] dark:bg-[#07090f] transition-colors duration-300"
+      className="relative py-8 sm:py-12 overflow-hidden bg-[#F5F5F0] dark:bg-[#07090f] transition-colors duration-300"
     >
       {/* blobs */}
       <div className="pointer-events-none absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-sky-200/25 dark:bg-sky-600/8 blur-[110px]" />
-      <div className="pointer-events-none absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full bg-violet-200/25 dark:bg-violet-700/8 blur-[100px]" />
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-violet-400/25 to-transparent" />
+      <div className="pointer-events-none absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full bg-indigo-200/25 dark:bg-indigo-700/8 blur-[100px]" />
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-indigo-400/25 to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
 
@@ -73,7 +73,7 @@ export default function Education() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
           <motion.span
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border border-violet-400/25 dark:border-violet-500/20 bg-violet-50 dark:bg-violet-500/5 text-violet-600 dark:text-violet-400 text-[10px] font-bold tracking-[0.18em] uppercase mb-5"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border border-indigo-400/25 dark:border-indigo-500/20 bg-indigo-50 dark:bg-indigo-500/5 text-indigo-600 dark:text-indigo-400 text-[10px] font-bold tracking-[0.18em] uppercase mb-5"
             initial={{ opacity: 0, scale: 0.85 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -92,14 +92,14 @@ export default function Education() {
             transition={{ duration: 0.5, delay: 0.15 }}
           >
             My{' '}
-            <span style={{ background: 'linear-gradient(90deg,#818cf8,#c084fc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+            <span className="bg-gradient-to-r from-sky-500 to-indigo-500 bg-clip-text text-transparent">
               Education
             </span>
           </motion.h2>
 
           <motion.div
             className="mt-4 h-[3px] rounded-full"
-            style={{ background: 'linear-gradient(90deg,#818cf8,#c084fc)' }}
+            style={{ background: 'linear-gradient(90deg,#0ea5e9,#6366f1)' }}
             initial={{ width: 0 }}
             whileInView={{ width: 48 }}
             viewport={{ once: true }}
@@ -119,7 +119,7 @@ export default function Education() {
           <div className="flex flex-col sm:flex-row sm:items-center gap-5">
             <motion.div
               className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
-              style={{ background: 'linear-gradient(135deg,#818cf8,#c084fc)' }}
+              style={{ background: 'linear-gradient(135deg,#0ea5e9,#6366f1)' }}
               initial={{ scale: 0, rotate: -20 }}
               whileInView={{ scale: 1, rotate: 0 }}
               viewport={{ once: true }}
@@ -140,7 +140,7 @@ export default function Education() {
               </motion.h3>
               <motion.p
                 className="text-sm font-semibold mt-1"
-                style={{ color: '#818cf8' }}
+                style={{ color: '#0ea5e9' }}
                 initial={{ opacity: 0, x: -12 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -251,19 +251,19 @@ export default function Education() {
             <div className="flex items-center gap-3 mb-5">
               <motion.div
                 className="w-9 h-9 rounded-xl flex items-center justify-center"
-                style={{ background: 'rgba(129,140,248,0.12)' }}
+                style={{ background: 'rgba(99,102,241,0.12)' }}
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.3, type: 'spring', stiffness: 220 }}
               >
-                <i className="bx bxs-book-content text-lg" style={{ color: '#818cf8' }} />
+                <i className="bx bxs-book-content text-lg" style={{ color: '#6366f1' }} />
               </motion.div>
               <div>
                 <h4 className="text-sm font-bold text-slate-800 dark:text-slate-200">Key Subjects</h4>
                 <motion.div
                   className="h-[2px] rounded-full mt-1"
-                  style={{ background: '#818cf8' }}
+                  style={{ background: '#6366f1' }}
                   initial={{ width: 0 }}
                   whileInView={{ width: 20 }}
                   viewport={{ once: true }}
