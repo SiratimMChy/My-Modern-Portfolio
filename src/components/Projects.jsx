@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import ProjectDetail from './ProjectDetail'
 import { Button } from './ui/button'
 import { Badge } from './ui/badge'
+import { Card, CardContent } from './ui/card'
 import { SiNextdotjs, SiExpress } from 'react-icons/si'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
@@ -15,7 +16,7 @@ const PROJECTS = [
     id: 'navora',
     name: 'Navora',
     category: 'Web',
-    image: 'https://i.ibb.co.com/35RNLPKW/image.png',
+    image: 'https://i.ibb.co.com/RkgBSqPz/Navora.png',
     tech: [
       'Next.js',
       'Mongoose',
@@ -59,7 +60,7 @@ const PROJECTS = [
     id: 'orvella',
     name: 'Orvella',
     category: 'Web',
-    image: 'https://i.ibb.co.com/XZhYcM5G/image.png',
+    image: 'https://i.ibb.co.com/Fqnvb8bt/orvela.png',
     tech: [
       'Next.js',
       'MongoDB',
@@ -104,7 +105,7 @@ const PROJECTS = [
     id: 'hemovia',
     name: 'Hemovia',
     category: 'Web',
-    image: 'https://i.ibb.co.com/Y4YFtMBB/hemovia.png',
+    image: 'https://i.ibb.co.com/fY3fdcBx/hemovia.png',
     tech: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Express.js', 'Tailwind CSS'],
     description: 'Hemovia is a MERN-based blood donation management platform designed to connect donors, volunteers, and administrators efficiently. It enables donor registration, blood request creation, tracking, and quick donor search by blood group and location.',
     shortDesc: 'MERN-based blood donation platform with Stripe integration and location-based donor search.',
@@ -121,7 +122,7 @@ const PROJECTS = [
     id: 'cashnivo',
     name: 'Cashnivo',
     category: 'Web',
-    image: 'https://i.ibb.co.com/DgkjhLb3/image.png',
+    image: 'https://i.ibb.co.com/Dfjq5v9h/cashnivo.png',
     tech: [
       'React',
       'MongoDB',
@@ -183,7 +184,7 @@ const PROJECTS = [
     id: 'classmate',
     name: 'ClassMate',
     category: 'Web',
-    image: 'https://i.ibb.co.com/21zn0wSr/CLASSMATE.png',
+    image: 'https://i.ibb.co.com/wNr2BckW/classmate.png',
     tech: ['HTML5', 'JavaScript', 'CSS3', 'Bootstrap'],
     description: 'CLASSMATE is a web-based academic collaboration platform developed as a final-year university project. It helps students share study materials, manage class resources, and collaborate efficiently in a centralized environment.',
     shortDesc: 'Academic collaboration platform for students to share materials and manage class resources.',
@@ -310,12 +311,13 @@ export default function Projects() {
               {filtered.map((project) => (
                 <SwiperSlide key={project.id} className="h-auto flex">
                   <motion.div
-                    className="group h-full w-full relative rounded-xl overflow-hidden bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 flex flex-col cursor-pointer"
-                    whileHover={{ borderColor: project.color + '55', y: -4, transition: { duration: 0.2 } }}
+                    className="h-full w-full cursor-pointer max-w-[400px] mx-auto"
+                    whileHover={{ y: -4, transition: { duration: 0.2 } }}
                     onClick={() => setSelected(project)}
                   >
+                    <Card className="group h-full w-full relative rounded-xl overflow-hidden bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 flex flex-col transition-colors hover:border-slate-300 dark:hover:border-slate-700">
                     {/* image */}
-                    <div className="relative flex-shrink-0 overflow-hidden h-52 bg-[#EBE8E0] dark:bg-slate-900">
+                    <div className="relative flex-shrink-0 overflow-hidden h-52 w-full bg-[#EBE8E0] dark:bg-slate-900">
                       <img src={project.image} alt={project.name}
                         loading="lazy"
                         decoding="async"
@@ -326,25 +328,18 @@ export default function Projects() {
                           <i className="text-sm bx bx-show" /> View Details
                         </span>
                       </div>
-                      {/* status */}
-                      <Badge
-                        className={`absolute top-1 right-1 gap-1 text-[9px] px-2 py-0.5 font-semibold rounded-sm ${project.status === 'Live'
-                          ? 'bg-emerald-500/95 hover:bg-emerald-500/95 text-white border-0 shadow-lg shadow-emerald-500/25'
-                          : 'bg-amber-500/95 hover:bg-amber-500/95 text-white border-0 shadow-lg shadow-amber-500/25'
-                          }`}
-                      >
-                        <span className="w-1 h-1 bg-white rounded-full animate-pulse" />{project.status}
-                      </Badge>
-                      {/* category */}
-                      <Badge variant="secondary" className="absolute top-1 left-1 text-[9px] px-2 py-0.5 font-semibold rounded-sm bg-black/60 hover:bg-black/60 text-white border-0 backdrop-blur-md shadow-lg">
-                        {project.category}
-                      </Badge>
+                      {/* status and category badges removed from image */}
                     </div>
 
                     {/* content */}
-                    <div className="flex flex-col flex-1 p-5">
+                    <CardContent className="flex flex-col flex-1 p-5">
                       <div className="mb-3">
-                        <h3 className="text-sm font-black leading-tight text-slate-900 dark:text-white">{project.name}</h3>
+                        <div className="flex items-start justify-between gap-2">
+                          <h3 className="text-sm font-black leading-tight text-slate-900 dark:text-white">{project.name}</h3>
+                          <Badge variant="secondary" className="text-[9px] px-1.5 py-0 font-semibold rounded-sm bg-slate-100 dark:bg-white/[0.05] text-slate-500 dark:text-slate-400 border-slate-200 dark:border-slate-800 flex-shrink-0 leading-tight h-[18px]">
+                            {project.category === 'Mobile' ? 'Android' : project.category}
+                          </Badge>
+                        </div>
                         <div className="h-[2px] w-6 rounded-full mt-1.5" style={{ background: project.color }} />
                       </div>
                       <p className="mb-4 text-xs leading-relaxed text-slate-500 dark:text-slate-400 line-clamp-2">{project.shortDesc}</p>
@@ -479,7 +474,8 @@ export default function Projects() {
                           </Button>
                         </motion.div>
                       </div>
-                    </div>
+                    </CardContent>
+                    </Card>
                   </motion.div>
                 </SwiperSlide>
               ))}
