@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Card } from './ui/card'
 
 const EDUCATION = {
   degree: 'Bachelor of Science in Computer Science & Engineering',
@@ -109,13 +110,14 @@ export default function Education() {
 
         {/* degree card */}
         <motion.div
-          className="mb-10 rounded-2xl p-6 sm:p-8 bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800"
+          className="mb-10 group"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          whileHover={{ borderColor: 'rgba(129,140,248,0.4)', transition: { duration: 0.2 } }}
+          whileHover={{ y: -2, transition: { duration: 0.2 } }}
         >
+          <Card className="rounded-2xl p-6 sm:p-8 bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 group-hover:border-indigo-400/40 transition-colors">
           <div className="flex flex-col sm:flex-row sm:items-center gap-5">
             <motion.div
               className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
@@ -167,6 +169,7 @@ export default function Education() {
               </span>
             </motion.div>
           </div>
+          </Card>
         </motion.div>
 
         {/* two columns */}
@@ -174,12 +177,13 @@ export default function Education() {
 
           {/* Key Projects */}
           <motion.div
-            className="rounded-2xl p-6 bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800"
+            className="group h-full"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           >
+            <Card className="rounded-2xl p-6 bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 h-full">
             <div className="flex items-center gap-3 mb-5">
               <motion.div
                 className="w-9 h-9 rounded-xl flex items-center justify-center"
@@ -238,16 +242,18 @@ export default function Education() {
                 )
               })}
             </motion.div>
+            </Card>
           </motion.div>
 
           {/* Key Subjects */}
           <motion.div
-            className="rounded-2xl p-6 bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800"
+            className="group h-full"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
+            <Card className="rounded-2xl p-6 bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 h-full flex flex-col">
             <div className="flex items-center gap-3 mb-5">
               <motion.div
                 className="w-9 h-9 rounded-xl flex items-center justify-center"
@@ -301,6 +307,7 @@ export default function Education() {
                 )
               })}
             </motion.div>
+            </Card>
           </motion.div>
 
         </div>

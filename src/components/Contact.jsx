@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import emailjs from '@emailjs/browser'
+import { Card } from './ui/card'
 import { Button } from './ui/button'
 import { ModernButton } from './ui/modern-button'
 
@@ -135,7 +136,7 @@ export default function Contact() {
 
           {/* LEFT — info: single card, full height */}
           <motion.div className="h-full" {...fade(0.1)}>
-            <div className="rounded-2xl bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 h-full flex flex-col">
+            <Card className="rounded-2xl bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 h-full flex flex-col overflow-hidden">
 
               {/* intro */}
               <div className="p-5 border-b border-slate-200 dark:border-slate-800">
@@ -215,14 +216,12 @@ export default function Contact() {
                 </div>
               </div>
 
-            </div>
+            </Card>
           </motion.div>
 
           {/* RIGHT — form */}
-          <motion.div
-            className="rounded-2xl p-6 sm:p-8 bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 h-full"
-            {...fade(0.2)}
-          >
+          <motion.div className="h-full" {...fade(0.2)}>
+            <Card className="rounded-2xl p-6 sm:p-8 bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 h-full">
             <p className="text-sm font-black text-slate-900 dark:text-white mb-1">Send a Message</p>
             <div className="h-[2px] w-6 rounded-full mb-6" style={{ background: '#818cf8' }} />
 
@@ -325,6 +324,7 @@ export default function Contact() {
                 </motion.button>
               </ModernButton>
             </form>
+            </Card>
           </motion.div>
 
         </div>

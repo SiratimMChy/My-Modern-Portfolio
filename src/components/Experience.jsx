@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Card, CardHeader, CardTitle, CardContent } from './ui/card'
 
 const EXP = [
   {
@@ -57,17 +58,18 @@ const EXP = [
   },
 ]
 
-function Card({ exp, i }) {
+function ExperienceCard({ exp, i }) {
   return (
     <motion.div
-      className="rounded-2xl bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 overflow-hidden w-full"
+      className="group"
       initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: 0.1 }}
-      whileHover={{ borderColor: exp.color + '55', transition: { duration: 0.2 } }}
+      whileHover={{ y: -2, transition: { duration: 0.2 } }}
     >
-      <div className="p-6">
+      <Card className="rounded-2xl bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 overflow-hidden w-full transition-colors group-hover:border-slate-300 dark:group-hover:border-slate-700">
+        <CardContent className="p-6 pt-6">
         {/* header */}
         <div className="flex items-start justify-between gap-3 mb-3">
           <div className="flex items-start gap-3">
@@ -136,7 +138,8 @@ function Card({ exp, i }) {
             </span>
           ))}
         </div>
-      </div>
+        </CardContent>
+      </Card>
     </motion.div>
   )
 }
@@ -183,7 +186,7 @@ export default function Experience() {
 
                 {/* LEFT slot */}
                 <div className="hidden md:block w-1/2 pr-8">
-                  {i % 2 === 0 && <Card exp={exp} i={i} />}
+                  {i % 2 === 0 && <ExperienceCard exp={exp} i={i} />}
                 </div>
 
                 {/* center dot */}
@@ -195,12 +198,12 @@ export default function Experience() {
 
                 {/* RIGHT slot */}
                 <div className="hidden md:block w-1/2 pl-8">
-                  {i % 2 !== 0 && <Card exp={exp} i={i} />}
+                  {i % 2 !== 0 && <ExperienceCard exp={exp} i={i} />}
                 </div>
 
                 {/* mobile: full width */}
                 <div className="md:hidden w-full">
-                  <Card exp={exp} i={i} />
+                  <ExperienceCard exp={exp} i={i} />
                 </div>
 
               </div>
