@@ -54,14 +54,14 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
       className="w-full fixed top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-14">
           {/* Logo */}
           <div ref={logoRef} className="flex-shrink-0">
             <a href="#" className="flex items-center">
               <img
                 src="/logo.png"
                 alt="SMC Logo"
-                className="h-12 lg:h-14 w-auto object-contain scale-125 origin-left drop-shadow-md"
+                className="h-10 lg:h-12 w-auto object-contain scale-125 origin-left drop-shadow-md"
               />
             </a>
           </div>

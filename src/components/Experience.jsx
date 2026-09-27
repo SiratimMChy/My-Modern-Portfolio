@@ -143,7 +143,7 @@ function Card({ exp, i }) {
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative py-8 sm:py-12 overflow-hidden bg-[#F5F5F0]/50 dark:bg-[#060810] transition-colors duration-300">
+    <section id="experience" className="relative pt-4 pb-8 sm:pt-8 sm:pb-12 overflow-hidden bg-[#F5F5F0]/50 dark:bg-[#060810] transition-colors duration-300">
       <div className="pointer-events-none absolute -top-40 -right-40 w-96 h-96 rounded-full bg-sky-200/20 dark:bg-sky-500/5 blur-[100px]" />
       <div className="pointer-events-none absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-violet-200/20 dark:bg-violet-600/5 blur-[100px]" />
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-sky-400/20 to-transparent" />
@@ -151,7 +151,7 @@ export default function Experience() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
 
         {/* header */}
-        <motion.div className="flex flex-col items-center text-center mb-16"
+        <motion.div className="flex flex-col items-center text-center mb-6 sm:mb-10"
           initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.6 }}>
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border border-sky-400/25 dark:border-sky-500/20 bg-sky-50 dark:bg-sky-500/5 text-sky-600 dark:text-sky-400 text-[10px] font-bold tracking-[0.18em] uppercase mb-5">

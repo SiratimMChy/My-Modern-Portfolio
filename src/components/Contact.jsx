@@ -92,7 +92,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="relative py-8 sm:py-12 overflow-hidden bg-[#F5F5F0]/50 dark:bg-[#060810] transition-colors duration-300">
+    <section id="contact" className="relative pt-4 pb-8 sm:pt-8 sm:pb-12 overflow-hidden bg-[#F5F5F0]/50 dark:bg-[#060810] transition-colors duration-300">
 
       <div className="pointer-events-none absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-sky-200/25 dark:bg-sky-600/8 blur-[110px]" />
       <div className="pointer-events-none absolute -bottom-32 -right-32 w-[400px] h-[400px] rounded-full bg-violet-200/25 dark:bg-violet-700/8 blur-[100px]" />
@@ -101,7 +101,7 @@ export default function Contact() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
 
         {/* header */}
-        <motion.div className="flex flex-col items-center text-center mb-16" {...fade(0)}>
+        <motion.div className="flex flex-col items-center text-center mb-6 sm:mb-10" {...fade(0)}>
           <motion.span
             className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border border-sky-400/25 dark:border-sky-500/20 bg-sky-50 dark:bg-sky-500/5 text-sky-600 dark:text-sky-400 text-[10px] font-bold tracking-[0.18em] uppercase mb-5"
             initial={{ opacity: 0, scale: 0.85 }} whileInView={{ opacity: 1, scale: 1 }}

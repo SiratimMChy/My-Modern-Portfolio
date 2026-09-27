@@ -55,7 +55,7 @@ export default function Education() {
   return (
     <section
       id="education"
-      className="relative py-8 sm:py-12 overflow-hidden bg-[#F5F5F0] dark:bg-[#07090f] transition-colors duration-300"
+      className="relative pt-4 pb-8 sm:pt-8 sm:pb-12 overflow-hidden bg-[#F5F5F0] dark:bg-[#07090f] transition-colors duration-300"
     >
       {/* blobs */}
       <div className="pointer-events-none absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-sky-200/25 dark:bg-sky-600/8 blur-[110px]" />
@@ -66,7 +66,7 @@ export default function Education() {
 
         {/* header */}
         <motion.div
-          className="flex flex-col items-center text-center mb-16"
+          className="flex flex-col items-center text-center mb-6 sm:mb-10"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

@@ -30,7 +30,7 @@ export default function About() {
     <section
       ref={ref}
       id="about"
-      className="relative py-8 sm:py-12 overflow-hidden
+      className="relative pt-4 pb-8 sm:pt-8 sm:pb-12 overflow-hidden
         bg-[#F5F5F0] dark:bg-[#07090f]
         transition-colors duration-300"
     >
@@ -47,7 +47,7 @@ export default function About() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
 
         {/* ── section label ── */}
-        <motion.div className="flex flex-col items-center text-center mb-6 lg:mb-10" {...fade(0)}>
+        <motion.div className="flex flex-col items-center text-center mb-2 sm:mb-6" {...fade(0)}>
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border
             border-violet-400/25 dark:border-violet-500/20
             bg-violet-50 dark:bg-violet-500/5

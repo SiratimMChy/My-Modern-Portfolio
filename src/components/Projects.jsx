@@ -216,7 +216,7 @@ export default function Projects() {
   const filtered = filter === 'all' ? PROJECTS : PROJECTS.filter(p => p.category === filter)
 
   return (
-    <section id="projects" className="relative py-8 sm:py-12 overflow-hidden bg-[#F5F5F0] dark:bg-[#07090f] transition-colors duration-300">
+    <section id="projects" className="relative pt-4 pb-8 sm:pt-8 sm:pb-12 overflow-hidden bg-[#F5F5F0] dark:bg-[#07090f] transition-colors duration-300">
 
       <div className="pointer-events-none absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-sky-200/25 dark:bg-sky-600/8 blur-[110px]" />
       <div className="pointer-events-none absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full bg-violet-200/25 dark:bg-violet-700/8 blur-[100px]" />
@@ -225,7 +225,7 @@ export default function Projects() {
       <div className="relative z-10 px-6 mx-auto max-w-7xl sm:px-12 lg:px-20">
 
         {/* header */}
-        <motion.div className="flex flex-col items-center mb-6 text-center"
+        <motion.div className="flex flex-col items-center mb-6 sm:mb-10 text-center"
           initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.6 }}>
           <motion.span
