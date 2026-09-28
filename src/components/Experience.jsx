@@ -70,7 +70,7 @@ function ExperienceCard({ exp, i }) {
     >
       <Card className="rounded-2xl bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 overflow-hidden w-full transition-colors group-hover:border-slate-300 dark:group-hover:border-slate-700">
         <CardContent className="p-6 pt-6">
-        {/* header */}
+        
         <div className="flex items-start justify-between gap-3 mb-3">
           <div className="flex items-start gap-3">
             <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
@@ -88,7 +88,7 @@ function ExperienceCard({ exp, i }) {
           </div>
         </div>
 
-        {/* meta */}
+        
         <div className="flex flex-wrap gap-2 mb-4">
           <span className="text-[9px] font-bold px-2 py-0.5 rounded-md bg-slate-200 dark:bg-white/[0.06] text-slate-500 dark:text-slate-400">{exp.type}</span>
           <span className="text-[9px] text-slate-400 flex items-center gap-0.5">
@@ -96,10 +96,10 @@ function ExperienceCard({ exp, i }) {
           </span>
         </div>
 
-        {/* summary */}
+        
         <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">{exp.summary}</p>
 
-        {/* project */}
+        
         {exp.project && (
           <div className="p-3 rounded-xl mb-4 border"
             style={{ borderColor: exp.color + '30', background: exp.color + '08' }}>
@@ -110,7 +110,7 @@ function ExperienceCard({ exp, i }) {
           </div>
         )}
 
-        {/* responsibilities */}
+        
         <p className="text-[9px] font-bold tracking-[0.15em] uppercase text-slate-400 dark:text-slate-600 mb-2">Key Responsibilities</p>
         <ul className="space-y-1.5 mb-4">
           {exp.resp.map((r, j) => (
@@ -126,7 +126,7 @@ function ExperienceCard({ exp, i }) {
           ))}
         </ul>
 
-        {/* tech */}
+        
         <p className="text-[9px] font-bold tracking-[0.15em] uppercase text-slate-400 dark:text-slate-600 mb-2">
           {i === 1 ? 'Skills' : 'Technologies'}
         </p>
@@ -153,7 +153,7 @@ export default function Experience() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
 
-        {/* header */}
+        
         <motion.div className="flex flex-col items-center text-center mb-6 sm:mb-10"
           initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.6 }}>
@@ -163,7 +163,7 @@ export default function Experience() {
           <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 dark:text-white"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Work{' '}
-            <span style={{ background: 'linear-gradient(90deg,#38bdf8,#818cf8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+            <span className='bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent'>
               Experience
             </span>
           </h2>
@@ -173,10 +173,10 @@ export default function Experience() {
             viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} />
         </motion.div>
 
-        {/* zigzag timeline */}
+        
         <div className="relative max-w-7xl mx-auto">
 
-          {/* center vertical line */}
+          
           <div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2
             bg-gradient-to-b from-sky-400/40 via-violet-400/30 to-transparent hidden md:block" />
 
@@ -184,24 +184,24 @@ export default function Experience() {
             {EXP.map((exp, i) => (
               <div key={i} className="relative flex items-start gap-0 md:gap-8">
 
-                {/* LEFT slot */}
+                
                 <div className="hidden md:block w-1/2 pr-8">
                   {i % 2 === 0 && <ExperienceCard exp={exp} i={i} />}
                 </div>
 
-                {/* center dot */}
+                
                 <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 top-8 z-10
                   w-10 h-10 rounded-full items-center justify-center border-2 border-white dark:border-[#060810]"
                   style={{ background: exp.color }}>
                   <i className={`bx ${exp.icon} text-white text-base`} />
                 </div>
 
-                {/* RIGHT slot */}
+                
                 <div className="hidden md:block w-1/2 pl-8">
                   {i % 2 !== 0 && <ExperienceCard exp={exp} i={i} />}
                 </div>
 
-                {/* mobile: full width */}
+                
                 <div className="md:hidden w-full">
                   <ExperienceCard exp={exp} i={i} />
                 </div>

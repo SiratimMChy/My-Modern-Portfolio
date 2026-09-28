@@ -35,19 +35,18 @@ export default function About() {
         bg-[#F5F5F0] dark:bg-[#07090f]
         transition-colors duration-300"
     >
-      {/* background blobs */}
+      
       <div className="pointer-events-none absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full
         bg-violet-200/30 dark:bg-violet-700/8 blur-[100px]" />
       <div className="pointer-events-none absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full
         bg-sky-200/30 dark:bg-sky-600/8 blur-[100px]" />
 
-      {/* top border */}
+      
       <div className="absolute top-0 inset-x-0 h-px
         bg-gradient-to-r from-transparent via-violet-400/25 to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
 
-        {/* ── section label ── */}
         <motion.div className="flex flex-col items-center text-center mb-2 sm:mb-6" {...fade(0)}>
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border
             border-violet-400/25 dark:border-violet-500/20
@@ -61,20 +60,15 @@ export default function About() {
             text-slate-900 dark:text-white"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Who I{' '}
-            <span style={{
-              background: 'linear-gradient(90deg,#818cf8,#38bdf8)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}>Am</span>
+            <span className='bg-gradient-to-r from-indigo-400 to-sky-400 bg-clip-text text-transparent'>Am</span>
           </h2>
           <div className="mt-4 w-12 h-[3px] rounded-full"
             style={{ background: 'linear-gradient(90deg,#818cf8,#38bdf8)' }} />
         </motion.div>
 
-        {/* ── main grid ── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
-          {/* LEFT — image + highlight cards */}
+          
           <motion.div
             className="relative flex justify-center lg:justify-start lg:pl-5 order-2 lg:order-1"
             initial={{ opacity: 0, x: -30 }}
@@ -82,11 +76,11 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* glow */}
+            
             <div className="absolute w-64 h-64 rounded-full blur-3xl opacity-20
               bg-gradient-to-tr from-sky-400 to-violet-500" />
 
-            {/* photo */}
+            
             <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 flex-shrink-0">
               <div className="w-full h-full rounded-3xl p-[2.5px]"
                 style={{ background: 'linear-gradient(135deg,#38bdf8,#818cf8,#c084fc)' }}>
@@ -101,7 +95,7 @@ export default function About() {
                 </div>
               </div>
 
-              {/* experience badge */}
+              
               <motion.div
                 className="absolute -bottom-4 -right-4 px-4 py-3 rounded-2xl shadow-xl shadow-slate-200/60 dark:shadow-xl
                   bg-white dark:bg-[#0d1117]
@@ -115,7 +109,7 @@ export default function About() {
                 <p className="text-[9px] text-slate-400 font-semibold tracking-widest uppercase mt-0.5">Graduate</p>
               </motion.div>
 
-              {/* top-left badge */}
+              
               <motion.div
                 className="absolute -top-4 -left-4 w-12 h-12 rounded-2xl flex items-center justify-center shadow-xl"
                 style={{ background: 'linear-gradient(135deg,#0ea5e9,#6366f1)' }}
@@ -128,7 +122,7 @@ export default function About() {
                 <i className="bx bx-code-alt text-white text-xl" />
               </motion.div>
 
-              {/* highlight cards — 2×2 grid below image on mobile, absolute on lg */}
+              
               <div className="absolute -right-32 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-3">
                 {HIGHLIGHTS.slice(0, 2).map((h, i) => (
                   <motion.div
@@ -155,7 +149,7 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* RIGHT — text content */}
+          
           <div className="space-y-7 text-center lg:text-left order-1 lg:order-2">
 
             <motion.h3
@@ -195,7 +189,7 @@ export default function About() {
               </p>
             </motion.div>
 
-            {/* highlight cards —  */}
+            
             <motion.div className="grid grid-cols-2 gap-3 lg:hidden" {...fade(0.3)}>
               {HIGHLIGHTS.map(h => (
                 <div key={h.label}
@@ -214,7 +208,7 @@ export default function About() {
               ))}
             </motion.div>
 
-            {/* hobbies */}
+            
             <motion.div {...fade(0.35)}>
               <p className="text-[10px] font-bold tracking-[0.18em] uppercase text-slate-400 dark:text-slate-600 mb-3">
                 Interests & Hobbies
@@ -233,7 +227,7 @@ export default function About() {
               </div>
             </motion.div>
 
-            {/* CTA */}
+            
             <motion.div className="flex flex-wrap gap-3 justify-center lg:justify-start" {...fade(0.45)}>
               <ModernButton variant="gradient" className="group relative overflow-hidden" asChild>
                 <a href="#contact">

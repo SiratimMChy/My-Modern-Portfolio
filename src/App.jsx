@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// Lazy load components for better code splitting
+
 const Hero = lazy(() => import('./components/Hero'))
 const About = lazy(() => import('./components/About'))
 const Skills = lazy(() => import('./components/Skills'))
@@ -17,7 +17,7 @@ const Projects = lazy(() => import('./components/Projects'))
 const Contact = lazy(() => import('./components/Contact'))
 const Footer = lazy(() => import('./components/Footer'))
 
-// Loading component
+
 const LoadingSpinner = () => (
   <div className="flex items-center justify-center min-h-[200px]">
     <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
@@ -28,7 +28,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() => {
-    // Check local storage or system preference
+
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       setDarkMode(true)
       document.documentElement.classList.add('dark')
@@ -37,7 +37,7 @@ function App() {
       document.documentElement.classList.remove('dark')
     }
 
-    // Initialize Lenis smooth scrolling
+
     const lenis = new Lenis({
       duration: 0.9,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -49,13 +49,13 @@ function App() {
       infinite: false,
     })
 
-    // Add lenis class to html
+
     document.documentElement.classList.add('lenis')
 
-    // Synchronize Lenis with GSAP ScrollTrigger
+
     lenis.on('scroll', ScrollTrigger.update)
 
-    // Integrate with GSAP ticker for high-performance RAF
+
     const update = (time) => {
       lenis.raf(time * 1000)
     }
@@ -63,10 +63,10 @@ function App() {
     gsap.ticker.add(update)
     gsap.ticker.lagSmoothing(0)
 
-    // Store lenis instance globally for modal access
+
     window.lenis = lenis
 
-    // Cleanup
+
     return () => {
       lenis.destroy()
       gsap.ticker.remove(update)

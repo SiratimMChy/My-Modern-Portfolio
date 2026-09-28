@@ -102,7 +102,7 @@ export default function Contact() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
 
-        {/* header */}
+        
         <motion.div className="flex flex-col items-center text-center mb-6 sm:mb-10" {...fade(0)}>
           <motion.span
             className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border border-sky-400/25 dark:border-sky-500/20 bg-sky-50 dark:bg-sky-500/5 text-sky-600 dark:text-sky-400 text-[10px] font-bold tracking-[0.18em] uppercase mb-5"
@@ -118,7 +118,7 @@ export default function Contact() {
             viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.15 }}
           >
             Contact{' '}
-            <span style={{ background: 'linear-gradient(90deg,#38bdf8,#818cf8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+            <span className='bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent'>
               Me
             </span>
           </motion.h2>
@@ -131,14 +131,14 @@ export default function Contact() {
           </motion.p>
         </motion.div>
 
-        {/* two-column layout */}
+        
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-8 items-stretch">
 
-          {/* LEFT — info: single card, full height */}
+          
           <motion.div className="h-full" {...fade(0.1)}>
             <Card className="rounded-2xl bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 h-full flex flex-col overflow-hidden">
 
-              {/* intro */}
+              
               <div className="p-5 border-b border-slate-200 dark:border-slate-800">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
@@ -155,7 +155,7 @@ export default function Contact() {
                 </p>
               </div>
 
-              {/* contact info */}
+              
               <div className="p-5 border-b border-slate-200 dark:border-slate-800 space-y-3 flex-1">
                 {CONTACT_INFO.map((c, i) => (
                   <motion.div key={i} className="flex items-center gap-3"
@@ -179,7 +179,7 @@ export default function Contact() {
                 ))}
               </div>
 
-              {/* socials */}
+              
               <div className="p-5">
                 <p className="text-[9px] font-bold tracking-[0.15em] uppercase text-slate-400 dark:text-slate-600 mb-3">Connect with me</p>
                 <div className="flex gap-3">
@@ -219,13 +219,13 @@ export default function Contact() {
             </Card>
           </motion.div>
 
-          {/* RIGHT — form */}
+          
           <motion.div className="h-full" {...fade(0.2)}>
             <Card className="rounded-2xl p-6 sm:p-8 bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 h-full">
             <p className="text-sm font-black text-slate-900 dark:text-white mb-1">Send a Message</p>
             <div className="h-[2px] w-6 rounded-full mb-6" style={{ background: '#818cf8' }} />
 
-            {/* status */}
+            
             <AnimatePresence>
               {status.msg && (
                 <motion.div

@@ -61,33 +61,32 @@ export default function Hero() {
       bg-[#F5F5F0]/80 dark:bg-[#060810]
       transition-colors duration-300">
 
-      {/* blobs */}
+      
       <div className="pointer-events-none absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full
         bg-sky-300/40 dark:bg-sky-600/10 blur-[120px] transition-colors duration-300" />
       <div className="pointer-events-none absolute -bottom-40 -right-20 w-[500px] h-[500px] rounded-full
         bg-violet-300/40 dark:bg-violet-700/10 blur-[100px] transition-colors duration-300" />
 
-      {/* noise */}
+      
       <div className="pointer-events-none absolute inset-0 opacity-[0.025] dark:opacity-[0.03]"
         style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")", backgroundSize: '200px' }} />
 
-      {/* vertical rule */}
+      
       <div className="hidden lg:block absolute left-[7%] top-0 bottom-0 w-px
         bg-gradient-to-b from-transparent via-slate-300/50 dark:via-slate-700/40 to-transparent" />
 
-      {/* top border */}
+      
       <div className="absolute top-0 inset-x-0 h-px
         bg-gradient-to-r from-transparent via-sky-400/30 dark:via-sky-500/25 to-transparent" />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-28 pt-28">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-0">
 
-          {/* ── LEFT ── */}
           <div className="flex-1 space-y-8 text-center lg:text-left">
 
 
 
-            {/* name */}
+            
             <div className="overflow-hidden pb-4 -mb-4">
               <motion.div
                 initial={{ y: '100%' }}
@@ -101,21 +100,14 @@ export default function Hero() {
                   <span className="block text-[clamp(2.4rem,5.5vw,4rem)] text-slate-900 dark:text-white">
                     Siratim Mustakim
                   </span>
-                  <span
-                    className="block text-[clamp(2.4rem,5.5vw,4rem)] pb-4 -mb-4"
-                    style={{
-                      background: 'linear-gradient(90deg,#38bdf8 0%,#818cf8 50%,#c084fc 100%)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                    }}
-                  >
+                  <span className="block text-[clamp(2.4rem,5.5vw,4rem)] pb-4 -mb-4 bg-gradient-to-r from-sky-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
                     Chowdhury
                   </span>
                 </h1>
               </motion.div>
             </div>
 
-            {/* terminal role */}
+            
             <motion.div
               className="inline-flex items-center gap-2 font-mono text-sm"
               initial={{ opacity: 0 }}
@@ -128,7 +120,7 @@ export default function Hero() {
               <span className="w-[2px] h-4 bg-sky-500 dark:bg-sky-400 animate-pulse rounded-full" />
             </motion.div>
 
-            {/* bio */}
+            
             <motion.p
               className="text-slate-500 dark:text-slate-500 text-sm leading-[1.9] max-w-[480px] mx-auto lg:mx-0"
               initial={{ opacity: 0, y: 12 }}
@@ -141,7 +133,7 @@ export default function Hero() {
               As a Computer Science graduate, I enjoy building scalable, secure, and user-friendly applications that solve real-world problems.
             </motion.p>
 
-            {/* CTAs */}
+            
             <motion.div
               className="flex flex-wrap gap-3 justify-center lg:justify-start"
               initial={{ opacity: 0, y: 10 }}
@@ -169,7 +161,7 @@ export default function Hero() {
               </ModernButton>
             </motion.div>
 
-            {/* socials + stats */}
+            
             <motion.div
               className="flex flex-col sm:flex-row items-center lg:items-start gap-5 justify-center lg:justify-start"
               initial={{ opacity: 0 }}
@@ -225,7 +217,6 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* ── RIGHT — tilted photo card + floating chips ── */}
           <motion.div
             className="relative flex-shrink-0 flex items-center justify-center w-full lg:w-auto"
             style={{ x: para.x, y: para.y }}
@@ -235,13 +226,12 @@ export default function Hero() {
           >
             <div className="relative w-[260px] sm:w-[300px] lg:w-[340px]">
 
-              {/* ── main photo card ── */}
               <motion.div
                 className="relative rounded-2xl overflow-hidden shadow-2xl"
                 style={{ rotate: 3 }}
                 whileHover={{ rotate: 0, scale: 1.02, transition: { duration: 0.3 } }}
               >
-                {/* gradient top bar */}
+                
                 <div className="absolute top-0 inset-x-0 h-1 z-10"
                   style={{ background: 'linear-gradient(90deg,#38bdf8,#6366f1,#c084fc)' }} />
 
@@ -252,7 +242,7 @@ export default function Hero() {
                   style={{ objectPosition: '50% 10%' }}
                 />
 
-                {/* bottom overlay */}
+                
                 <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-8 left-4">
                   <p className="text-white text-xs font-bold tracking-wide">Siratim Mustakim</p>
@@ -260,7 +250,6 @@ export default function Hero() {
                 </div>
               </motion.div>
 
-              {/* ── floating stat chips ── */}
               <motion.div
                 className="absolute -top-5 -left-10 flex items-center gap-2 px-3 py-2 rounded-xl shadow-xl shadow-slate-200/60 dark:shadow-xl
                   bg-white dark:bg-[#0d1117] border border-slate-200 dark:border-slate-800"
@@ -278,7 +267,7 @@ export default function Hero() {
                 </div>
               </motion.div>
 
-              {/* top-right: 10+ Technologies */}
+              
               <motion.div
                 className="absolute -top-5 -right-10 flex items-center gap-2 px-3 py-2 rounded-xl shadow-xl shadow-slate-200/60 dark:shadow-xl
                   bg-white dark:bg-[#0d1117] border border-slate-200 dark:border-slate-800"
@@ -309,7 +298,6 @@ export default function Hero() {
                 </div>
               </motion.div>
 
-              {/* ── tech stack row ── */}
               <motion.div
                 className="absolute -bottom-5 -right-4 flex items-center gap-1.5 px-3 py-2 rounded-xl shadow-xl shadow-slate-200/60 dark:shadow-xl
                   bg-white dark:bg-[#0d1117] border border-slate-200 dark:border-slate-800"
@@ -323,7 +311,7 @@ export default function Hero() {
                 <span className="text-[10px] text-slate-400 dark:text-slate-600 font-bold ml-0.5">+2</span>
               </motion.div>
 
-              {/* background card (depth effect) */}
+              
               <div
                 className="absolute inset-0 rounded-2xl -z-10 border border-slate-200 dark:border-slate-800
                   bg-[#EBE8E0] dark:bg-slate-900"

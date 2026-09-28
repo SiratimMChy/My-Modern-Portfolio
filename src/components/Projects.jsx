@@ -225,7 +225,7 @@ export default function Projects() {
 
       <div className="relative z-10 px-6 mx-auto max-w-7xl sm:px-12 lg:px-20">
 
-        {/* header */}
+        
         <motion.div className="flex flex-col items-center mb-6 sm:mb-10 text-center"
           initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.6 }}>
@@ -243,7 +243,7 @@ export default function Projects() {
             viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.15 }}
           >
             Featured{' '}
-            <span style={{ background: 'linear-gradient(90deg,#38bdf8,#818cf8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+            <span className='bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent'>
               Projects
             </span>
           </motion.h2>
@@ -253,7 +253,7 @@ export default function Projects() {
             viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} />
         </motion.div>
 
-        {/* filter tabs */}
+        
         <motion.div className="flex justify-center px-0 mb-10"
           initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}>
@@ -283,7 +283,7 @@ export default function Projects() {
           </div>
         </motion.div>
 
-        {/* slider */}
+        
         <AnimatePresence mode="wait">
           <motion.div key={filter}
             initial={{ opacity: 0, y: 20 }}
@@ -316,22 +316,22 @@ export default function Projects() {
                     onClick={() => setSelected(project)}
                   >
                     <Card className="group h-full w-full relative rounded-xl overflow-hidden bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 flex flex-col transition-colors hover:border-slate-300 dark:hover:border-slate-700">
-                    {/* image */}
+                    
                     <div className="relative flex-shrink-0 overflow-hidden h-52 w-full bg-[#EBE8E0] dark:bg-slate-900">
                       <img src={project.image} alt={project.name}
                         loading="lazy"
                         decoding="async"
                         className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" />
-                      {/* hover overlay */}
+                      
                       <div className="absolute inset-0 flex items-center justify-center gap-3 transition-opacity duration-300 opacity-0 bg-black/50 group-hover:opacity-100">
                         <span className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white/20 backdrop-blur-sm text-white text-xs font-semibold">
                           <i className="text-sm bx bx-show" /> View Details
                         </span>
                       </div>
-                      {/* status and category badges removed from image */}
+                      
                     </div>
 
-                    {/* content */}
+                    
                     <CardContent className="flex flex-col flex-1 p-5">
                       <div className="mb-3">
                         <div className="flex items-start justify-between gap-2">
@@ -344,7 +344,7 @@ export default function Projects() {
                       </div>
                       <p className="mb-4 text-xs leading-relaxed text-slate-500 dark:text-slate-400 line-clamp-2">{project.shortDesc}</p>
 
-                      {/* features */}
+                      
                       <div className="flex flex-wrap gap-1.5 mb-4 min-h-[44px]">
                         {project.features.slice(0, 3).map(f => (
                           <span key={f} className="inline-flex items-center text-[9px] font-medium px-2 py-1 rounded-md h-[20px]"
@@ -357,7 +357,7 @@ export default function Projects() {
                         )}
                       </div>
 
-                      {/* tech */}
+                      
                       <div className="flex flex-wrap gap-1 mb-4 min-h-[44px]">
                         {project.tech.slice(0, 3).map((t, index) => {
                           const techIcons = {
@@ -448,7 +448,7 @@ export default function Projects() {
                         )}
                       </div>
 
-                      {/* buttons */}
+                      
                       <div className="flex gap-2 mt-auto">
                         {project.category !== 'Mobile' && (
                           <motion.div
@@ -512,7 +512,7 @@ export default function Projects() {
         </AnimatePresence>
       </div>
 
-      {/* Project Detail Modal */}
+      
       <AnimatePresence>
         {selected && (
           <ProjectDetail

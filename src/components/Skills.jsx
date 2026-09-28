@@ -66,7 +66,7 @@ const fade = (delay = 0) => ({
   transition: { duration: 0.55, delay, ease: [0.16, 1, 0.3, 1] },
 })
 
-// Enhanced container animation
+
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -78,7 +78,7 @@ const containerVariants = {
   },
 }
 
-// Enhanced card animation with smooth entrance
+
 const cardVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
@@ -88,7 +88,7 @@ const cardVariants = {
   },
 }
 
-// Skill chip animation - smooth
+
 const chipVariants = {
   hidden: { opacity: 0, y: 15 },
   visible: {
@@ -108,7 +108,7 @@ export default function Skills() {
   const particlesRef = useRef(null)
 
   useEffect(() => {
-    // Create floating particles animation
+
     if (particlesRef.current) {
       const particles = particlesRef.current.querySelectorAll('.skill-particle')
       particles.forEach((particle, index) => {
@@ -124,10 +124,10 @@ export default function Skills() {
       })
     }
 
-    // GSAP animation for category badge icons
+
     const badgeIcons = sectionRef.current?.querySelectorAll('.category-badge-icon')
     badgeIcons?.forEach((icon, index) => {
-      // Entrance animation
+
       gsap.fromTo(
         icon,
         { opacity: 0, scale: 0.5, y: 20 },
@@ -141,7 +141,7 @@ export default function Skills() {
         }
       )
 
-      // Subtle floating animation
+
       gsap.to(icon, {
         y: -4,
         duration: 2 + index * 0.3,
@@ -151,7 +151,7 @@ export default function Skills() {
         delay: index * 0.1 + 0.6,
       })
 
-      // Glow pulse on hover
+
       icon.addEventListener('mouseenter', () => {
         gsap.to(icon, {
           boxShadow: `0 0 20px ${icon.dataset.color}80`,
@@ -171,7 +171,7 @@ export default function Skills() {
       })
     })
 
-    // Hover animation for category cards
+
     const cards = sectionRef.current?.querySelectorAll('.skill-card')
     cards?.forEach((card) => {
       card.addEventListener('mouseenter', () => {
@@ -189,7 +189,7 @@ export default function Skills() {
     })
 
     return () => {
-      // Cleanup
+
     }
   }, [])
 
@@ -201,7 +201,7 @@ export default function Skills() {
         bg-[#F5F5F0]/50 dark:bg-[#060810]
         transition-colors duration-300"
     >
-      {/* Animated background particles */}
+      
       <div ref={particlesRef} className="absolute inset-0 pointer-events-none">
         {[...Array(8)].map((_, i) => (
           <div
@@ -217,19 +217,18 @@ export default function Skills() {
         ))}
       </div>
 
-      {/* background blobs */}
+      
       <div className="pointer-events-none absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full
         bg-sky-200/25 dark:bg-sky-600/8 blur-[110px] animate-pulse" />
       <div className="pointer-events-none absolute -bottom-32 -right-32 w-[400px] h-[400px] rounded-full
         bg-violet-200/25 dark:bg-violet-700/8 blur-[100px] animate-pulse" style={{ animationDelay: '1s' }} />
 
-      {/* top border */}
+      
       <div className="absolute top-0 inset-x-0 h-px
         bg-gradient-to-r from-transparent via-sky-400/25 to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
 
-        {/* ── header ── */}
         <motion.div className="flex flex-col items-center text-center mb-6 sm:mb-10" {...fade(0)}>
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border
             border-sky-400/25 dark:border-sky-500/20
@@ -245,11 +244,7 @@ export default function Skills() {
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             Skills &amp;{' '}
-            <span style={{
-              background: 'linear-gradient(90deg,#38bdf8,#818cf8)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}>
+            <span className="bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent">
               Expertise
             </span>
           </h2>
@@ -257,7 +252,6 @@ export default function Skills() {
             style={{ background: 'linear-gradient(90deg,#38bdf8,#818cf8)' }} />
         </motion.div>
 
-        {/* ── 4 cards ── */}
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
           variants={containerVariants}
@@ -281,11 +275,11 @@ export default function Skills() {
                 hover:border-slate-300 dark:hover:border-slate-700
                 transition-all duration-300 cursor-default">
                 
-                {/* Animated gradient overlay on hover */}
+                
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300
                   bg-gradient-to-br from-sky-500/5 to-violet-500/5 pointer-events-none" />
 
-                {/* card header */}
+                
                 <CardHeader className="flex flex-row items-center gap-3 relative z-10 p-6 pb-2 space-y-0">
                   <motion.div 
                     className="flex-shrink-0"
@@ -328,7 +322,7 @@ export default function Skills() {
 
                 <CardContent className="p-6 pt-4">
 
-              {/* skill chips */}
+              
               <motion.div 
                 className="grid grid-cols-3 gap-2.5 relative z-10"
                 variants={containerVariants}
@@ -347,7 +341,7 @@ export default function Skills() {
                     variants={chipVariants}
                     whileHover="hover"
                   >
-                    {/* Animated background on chip hover */}
+                    
                     <div className="absolute inset-0 opacity-0 group-hover/chip:opacity-100 transition-opacity duration-300
                       bg-gradient-to-br from-sky-500/10 to-violet-500/10 pointer-events-none" />
 
@@ -382,7 +376,6 @@ export default function Skills() {
           ))}
         </motion.div>
 
-        {/* ── bottom CTA ── */}
         <motion.div
           className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4"
           {...fade(0.2)}

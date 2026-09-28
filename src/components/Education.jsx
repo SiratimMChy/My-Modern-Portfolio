@@ -58,14 +58,14 @@ export default function Education() {
       id="education"
       className="relative pt-4 pb-8 sm:pt-8 sm:pb-12 overflow-hidden bg-[#F5F5F0] dark:bg-[#07090f] transition-colors duration-300"
     >
-      {/* blobs */}
+      
       <div className="pointer-events-none absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-sky-200/25 dark:bg-sky-600/8 blur-[110px]" />
       <div className="pointer-events-none absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full bg-indigo-200/25 dark:bg-indigo-700/8 blur-[100px]" />
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-indigo-400/25 to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
 
-        {/* header */}
+        
         <motion.div
           className="flex flex-col items-center text-center mb-6 sm:mb-10"
           initial={{ opacity: 0, y: 30 }}
@@ -108,7 +108,7 @@ export default function Education() {
           />
         </motion.div>
 
-        {/* degree card */}
+        
         <motion.div
           className="mb-10 group"
           initial={{ opacity: 0, y: 40 }}
@@ -172,10 +172,10 @@ export default function Education() {
           </Card>
         </motion.div>
 
-        {/* two columns */}
+        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-          {/* Key Projects */}
+          
           <motion.div
             className="group h-full"
             initial={{ opacity: 0, x: -30 }}
@@ -245,7 +245,7 @@ export default function Education() {
             </Card>
           </motion.div>
 
-          {/* Key Subjects */}
+          
           <motion.div
             className="group h-full"
             initial={{ opacity: 0, x: 30 }}

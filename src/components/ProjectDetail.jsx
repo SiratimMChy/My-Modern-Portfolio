@@ -7,19 +7,19 @@ import { useEffect } from 'react'
 const ProjectDetail = ({ project, onClose }) => {
   if (!project) return null
 
-  // Stop Lenis when modal opens, restart when it closes
+
   useEffect(() => {
     if (window.lenis) {
       window.lenis.stop()
     }
-    // Prevent body scroll
+
     document.body.style.overflow = 'hidden'
 
     return () => {
       if (window.lenis) {
         window.lenis.start()
       }
-      // Restore body scroll
+
       document.body.style.overflow = ''
     }
   }, [])
@@ -99,7 +99,7 @@ const ProjectDetail = ({ project, onClose }) => {
         exit="hidden"
         data-lenis-prevent
       >
-        {/* Header */}
+        
         <div className="sticky top-0 bg-gradient-to-r from-sky-500 via-sky-600 to-indigo-600 p-6 text-white z-10">
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-4 flex-1">
@@ -137,14 +137,14 @@ const ProjectDetail = ({ project, onClose }) => {
           </div>
         </div>
 
-        {/* Content */}
+        
         <div className="p-6 space-y-8">
-          {/* Project Image and Description */}
+          
           <motion.div 
             className="flex flex-col lg:flex-row gap-6"
             variants={itemVariants}
           >
-            {/* Project Image */}
+            
             <div className="lg:w-1/2">
               <div className="relative overflow-hidden rounded-lg">
                 <img 
@@ -166,7 +166,7 @@ const ProjectDetail = ({ project, onClose }) => {
               </div>
             </div>
 
-            {/* Project Description */}
+            
             <div className="lg:w-1/2 flex flex-col justify-center">
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
@@ -184,7 +184,7 @@ const ProjectDetail = ({ project, onClose }) => {
             </div>
           </motion.div>
 
-          {/* Tech Stack */}
+          
           <motion.div variants={itemVariants}>
             <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
               <i className="bx bx-code-curly text-primary"></i>
@@ -218,10 +218,10 @@ const ProjectDetail = ({ project, onClose }) => {
             </div>
           </motion.div>
 
-          {/* Three Cards Section: Features, Challenges, Future */}
+          
           <motion.div variants={itemVariants}>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {/* Key Features Card */}
+              
               <motion.div
                 className="bg-card border border-border rounded-lg p-6 h-full"
                 whileHover={{ scale: 1.02, y: -5 }}
@@ -249,7 +249,7 @@ const ProjectDetail = ({ project, onClose }) => {
                 </div>
               </motion.div>
 
-              {/* Challenges Card */}
+              
               {project.challenges && project.challenges.length > 0 && (
                 <motion.div
                   className="bg-card border border-border rounded-lg p-6 h-full"
@@ -279,7 +279,7 @@ const ProjectDetail = ({ project, onClose }) => {
                 </motion.div>
               )}
 
-              {/* Future Improvements Card */}
+              
               {project.futureImprovements && project.futureImprovements.length > 0 && (
                 <motion.div
                   className="bg-card border border-border rounded-lg p-6 h-full"
@@ -311,7 +311,7 @@ const ProjectDetail = ({ project, onClose }) => {
             </div>
           </motion.div>
 
-          {/* Action Buttons */}
+          
           <motion.div 
             className="flex flex-col gap-4 pt-6 border-t border-border"
             variants={itemVariants}

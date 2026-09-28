@@ -23,7 +23,7 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-[#F5F5F0] dark:bg-[#07090f] border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
 
-      {/* Animated background blobs */}
+      
       <div className="pointer-events-none absolute -top-20 -left-20 w-[300px] h-[300px] rounded-full bg-sky-200/10 dark:bg-sky-600/5 blur-[80px]" />
       <div className="pointer-events-none absolute -bottom-20 -right-20 w-[300px] h-[300px] rounded-full bg-violet-200/10 dark:bg-violet-700/5 blur-[80px]" />
 
@@ -31,7 +31,7 @@ export default function Footer() {
 
       <div className="relative flex flex-col items-center gap-5 sm:gap-6 px-6 py-6 sm:py-8 mx-auto max-w-7xl sm:px-12 lg:px-20">
         
-        {/* Back to Home Button */}
+        
         <motion.div
           className="absolute bottom-2 right-6 sm:right-12 lg:right-20"
           initial={{ opacity: 0, scale: 0.8 }}
@@ -53,7 +53,7 @@ export default function Footer() {
           </Button>
         </motion.div>
 
-        {/* logo + badge */}
+        
         <motion.div
           className="flex flex-col items-center gap-4"
           initial={{ opacity: 0, y: 20 }}
@@ -75,7 +75,7 @@ export default function Footer() {
           </motion.a>
         </motion.div>
 
-        {/* nav links with enhanced animations */}
+        
         <motion.nav
           className="flex flex-wrap justify-center gap-2"
           initial={{ opacity: 0, y: 20 }}
@@ -106,7 +106,7 @@ export default function Footer() {
           ))}
         </motion.nav>
 
-        {/* social icons with enhanced animations */}
+        
         <motion.nav
           className="flex items-center gap-3"
           initial={{ opacity: 0, y: 20 }}
@@ -136,7 +136,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   aria-label={s.label}
                 >
-                  {/* Shimmer effect background */}
+                  
                   <span className="absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />
                   
                   <i className={`bx ${s.icon} text-xl transition-all duration-300 relative z-10 ${
@@ -150,7 +150,7 @@ export default function Footer() {
           ))}
         </motion.nav>
 
-        {/* divider with glow effect */}
+        
         <motion.div
           className="w-full h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent relative"
           initial={{ scaleX: 0, opacity: 0 }}
@@ -165,7 +165,7 @@ export default function Footer() {
           />
         </motion.div>
 
-        {/* copyright with staggered text animation */}
+        
         <motion.p
           className="text-[11px] text-slate-400 dark:text-slate-600 font-medium text-center"
           initial={{ opacity: 0, y: 10 }}
