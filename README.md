@@ -27,48 +27,62 @@ This portfolio is built to demonstrate real-world implementation of modern front
 
 - **Responsive & Accessible UI:** Designed with a mobile-first approach using Tailwind CSS to ensure a consistent experience across all devices.
 - **Dynamic Theming:** Seamless system-aware dark and light mode toggle.
-- **Optimized Animations:** Uses Framer Motion for declarative component transitions and CSS utilities for lightweight micro-interactions, reducing JavaScript overhead.
+- **Optimized Animations:** Uses Framer Motion for declarative component transitions and GSAP for complex scroll-driven animations.
 - **Performance Focused:** Implements lazy loading and optimized asset delivery for faster initial page loads.
 - **Interactive Contact Integration:** Client-side email handling powered by EmailJS, providing real-time feedback without a dedicated backend.
-- **Custom Integrations:** Features modular utilities for cursor tracking and performance monitoring.
+- **Custom Utilities:** Features modular utilities for smooth scrolling (Lenis), custom cursor tracking, and performance monitoring.
 
 ---
 
 ## 🛠️ Technology Stack
 
 ### Frontend & Build Tools
-- **React 18**
-- **Vite 5**
-- **Tailwind CSS 3.4**
+- **React 18** (Functional Components & Hooks)
+- **Vite 5** (Fast HMR & Optimized Build)
+- **Tailwind CSS 3.4** (Utility-first Styling)
 
 ### State Management & Animation
-- **Framer Motion 12**
-- **GSAP 3**
+- **Framer Motion 12** (Micro-interactions & page transitions)
+- **GSAP 3** (ScrollTrigger & complex timelines)
 - **Lenis** (Smooth Scrolling)
 
-### Utilities
-- **EmailJS** (`@emailjs/browser`)
-- **Radix UI** / **Lucide React** / **Boxicons**
-- **clsx & tailwind-merge**
+### Utilities & Packages
+- **EmailJS** (`@emailjs/browser` for form submissions)
+- **Radix UI** / **Lucide React** / **Boxicons** (Icons & accessible primitives)
+- **clsx & tailwind-merge** (Dynamic class handling)
 
 ---
 
 ## 📂 Project Architecture
 
-The repository is modularly organized for maintainability and scalability:
+The repository is modularly organized for maintainability and scalability. All core components are separated logically:
 
 ```text
 src/
-├── components/          # Core section components (Hero, About, Projects, etc.)
-│   └── ui/              # Reusable UI primitives (Buttons, Badges)
-├── lib/                 # Third-party configuration files
+├── components/          # UI Sections and Layout Components
+│   ├── About.jsx        # Personal introduction
+│   ├── Contact.jsx      # EmailJS integrated contact form
+│   ├── Education.jsx    # Academic history timeline
+│   ├── Experience.jsx   # Professional work timeline
+│   ├── Footer.jsx       # Global footer
+│   ├── Hero.jsx         # Landing section with animations
+│   ├── Navbar.jsx       # Responsive navigation (Mobile & Desktop)
+│   ├── ProjectDetail.jsx# Detailed modal/view for individual projects
+│   ├── Projects.jsx     # Showcase grid of projects
+│   ├── Skills.jsx       # Technical skills visualization
+│   └── ui/              # Reusable UI primitives (Buttons, Cards, Badges)
+│
+├── lib/                 # Third-party configurations
+│   └── utils.js         # clsx and tailwind-merge utilities
+│
 ├── utils/               # Helper functions and logic handlers
-│   ├── cursorEffects.js # Custom cursor logic
-│   ├── gsapAnimations.js# GSAP sequences
-│   ├── soundEffects.js  # Audio interactions
-│   └── performanceMonitor.js 
-├── App.jsx              # Root layout and routing orchestration
-├── main.jsx             # React entry point
+│   ├── cursorEffects.js # Custom interactive cursor logic
+│   ├── gsapAnimations.js# Global GSAP timeline sequences
+│   ├── performanceMonitor.js # Metric tracking for optimizations
+│   └── soundEffects.js  # Audio interactions
+│
+├── App.jsx              # Root layout, routing, and theme orchestration
+├── main.jsx             # React DOM entry point
 └── index.css            # Global styles and Tailwind configuration
 ```
 
@@ -90,7 +104,7 @@ To run this project locally, ensure you have **Node.js (v18+)** installed.
    ```
 
 3. **Configure Environment Variables:**
-   Create a `.env` file in the root directory for EmailJS integration:
+   Create a `.env` file in the root directory for EmailJS integration. You will need to get these keys from your EmailJS dashboard:
    ```env
    VITE_EMAILJS_SERVICE_ID=your_service_id
    VITE_EMAILJS_TEMPLATE_ID=your_template_id
@@ -107,23 +121,23 @@ To run this project locally, ensure you have **Node.js (v18+)** installed.
 
 ## 📦 Available Scripts
 
-- `npm run dev` - Starts the local development server.
-- `npm run build` - Compiles the application for production.
+- `npm run dev` - Starts the local development server with HMR.
+- `npm run build` - Compiles and minifies the application for production.
 - `npm run preview` - Previews the production build locally.
-- `npm run lint` - Runs ESLint to check for code quality.
+- `npm run lint` - Runs ESLint to check for code quality and formatting.
 
 ---
 
 ## 🌐 Deployment
 
-The application is configured and ready for modern hosting platforms like **Firebase Hosting** and **Vercel**.
+The application is configured and ready for modern hosting platforms like **Vercel** and **Firebase Hosting**.
 
-To deploy to Firebase:
+To deploy to Vercel via CLI:
 ```bash
-npm run build
-firebase login
-firebase deploy
+npm install -g vercel
+vercel --prod
 ```
+*Note: Make sure to add your EmailJS environment variables to your Vercel Project Settings before deploying!*
 
 ---
 
@@ -140,5 +154,5 @@ Feel free to reach out for collaborations or inquiries:
 ---
 
 <div align="center">
-  <b>If you found this project helpful, consider leaving a ⭐ on the repository!</b>
+  <b>If you found this project helpful or inspiring, consider leaving a ⭐ on the repository!</b>
 </div>
