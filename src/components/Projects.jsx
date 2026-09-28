@@ -105,7 +105,7 @@ const PROJECTS = [
     id: 'hemovia',
     name: 'Hemovia',
     category: 'Web',
-    image: 'https://i.ibb.co.com/yF9tF1CZ/Hemovia.png',
+    image: 'https://i.ibb.co.com/D2QqMJY/Hemovia.png',
     tech: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Express.js', 'Tailwind CSS'],
     description: 'Hemovia is a MERN-based blood donation management platform designed to connect donors, volunteers, and administrators efficiently. It enables donor registration, blood request creation, tracking, and quick donor search by blood group and location.',
     shortDesc: 'MERN-based blood donation platform with Stripe integration and location-based donor search.',
