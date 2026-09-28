@@ -123,7 +123,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
             <button
               type="button"
               onClick={toggleMobileMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-600 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-600 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none [-webkit-tap-highlight-color:transparent] transition-colors"
             >
               <span className="sr-only">Open main menu</span>
               {isMobileMenuOpen ? (
