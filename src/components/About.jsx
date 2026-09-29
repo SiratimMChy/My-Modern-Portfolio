@@ -185,7 +185,7 @@ export default function About() {
               <p>
                 Outside of web development, I actively solve problems on platforms like{' '}
                 <span className="text-slate-700 dark:text-slate-300 font-medium">HackerRank, Codeforces, CodeChef, and LeetCode</span>{' '}
-                because I always want to make my problem-solving skills sharper and better. Right now, I'm looking for a great team where I can bring my skills, learn from experienced developers, and grow as a software engineer.
+                because I always want to make my problem-solving skills sharper and better. Right now, I'm looking for a great team where I can apply my full-stack expertise and problem-solving skills to build scalable solutions, drive innovation, and grow alongside experienced developers.
               </p>
             </motion.div>
 
