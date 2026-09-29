@@ -61,16 +61,25 @@ The repository is modularly organized for maintainability and scalability. All c
 src/
 ├── components/          # UI Sections and Layout Components
 │   ├── About.jsx        # Personal introduction
-│   ├── Contact.jsx      # EmailJS integrated contact form
+│   ├── Contact.jsx      # Main contact section
+│   ├── ContactForm.jsx  # Extracted EmailJS form logic and UI
 │   ├── Education.jsx    # Academic history timeline
 │   ├── Experience.jsx   # Professional work timeline
 │   ├── Footer.jsx       # Global footer
 │   ├── Hero.jsx         # Landing section with animations
 │   ├── Navbar.jsx       # Responsive navigation (Mobile & Desktop)
+│   ├── ProjectCard.jsx  # Reusable UI for individual project showcase
 │   ├── ProjectDetail.jsx# Detailed modal/view for individual projects
-│   ├── Projects.jsx     # Showcase grid of projects
+│   ├── Projects.jsx     # Main showcase grid of projects
 │   ├── Skills.jsx       # Technical skills visualization
 │   └── ui/              # Reusable UI primitives (Buttons, Cards, Badges)
+│
+├── data/                # Extracted static data for cleaner components
+│   ├── contactData.js   # Contact info & social links
+│   ├── educationData.js # Degrees & academic projects
+│   ├── experienceData.js# Work history & responsibilities
+│   ├── projectsData.js  # Project details, tech stacks & links
+│   └── skillsData.js    # Technical skills & categories
 │
 ├── lib/                 # Third-party configurations
 │   └── utils.js         # clsx and tailwind-merge utilities
