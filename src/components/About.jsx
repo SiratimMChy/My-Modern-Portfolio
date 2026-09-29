@@ -182,7 +182,10 @@ export default function About() {
               </p>
               <p>
                 Outside of web development, I actively solve problems on platforms like{' '}
-                <span className="text-slate-900 dark:text-white font-bold">HackerRank, Codeforces, CodeChef, and LeetCode</span>{' '}
+                <span className="text-sky-600 dark:text-sky-400 font-bold">HackerRank</span>,{' '}
+                <span className="text-violet-600 dark:text-violet-400 font-bold">Codeforces</span>,{' '}
+                <span className="text-indigo-600 dark:text-indigo-400 font-bold">CodeChef</span>, and{' '}
+                <span className="text-cyan-600 dark:text-cyan-400 font-bold">LeetCode</span>{' '}
                 because I always want to make my problem-solving skills sharper and better. Right now, I'm looking for a great team where I can apply my full-stack expertise and problem-solving skills to build scalable solutions, drive innovation, and grow alongside experienced developers.
               </p>
             </motion.div>
