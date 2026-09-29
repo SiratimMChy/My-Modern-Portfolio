@@ -56,7 +56,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
       <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
         <div className="flex items-center justify-between h-14">
           
-          <div ref={logoRef} className="flex-shrink-0">
+          <div ref={logoRef} className="flex-shrink-0 -ml-2 lg:-ml-4">
             <a href="#" className="flex items-center">
               <img
                 src="/logo.png"
