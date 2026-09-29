@@ -1,62 +1,7 @@
 import { motion } from 'framer-motion'
 import { Card, CardHeader, CardTitle, CardContent } from './ui/card'
 
-const EXP = [
-  {
-    role: 'Web Developer',
-    company: 'Javed Paribahan (Transportation Company)',
-    type: 'Contract',
-    period: 'Nov 2025 - Mar 2026',
-    duration: '5 mos',
-    location: 'Sylhet, Bangladesh · Hybrid',
-    icon: 'bx-code-block',
-    color: '#38bdf8',
-    project: {
-      name: 'Bill Payment Statement Manager',
-      desc: 'A browser-based logistics and bill payment management system built for Javed Paribahan, supporting multi-company operations, automated billing, and real-time data tracking.',
-    },
-    summary: 'Designed and deployed a browser-based Transportation Management System to digitize logistics operations, automate billing, and replace manual record-keeping.',
-    resp: [
-      'Developed a browser-based system to digitize logistics transactions and automate billing.',
-      'Designed a single-file, zero-dependency web app using HTML, CSS, and JavaScript.',
-      'Implemented multi-company transaction tracking with dynamic forms for delivery records.',
-      'Integrated Google Sheets via Apps Script for real-time sync and Excel export with SheetJS.',
-      'Delivered fully responsive system with auto-save, validation, and real-time calculations.',
-    ],
-    tech: ['JavaScript', 'HTML5', 'CSS', 'Google Sheets', 'Apps Script', 'SheetJS', 'Data Management'],
-  },
-  {
-    role: 'Director of Finance And Administration',
-    company: 'The City Bank - Shunashar Outlet',
-    type: 'Full-time',
-    period: 'Oct 2020 - Oct 2021',
-    duration: '1 yr 1 mo',
-    location: 'Zakigonj, Sylhet · On-site',
-    icon: 'bx-bar-chart-alt-2',
-    color: '#818cf8',
-    project: null,
-    summary: 'Managed branch financial operations, administration, reporting, compliance, and staff supervision to ensure smooth daily performance while supporting management decisions through accurate financial analysis.',
-    resp: [
-      'Managed daily branch financial operations, balancing transactions and cash flow.',
-      'Prepared accurate financial reports, statements, and regulatory compliance documents.',
-      'Supervised employee attendance, discipline, productivity, and administrative performance standards.',
-      'Reviewed account openings, customer transactions, and operational team reports.',
-      'Supported management decisions through financial analysis and performance reporting.'
-    ],
-    tech: [
-      'Financial Management',
-      'Financial Reporting',
-      'Financial Analysis',
-      'Cost Control',
-      'Cash Flow Management',
-      'Banking Operations',
-      'Branch Administration',
-      'Staff Supervision',
-      'Compliance',
-      'Operations Management'
-    ],
-  },
-]
+import { EXP } from '../data/experienceData'
 
 function ExperienceCard({ exp, i }) {
   return (
