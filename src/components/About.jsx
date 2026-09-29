@@ -66,7 +66,7 @@ export default function About() {
             style={{ background: 'linear-gradient(90deg,#818cf8,#38bdf8)' }} />
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
 
           
           <motion.div
@@ -153,38 +153,36 @@ export default function About() {
           <div className="space-y-7 text-center lg:text-left order-1 lg:order-2">
 
             <motion.h3
-              className="text-xl sm:text-2xl font-bold text-slate-800 dark:text-slate-200"
+              className="text-xl sm:text-2xl font-extrabold text-slate-800 dark:text-slate-200"
               {...fade(0.1)}
             >
               Full Stack Web & Android Developer
             </motion.h3>
 
-            <motion.div className="space-y-4 text-slate-500 dark:text-slate-400 text-sm leading-[1.9] text-justify tracking-tight" {...fade(0.2)}>
+            <motion.div className="space-y-4 text-slate-700 dark:text-slate-300 font-medium text-sm leading-[1.9] text-justify tracking-tight" {...fade(0.2)}>
               <p>
                 I recently graduated with a B.Sc. in Computer Science and Engineering from{' '}
-                <span className="text-slate-700 dark:text-slate-300 font-medium">Leading University, Sylhet</span> (December 2025). I have a strong foundation in{' '}
-                <span className="text-slate-700 dark:text-slate-300 font-medium">JavaScript and Java</span>.
-                I specialize in building scalable, secure, and user-friendly applications across both web and mobile platforms, utilizing modern technologies like the{' '}
-                <span className="text-slate-700 dark:text-slate-300 font-medium">MERN stack</span>,{' '}
-                Next.js, Android, Firebase, and RESTful APIs.
+                <span className="text-slate-900 dark:text-white font-bold">Leading University, Sylhet</span>. I have a strong foundation in{' '}
+                <span className="text-slate-900 dark:text-white font-bold">JavaScript and Java</span>, 
+                specializing in the{' '}
+                <span className="text-slate-900 dark:text-white font-bold">MERN stack</span>, 
+                Next.js, Android, and Firebase.
               </p>
               <p>
-                Recently, I worked as a Web Developer at{' '}
-                <span className="text-sky-600 dark:text-sky-400 font-medium">Javed Paribahan</span>,
-                where I built a system to help digitize their billing process. Along with this, I have built several full-stack projects, such as a{' '}
-                <span className="text-violet-600 dark:text-violet-400 font-medium">personal finance tracker with a smart AI advisor</span>,
-                an{' '}
-                <span className="text-sky-600 dark:text-sky-400 font-medium">AI-powered travel booking site</span>,{' '}
-                and a{' '}
-                <span className="text-violet-600 dark:text-violet-400 font-medium">blood donation platform</span>.
-                As a third-year academic project, I developed a{' '}
-                <span className="text-sky-600 dark:text-sky-400 font-medium">women's safety Android app</span>{' '}
-                featuring real-time location sharing and emergency SOS alerts.
-                Through these experiences, I learned how to integrate AI features, handle databases securely, and build reliable cross-platform solutions.
+                During university, I led development teams for my major academic projects. For my third-year Android development project, I built a Java-based women's safety app called{' '}
+                <span className="text-sky-600 dark:text-sky-400 font-bold">She</span>. 
+                For my fourth-year web development project, I created a collaborative platform called{' '}
+                <span className="text-violet-600 dark:text-violet-400 font-bold">ClassMate</span>. 
+                I earned an A+ grade for both, and my work on ClassMate earned me strong personal and team recommendations from my supervisor. Professionally, I recently worked as a Web Developer at{' '}
+                <span className="text-sky-600 dark:text-sky-400 font-bold">Javed Paribahan</span>{' '}
+                to digitize their billing process. I have also built several full-stack projects, including{' '}
+                <span className="text-violet-600 dark:text-violet-400 font-bold">Cashnivo</span>, a personal finance tracker with a smart AI advisor;{' '}
+                <span className="text-sky-600 dark:text-sky-400 font-bold">Nevora</span>, an AI-powered travel guide; and{' '}
+                <span className="text-violet-600 dark:text-violet-400 font-bold">Hemovia</span>, a comprehensive blood donation platform. Through these experiences, I learned how to integrate AI features, handle databases securely, manage teams, and build reliable applications.
               </p>
               <p>
                 Outside of web development, I actively solve problems on platforms like{' '}
-                <span className="text-slate-700 dark:text-slate-300 font-medium">HackerRank, Codeforces, CodeChef, and LeetCode</span>{' '}
+                <span className="text-slate-900 dark:text-white font-bold">HackerRank, Codeforces, CodeChef, and LeetCode</span>{' '}
                 because I always want to make my problem-solving skills sharper and better. Right now, I'm looking for a great team where I can apply my full-stack expertise and problem-solving skills to build scalable solutions, drive innovation, and grow alongside experienced developers.
               </p>
             </motion.div>
