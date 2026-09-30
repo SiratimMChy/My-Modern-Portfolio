@@ -5,11 +5,25 @@ import { Button } from './ui/button'
 import { SiNextdotjs, SiExpress } from 'react-icons/si'
 
 export default function ProjectCard({ project, onClick }) {
+  const handleCardKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      onClick(project)
+    }
+  }
+
+  const handleLinkKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      e.stopPropagation()
+      e.currentTarget.click()
+    }
+  }
+
   return (
     <motion.div
-      className="h-full w-full cursor-pointer max-w-[400px] mx-auto"
+      className="h-full w-full max-w-[400px] mx-auto group/card"
       whileHover={{ y: -4, transition: { duration: 0.2 } }}
-      onClick={() => onClick(project)}
     >
       <Card className="group h-full w-full relative rounded-xl overflow-hidden bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 flex flex-col transition-colors hover:border-slate-300 dark:hover:border-slate-700">
         <div className="relative flex-shrink-0 overflow-hidden h-52 w-full bg-[#EBE8E0] dark:bg-slate-900">
@@ -32,7 +46,15 @@ export default function ProjectCard({ project, onClick }) {
           <div className="mb-3">
             <div className="flex items-start justify-between gap-2">
               <h3 className="text-sm font-black leading-tight text-slate-900 dark:text-white">
-                {project.name}
+                <button
+                  type="button"
+                  onClick={() => onClick(project)}
+                  onKeyDown={handleCardKeyDown}
+                  className="focus:outline-none after:absolute after:inset-0 text-left cursor-pointer focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-900 rounded-sm"
+                  aria-label={`View details for ${project.name}`}
+                >
+                  {project.name}
+                </button>
               </h3>
               <Badge
                 variant="secondary"
@@ -174,7 +196,7 @@ export default function ProjectCard({ project, onClick }) {
             )}
           </div>
 
-          <div className="flex gap-2 mt-auto">
+          <div className="flex gap-2 mt-auto relative z-10">
             {project.category !== 'Mobile' && (
               <motion.div
                 className="flex-1"
@@ -197,6 +219,7 @@ export default function ProjectCard({ project, onClick }) {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
+                      onKeyDown={handleLinkKeyDown}
                     >
                       <i className="mr-1 text-xs bx bx-link-external" /> Live Demo
                     </a>
@@ -230,6 +253,7 @@ export default function ProjectCard({ project, onClick }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
+                    onKeyDown={handleLinkKeyDown}
                   >
                     <i className="mr-1 text-xs bx bxl-github" /> Source Code
                   </a>
