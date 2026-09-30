@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import ProjectDetail from './ProjectDetail'
 import ProjectCard from './ProjectCard'
-import { Button } from './ui/button'
-import { Badge } from './ui/badge'
-import { Card, CardContent } from './ui/card'
+import { Button } from '../ui/button'
+import { Badge } from '../ui/badge'
+import { Card, CardContent } from '../ui/card'
 import { SiNextdotjs, SiExpress } from 'react-icons/si'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
@@ -12,7 +12,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
-import { PROJECTS, CATEGORIES } from '../data/projectsData'
+import { PROJECTS, CATEGORIES } from '../../data/projectsData'
 
 const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } }
 const cardVar = {

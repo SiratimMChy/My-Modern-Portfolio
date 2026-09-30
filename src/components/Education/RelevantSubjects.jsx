@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import { Card } from './ui/card'
-import { SUBJECTS } from '../data/educationData'
+import { Card } from '../ui/card'
+import { SUBJECTS } from '../../data/educationData'
 
 const gradeStyle = g => {
   if (g === 'A+') return { color: '#34d399', bg: 'rgba(52,211,153,0.1)',  border: 'rgba(52,211,153,0.25)' }

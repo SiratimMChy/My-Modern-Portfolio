@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
-import { Button } from './ui/button'
-import { Badge } from './ui/badge'
+import { Button } from '../ui/button'
+import { Badge } from '../ui/badge'
 import { SiNextdotjs, SiExpress } from 'react-icons/si'
 import { useEffect } from 'react'
-import { getTechConfig } from '../lib/techConfig'
+import { getTechConfig } from '../../lib/techConfig'
 
 const ProjectDetail = ({ project, onClose }) => {
   if (!project) return null

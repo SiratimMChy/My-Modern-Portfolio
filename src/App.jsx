@@ -10,11 +10,11 @@ gsap.registerPlugin(ScrollTrigger)
 
 const Hero = lazy(() => import('./components/Hero'))
 const About = lazy(() => import('./components/About'))
-const Skills = lazy(() => import('./components/Skills'))
-const Education = lazy(() => import('./components/Education'))
+const Skills = lazy(() => import('./components/Skills/Skills'))
+const Education = lazy(() => import('./components/Education/Education'))
 const Experience = lazy(() => import('./components/Experience'))
-const Projects = lazy(() => import('./components/Projects'))
-const Contact = lazy(() => import('./components/Contact'))
+const Projects = lazy(() => import('./components/Projects/Projects'))
+const Contact = lazy(() => import('./components/Contact/Contact'))
 const Footer = lazy(() => import('./components/Footer'))
 
 

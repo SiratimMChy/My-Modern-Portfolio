@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
-import { Card, CardContent } from './ui/card'
-import { Badge } from './ui/badge'
-import { Button } from './ui/button'
+import { Card, CardContent } from '../ui/card'
+import { Badge } from '../ui/badge'
+import { Button } from '../ui/button'
 import ProjectTechTags from './ProjectTechTags'
 
 export default function ProjectCard({ project, onClick }) {
