@@ -25,7 +25,7 @@ This portfolio is built to demonstrate real-world implementation of modern front
 
 ## ✨ Key Features
 
-- **Responsive & Accessible UI:** Designed with a mobile-first approach using Tailwind CSS to ensure a consistent experience across all devices.
+- **Responsive & Accessible UI:** Designed with a mobile-first approach using Tailwind CSS. Fully keyboard navigable with semantic HTML and custom Enter/Space event handlers for interactive elements.
 - **Dynamic Theming:** Seamless system-aware dark and light mode toggle.
 - **Optimized Animations:** Uses Framer Motion for declarative component transitions and GSAP for complex scroll-driven animations.
 - **Performance Focused:** Implements lazy loading and optimized asset delivery for faster initial page loads.
@@ -61,18 +61,26 @@ The repository is modularly organized for maintainability and scalability. All c
 src/
 ├── components/          # UI Sections and Layout Components
 │   ├── About.jsx        # Personal introduction
-│   ├── Contact.jsx      # Main contact section
-│   ├── ContactForm.jsx  # Extracted EmailJS form logic and UI
-│   ├── Education.jsx    # Academic history timeline
+│   ├── Contact/         # Contact section
+│   │   ├── Contact.jsx
+│   │   └── ContactForm.jsx
+│   ├── Education/       # Academic timeline & subjects
+│   │   ├── Education.jsx
+│   │   ├── AcademicProjects.jsx
+│   │   └── RelevantSubjects.jsx
 │   ├── Experience.jsx   # Professional work timeline
 │   ├── Footer.jsx       # Global footer
 │   ├── Hero.jsx         # Landing section with animations
-│   ├── Navbar.jsx       # Responsive navigation (Mobile & Desktop)
-│   ├── ProjectCard.jsx  # Reusable UI for individual project showcase
-│   ├── ProjectDetail.jsx# Detailed modal/view for individual projects
-│   ├── Projects.jsx     # Main showcase grid of projects
-│   ├── Skills.jsx       # Technical skills visualization
-│   └── ui/              # Reusable UI primitives (Buttons, Cards, Badges)
+│   ├── Navbar.jsx       # Responsive navigation
+│   ├── Projects/        # Portfolio showcase
+│   │   ├── Projects.jsx
+│   │   ├── ProjectCard.jsx
+│   │   ├── ProjectDetail.jsx
+│   │   └── ProjectTechTags.jsx
+│   ├── Skills/          # Technical skills
+│   │   ├── Skills.jsx
+│   │   └── SkillCategoryCard.jsx
+│   └── ui/              # Reusable UI primitives
 │
 ├── data/                # Extracted static data for cleaner components
 │   ├── contactData.js   # Contact info & social links
@@ -81,7 +89,8 @@ src/
 │   ├── projectsData.js  # Project details, tech stacks & links
 │   └── skillsData.js    # Technical skills & categories
 │
-├── lib/                 # Third-party configurations
+├── lib/                 # Shared utilities and configurations
+│   ├── techConfig.js    # Centralized UI configuration for tech stack badges
 │   └── utils.js         # clsx and tailwind-merge utilities
 │
 ├── utils/               # Helper functions and logic handlers
@@ -93,6 +102,52 @@ src/
 ├── App.jsx              # Root layout, routing, and theme orchestration
 ├── main.jsx             # React DOM entry point
 └── index.css            # Global styles and Tailwind configuration
+```
+
+### ⚙️ Component Flow & Architecture
+
+```mermaid
+graph TD
+    %% Global & Layout
+    A["App.jsx (Root)"] --> Layout["Layout (Navbar & Footer)"]
+    A --> Utils["Global Utils<br/>(GSAP, Lenis, Cursor)"]
+    A --> Sections{"Lazy Loaded<br/>Sections"}
+    
+    %% Sections
+    Sections --> Hero["Hero"]
+    Sections --> About["About"]
+    Sections --> Projects["Projects/"]
+    Sections --> Skills["Skills/"]
+    Sections --> Education["Education/"]
+    Sections --> Contact["Contact/"]
+    
+    %% Sub-components
+    Projects --> PC["ProjectCard"]
+    Projects --> PD["ProjectDetail Modal"]
+    Skills --> SC["SkillCategoryCard"]
+    Education --> AP["AcademicProjects"]
+    Education --> RS["RelevantSubjects"]
+    Contact --> CF["ContactForm (EmailJS)"]
+    
+    %% Data & Config
+    Data[("src/data/<br/>(Static Data)")] -. "Feeds Data" .-> Projects
+    Data -. "Feeds Data" .-> Skills
+    Data -. "Feeds Data" .-> Education
+    Data -. "Feeds Data" .-> Contact
+    
+    Config["src/lib/techConfig.js"] -. "UI Config" .-> PC
+    Config -. "UI Config" .-> PD
+    Config -. "UI Config" .-> SC
+    
+    %% Shared UI
+    UI["src/components/ui/<br/>(Buttons, Cards, Badges)"] -. "Used By" .-> Sections
+    
+    %% Styling
+    style A fill:#4F46E5,stroke:#fff,stroke-width:2px,color:#fff
+    style Sections fill:#D97706,stroke:#fff,stroke-width:2px,color:#fff
+    style Data fill:#2563EB,stroke:#fff,stroke-width:2px,color:#fff
+    style Config fill:#059669,stroke:#fff,stroke-width:2px,color:#fff
+    style UI fill:#9333EA,stroke:#fff,stroke-width:2px,color:#fff
 ```
 
 ---
