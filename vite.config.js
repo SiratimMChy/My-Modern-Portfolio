@@ -20,10 +20,10 @@ export default defineConfig({
           'components': [
             './src/components/Hero.jsx',
             './src/components/About.jsx',
-            './src/components/Skills.jsx',
-            './src/components/Projects.jsx',
-            './src/components/Education.jsx',
-            './src/components/Contact.jsx',
+            './src/components/Skills/Skills.jsx',
+            './src/components/Projects/Projects.jsx',
+            './src/components/Education/Education.jsx',
+            './src/components/Contact/Contact.jsx',
             './src/components/Footer.jsx',
             './src/components/Navbar.jsx'
           ],
