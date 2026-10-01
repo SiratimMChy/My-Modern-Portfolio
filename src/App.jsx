@@ -16,6 +16,7 @@ const Experience = lazy(() => import('./components/Experience'))
 const Projects = lazy(() => import('./components/Projects/Projects'))
 const Contact = lazy(() => import('./components/Contact/Contact'))
 const Footer = lazy(() => import('./components/Footer'))
+const AiChatbot = lazy(() => import('./components/AiChatbot'))
 
 
 const LoadingSpinner = () => (
@@ -137,6 +138,10 @@ function App() {
       
       <Suspense fallback={<LoadingSpinner />}>
         <Footer />
+      </Suspense>
+
+      <Suspense fallback={null}>
+        <AiChatbot />
       </Suspense>
     </div>
   )

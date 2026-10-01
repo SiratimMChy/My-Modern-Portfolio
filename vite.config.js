@@ -25,7 +25,8 @@ export default defineConfig({
             './src/components/Education/Education.jsx',
             './src/components/Contact/Contact.jsx',
             './src/components/Footer.jsx',
-            './src/components/Navbar.jsx'
+            './src/components/Navbar.jsx',
+            './src/components/AiChatbot.jsx'
           ],
           'ui-components': [
             './src/components/ui/button.jsx',

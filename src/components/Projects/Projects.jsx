@@ -107,7 +107,7 @@ export default function Projects() {
               spaceBetween={24}
               slidesPerView={1}
               pagination={{ clickable: true }}
-              navigation={false}
+              navigation={true}
               autoplay={{ delay: 5000, disableOnInteraction: false }}
               breakpoints={{
                 640: { slidesPerView: 2 },
@@ -115,8 +115,10 @@ export default function Projects() {
               }}
               style={{
                 '--swiper-pagination-color': '#38bdf8',
+                '--swiper-navigation-color': '#38bdf8',
+                '--swiper-navigation-size': '20px',
               }}
-              className="px-2 pt-6 pb-6 [&_.swiper-wrapper]:items-stretch [&_.swiper-pagination]:!relative [&_.swiper-pagination]:!mt-6 sm:[&_.swiper-pagination]:!mt-8"
+              className="px-2 pt-6 pb-6 [&_.swiper-wrapper]:items-stretch [&_.swiper-pagination]:!relative [&_.swiper-pagination]:!mt-6 sm:[&_.swiper-pagination]:!mt-8 [&_.swiper-button-next]:!right-0 [&_.swiper-button-prev]:!left-0"
             >
               {filtered.map((project) => (
                 <SwiperSlide key={project.id} className="h-auto flex">

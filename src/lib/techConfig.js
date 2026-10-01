@@ -23,6 +23,7 @@ export const getTechConfig = (tech) => {
     'MySQL': { icon: 'bx-data', iconType: 'boxicon', color: 'text-blue-700', hex: '#4479A1', bg: 'bg-blue-50 dark:bg-blue-900/20', border: 'border-blue-200 dark:border-blue-800' },
     'Bootstrap': { icon: 'bxl-bootstrap', iconType: 'boxicon', color: 'text-purple-600', hex: '#7952B3', bg: 'bg-purple-50 dark:bg-purple-900/20', border: 'border-purple-200 dark:border-purple-800' },
     'Groq AI': { icon: 'bx-brain', iconType: 'boxicon', color: 'text-purple-500', hex: '#f55036', bg: 'bg-purple-50 dark:bg-purple-900/20', border: 'border-purple-200 dark:border-purple-800' },
+    'Cloudinary': { icon: 'bx-cloud-upload', iconType: 'boxicon', color: 'text-blue-500', hex: '#3448C5', bg: 'bg-blue-50 dark:bg-blue-900/20', border: 'border-blue-200 dark:border-blue-800' },
     'React Router': { icon: 'bx-sitemap', iconType: 'boxicon', color: 'text-red-500', hex: '#CA4245', bg: 'bg-red-50 dark:bg-red-900/20', border: 'border-red-200 dark:border-red-800' },
     'Framer Motion': { icon: 'bx-play-circle', iconType: 'boxicon', color: 'text-pink-500', hex: '#0055FF', bg: 'bg-pink-50 dark:bg-pink-900/20', border: 'border-pink-200 dark:border-pink-800' },
     'GSAP': { icon: 'bx-play-circle', iconType: 'boxicon', color: 'text-green-500', hex: '#88CE02', bg: 'bg-green-50 dark:bg-green-900/20', border: 'border-green-200 dark:border-green-800' },

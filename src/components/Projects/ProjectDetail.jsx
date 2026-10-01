@@ -70,29 +70,29 @@ const ProjectDetail = ({ project, onClose }) => {
         
         <div className="sticky top-0 bg-gradient-to-r from-sky-500 via-sky-600 to-indigo-600 p-6 text-white z-10">
           <div className="flex items-center justify-between gap-4">
-            <div className="flex items-center gap-4 flex-1">
+            <div className="flex items-center flex-wrap sm:flex-nowrap gap-3 sm:gap-4 flex-1">
               <motion.div 
-                className="p-3 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg flex-shrink-0"
+                className="w-12 h-12 flex items-center justify-center bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg flex-shrink-0"
                 whileHover={{ scale: 1.05, rotate: 5 }}
               >
                 <i className="bx bx-code-alt text-2xl text-white"></i>
               </motion.div>
-              <div className="flex-1">
-                <motion.h1 
-                  className="text-3xl font-bold mb-2"
-                  variants={itemVariants}
-                >
-                  {project.name}
-                </motion.h1>
-                <motion.div 
-                  className="flex items-center gap-2"
-                  variants={itemVariants}
-                >
-                  <Badge className="px-3 py-1 bg-white/20 backdrop-blur-sm border border-white/30 text-xs font-medium rounded-lg">
-                    {project.category}
-                  </Badge>
-                </motion.div>
-              </div>
+              
+              <motion.h1 
+                className="text-2xl sm:text-3xl font-bold tracking-tight"
+                variants={itemVariants}
+              >
+                {project.name}
+              </motion.h1>
+              
+              <motion.div 
+                className="flex items-center sm:ml-2"
+                variants={itemVariants}
+              >
+                <Badge className="px-3 py-1 bg-white/20 hover:bg-white/30 transition-colors backdrop-blur-sm border border-white/30 text-[10px] sm:text-xs font-semibold rounded-md uppercase tracking-wider shadow-sm">
+                  {project.category}
+                </Badge>
+              </motion.div>
             </div>
             <Button
               onClick={onClose}
@@ -109,33 +109,22 @@ const ProjectDetail = ({ project, onClose }) => {
         <div className="p-6 space-y-8">
           
           <motion.div 
-            className="flex flex-col lg:flex-row gap-6"
+            className="flex flex-col lg:flex-row gap-6 lg:gap-10"
             variants={itemVariants}
           >
             
-            <div className="lg:w-1/2">
-              <div className="relative overflow-hidden rounded-lg">
+            <div className="lg:w-7/12">
+              <div className="relative overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800/50 flex items-center justify-center border border-border">
                 <img 
                   src={project.image} 
                   alt={project.name}
-                  className="w-full h-64 md:h-80 lg:h-96 object-cover"
+                  className="w-full h-auto max-h-[450px] object-contain"
                 />
-                <div className="absolute top-4 right-4">
-                  <Badge 
-                    className={`px-3 py-1.5 backdrop-blur-xl border text-sm font-semibold rounded-lg ${
-                      project.status === 'Live' 
-                        ? 'bg-emerald-500/90 text-white border-emerald-400/50' 
-                        : 'bg-amber-500/90 text-white border-amber-400/50'
-                    }`}
-                  >
-                    {project.status}
-                  </Badge>
-                </div>
               </div>
             </div>
 
             
-            <div className="lg:w-1/2 flex flex-col justify-center">
+            <div className="lg:w-5/12 flex flex-col justify-center">
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -281,13 +270,13 @@ const ProjectDetail = ({ project, onClose }) => {
 
           
           <motion.div 
-            className="flex flex-col gap-4 pt-6 border-t border-border"
+            className="flex flex-col sm:flex-row gap-4 pt-6 border-t border-border"
             variants={itemVariants}
           >
             {project.liveLink && (
               <Button
                 onClick={() => window.open(project.liveLink, '_blank')}
-                className="w-full bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-400 hover:to-indigo-400 text-white rounded-lg"
+                className="w-full sm:flex-1 bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-400 hover:to-indigo-400 text-white rounded-lg"
                 asChild
               >
                 <motion.button
@@ -303,7 +292,7 @@ const ProjectDetail = ({ project, onClose }) => {
             <Button
               onClick={() => window.open(project.githubLink, '_blank')}
               variant="outline"
-              className="w-full rounded-lg"
+              className="w-full sm:flex-1 rounded-lg"
               asChild
             >
               <motion.button

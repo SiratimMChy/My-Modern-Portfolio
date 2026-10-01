@@ -79,7 +79,7 @@ export default function Hero() {
       <div className="absolute top-0 inset-x-0 h-px
         bg-gradient-to-r from-transparent via-sky-400/30 dark:via-sky-500/25 to-transparent" />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-28 pt-28">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 pt-32 pb-12 lg:pb-16">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-0">
 
           <div className="flex-1 space-y-8 text-center lg:text-left">
@@ -224,7 +224,7 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="relative w-[260px] sm:w-[300px] lg:w-[340px]">
+            <div className="relative w-[260px] sm:w-[300px] lg:w-[340px] max-[360px]:scale-[0.8] max-[360px]:origin-center transition-transform duration-300">
 
               <motion.div
                 className="relative rounded-2xl overflow-hidden shadow-2xl"
@@ -299,11 +299,11 @@ export default function Hero() {
               </motion.div>
 
               <motion.div
-                className="absolute -bottom-5 -right-4 flex items-center gap-1.5 px-3 py-2 rounded-xl shadow-xl shadow-slate-200/60 dark:shadow-xl
+                className="absolute -bottom-8 -right-4 flex items-center gap-1.5 px-3 py-2 rounded-xl shadow-xl shadow-slate-200/60 dark:shadow-xl
                   bg-white dark:bg-[#0d1117] border border-slate-200 dark:border-slate-800"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.4 }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: [0, -5, 0] }}
+                transition={{ opacity: { delay: 1.4 }, y: { delay: 1.4, duration: 4.5, repeat: Infinity, ease: 'easeInOut' } }}
               >
                 {TECH.slice(0, 4).map(t => (
                   <i key={t.label} className={`bx ${t.icon} text-lg`} style={{ color: t.color }} title={t.label} />
@@ -325,5 +325,3 @@ export default function Hero() {
     </main>
   )
 }
-
-

@@ -22,7 +22,7 @@ export default function ProjectCard({ project, onClick }) {
 
   return (
     <motion.div
-      className="h-full w-full max-w-[400px] mx-auto group/card"
+      className="h-full w-full group/card"
       whileHover={{ y: -4, transition: { duration: 0.2 } }}
     >
       <Card className="group h-full w-full relative rounded-xl overflow-hidden bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 flex flex-col transition-colors hover:border-slate-300 dark:hover:border-slate-700">
@@ -68,7 +68,7 @@ export default function ProjectCard({ project, onClick }) {
               style={{ background: project.color }}
             />
           </div>
-          <p className="mb-4 text-xs leading-relaxed text-slate-500 dark:text-slate-400 line-clamp-2">
+          <p className="mb-4 text-xs leading-relaxed text-slate-500 dark:text-slate-400 line-clamp-3">
             {project.shortDesc}
           </p>
 
