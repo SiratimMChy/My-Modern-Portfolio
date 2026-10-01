@@ -25,11 +25,11 @@ This portfolio is built to demonstrate real-world implementation of modern front
 
 ## ✨ Key Features
 
-- **Responsive & Accessible UI:** Designed with a mobile-first approach using Tailwind CSS. Fully keyboard navigable with semantic HTML and custom Enter/Space event handlers for interactive elements.
-- **Dynamic Theming:** Seamless system-aware dark and light mode toggle.
-- **Optimized Animations:** Uses Framer Motion for declarative component transitions and GSAP for complex scroll-driven animations.
-- **Performance Focused:** Implements lazy loading and optimized asset delivery for faster initial page loads.
-- **Interactive Contact Integration:** Client-side email handling powered by EmailJS, providing real-time feedback without a dedicated backend.
+- **Groq-Powered AI Assistant:** A custom intelligent chatbot (`gpt-oss-120b`) integrated directly into the portfolio that acts as a professional assistant to answer questions about my background, skills, and projects.
+- **Responsive & Accessible UI:** Designed with a mobile-first approach using Tailwind CSS. Fully keyboard navigable with semantic HTML and custom event handlers for interactive elements.
+- **Advanced Animations & Particles:** Features reusable particle animations (`BackgroundParticles`), floating 3D tech stack cards, and declarative component transitions using Framer Motion and GSAP.
+- **Dynamic Theming:** Seamless system-aware dark and light mode toggle with customized glassmorphism aesthetics.
+- **Interactive Project Showcase:** Includes a detailed Swiper-powered project carousel and dynamic modals for deeper case study exploration.
 - **Custom Utilities:** Features modular utilities for smooth scrolling (Lenis), custom cursor tracking, and performance monitoring.
 
 ---
@@ -39,15 +39,20 @@ This portfolio is built to demonstrate real-world implementation of modern front
 ### Frontend & Build Tools
 - **React 18** (Functional Components & Hooks)
 - **Vite 5** (Fast HMR & Optimized Build)
-- **Tailwind CSS 3.4** (Utility-first Styling)
+- **Tailwind CSS 3.4** (Utility-first Styling & Glassmorphism)
+
+### AI & Integrations
+- **Groq API (`groq-sdk`)** (Ultra-fast LLM inference)
+- **React Markdown** (Rendering AI responses)
+- **EmailJS** (`@emailjs/browser` for form submissions)
 
 ### State Management & Animation
 - **Framer Motion 12** (Micro-interactions & page transitions)
 - **GSAP 3** (ScrollTrigger & complex timelines)
+- **Swiper** (Modern touch-slider for project galleries)
 - **Lenis** (Smooth Scrolling)
 
 ### Utilities & Packages
-- **EmailJS** (`@emailjs/browser` for form submissions)
 - **Radix UI** / **Lucide React** / **Boxicons** (Icons & accessible primitives)
 - **clsx & tailwind-merge** (Dynamic class handling)
 
@@ -60,6 +65,7 @@ The repository is modularly organized for maintainability and scalability. All c
 ```text
 src/
 ├── components/          # UI Sections and Layout Components
+│   ├── AiChatbot.jsx    # Groq-powered AI Assistant Chatbot
 │   ├── About.jsx        # Personal introduction
 │   ├── Contact/         # Contact section
 │   │   ├── Contact.jsx
@@ -75,12 +81,12 @@ src/
 │   ├── Projects/        # Portfolio showcase
 │   │   ├── Projects.jsx
 │   │   ├── ProjectCard.jsx
-│   │   ├── ProjectDetail.jsx
-│   │   └── ProjectTechTags.jsx
+│   │   └── ProjectDetail.jsx
 │   ├── Skills/          # Technical skills
 │   │   ├── Skills.jsx
 │   │   └── SkillCategoryCard.jsx
 │   └── ui/              # Reusable UI primitives
+│       └── BackgroundParticles.jsx
 │
 ├── data/                # Extracted static data for cleaner components
 │   ├── contactData.js   # Contact info & social links
@@ -90,6 +96,7 @@ src/
 │   └── skillsData.js    # Technical skills & categories
 │
 ├── lib/                 # Shared utilities and configurations
+│   ├── chatbotPrompt.js # AI persona and system prompt configuration
 │   ├── techConfig.js    # Centralized UI configuration for tech stack badges
 │   └── utils.js         # clsx and tailwind-merge utilities
 │
