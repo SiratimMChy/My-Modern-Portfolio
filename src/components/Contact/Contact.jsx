@@ -3,6 +3,7 @@ import { Card } from '../ui/card'
 import { Button } from '../ui/button'
 import ContactForm from './ContactForm'
 import { CONTACT_INFO, SOCIALS } from '../../data/contactData'
+import BackgroundParticles from '../ui/BackgroundParticles'
 
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -15,6 +16,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="relative pt-4 pb-8 sm:pt-8 sm:pb-12 overflow-hidden bg-[#F5F5F0]/50 dark:bg-[#060810] transition-colors duration-300">
+      <BackgroundParticles />
 
       <div className="pointer-events-none absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-sky-200/25 dark:bg-sky-600/8 blur-[110px]" />
       <div className="pointer-events-none absolute -bottom-32 -right-32 w-[400px] h-[400px] rounded-full bg-violet-200/25 dark:bg-violet-700/8 blur-[100px]" />

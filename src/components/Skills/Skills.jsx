@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { gsap } from 'gsap'
 import { ModernButton } from '../ui/modern-button'
 import SkillCategoryCard from './SkillCategoryCard'
+import BackgroundParticles from '../ui/BackgroundParticles'
 
 import { CATEGORIES } from '../../data/skillsData'
 
@@ -27,25 +28,7 @@ const containerVariants = {
 
 export default function Skills() {
   const sectionRef = useRef(null)
-  const particlesRef = useRef(null)
-
   useEffect(() => {
-
-    if (particlesRef.current) {
-      const particles = particlesRef.current.querySelectorAll('.skill-particle')
-      particles.forEach((particle, index) => {
-        gsap.to(particle, {
-          y: -20 - Math.random() * 30,
-          x: -10 + Math.random() * 20,
-          opacity: 0,
-          duration: 3 + Math.random() * 2,
-          delay: index * 0.1,
-          repeat: -1,
-          ease: 'sine.inOut',
-        })
-      })
-    }
-
 
     const badgeIcons = sectionRef.current?.querySelectorAll('.category-badge-icon')
     badgeIcons?.forEach((icon, index) => {
@@ -124,20 +107,7 @@ export default function Skills() {
         transition-colors duration-300"
     >
       
-      <div ref={particlesRef} className="absolute inset-0 pointer-events-none">
-        {[...Array(8)].map((_, i) => (
-          <div
-            key={i}
-            className="skill-particle absolute w-1 h-1 rounded-full"
-            style={{
-              background: `hsl(${200 + i * 20}, 100%, 60%)`,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              opacity: 0.3,
-            }}
-          />
-        ))}
-      </div>
+      <BackgroundParticles />
 
       
       <div className="pointer-events-none absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full
