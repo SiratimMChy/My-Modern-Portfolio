@@ -13,9 +13,17 @@ const groq = new Groq({
 
 const AiChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState([
-    { role: 'assistant', content: "Hi! I'm Siratim's AI Assistant. How can I help you today?" }
-  ]);
+  const [messages, setMessages] = useState(() => {
+    const saved = localStorage.getItem('chatbot_messages');
+    if (saved) {
+      try { return JSON.parse(saved); } catch (e) {}
+    }
+    return [{ role: 'assistant', content: "Hi! I'm Siratim's AI Assistant. How can I help you today?" }];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('chatbot_messages', JSON.stringify(messages));
+  }, [messages]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
@@ -54,7 +62,7 @@ const AiChatbot = () => {
         messages: apiMessages,
         model: 'openai/gpt-oss-120b',
         temperature: 0.5,
-        max_tokens: 500,
+        max_tokens: 1024,
       });
 
       const aiResponse = completion.choices[0]?.message?.content || "I'm sorry, I couldn't process that. Please try again.";
@@ -100,7 +108,11 @@ const AiChatbot = () => {
             </div>
 
             {/* Messages Area */}
-            <div className="flex-1 overflow-y-auto overflow-x-hidden min-h-0 p-4 space-y-4 bg-slate-50 dark:bg-[#07090f] custom-scrollbar">
+            <div 
+              className="flex-1 overflow-y-auto overflow-x-hidden min-h-0 p-4 space-y-4 bg-slate-50 dark:bg-[#07090f] custom-scrollbar overscroll-contain touch-pan-y"
+              onWheel={(e) => e.stopPropagation()}
+              onTouchMove={(e) => e.stopPropagation()}
+            >
               {messages.map((msg, index) => (
                 <div key={index} className={`flex gap-2 w-full ${msg.role === 'user' ? 'justify-end' : 'justify-center'}`}>
                   {msg.role === 'assistant' && (
@@ -112,7 +124,7 @@ const AiChatbot = () => {
                     className={`rounded-2xl px-4 py-3 text-sm ${
                       msg.role === 'user' 
                         ? 'bg-indigo-500 text-white rounded-tr-sm max-w-[85%]' 
-                        : 'w-full max-w-full bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 rounded-tl-sm border border-slate-100 dark:border-slate-700 shadow-sm'
+                        : 'flex-1 min-w-0 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 rounded-tl-sm border border-slate-100 dark:border-slate-700 shadow-sm'
                     }`}
                   >
                     {msg.role === 'assistant' ? (
