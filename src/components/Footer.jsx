@@ -14,7 +14,7 @@ const NAV = [
 const SOCIALS = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/siratim-mustakim-chowdhury', icon: 'bxl-linkedin', color: '#0077b5' },
   { label: 'GitHub',   href: 'https://github.com/SiratimMChy',                         icon: 'bxl-github',   color: '#171515' },
-  { label: 'Email',    href: 'mailto:chowdhurysiratimmustakim@gmail.com',               icon: 'bx-envelope',  color: '#38bdf8' },
+  { label: 'Email',    href: 'mailto:chysiratimmustakim@gmail.com',               icon: 'bx-envelope',  color: '#38bdf8' },
 ]
 
 export default function Footer() {

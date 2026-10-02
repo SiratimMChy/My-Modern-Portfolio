@@ -28,4 +28,5 @@ export const SUBJECTS = [
   { name: 'Computer Networks',                grade: 'A+', icon: 'bxs-network-chart', color: '#818cf8' },
   { name: 'Java Programming',                 grade: 'A+', icon: 'bxl-java',          color: '#fb923c' },
   { name: 'Object Oriented Programming',      grade: 'A-', icon: 'bxs-cube-alt',      color: '#c084fc' },
+  { name: 'Artificial Intelligence',          grade: 'B+', icon: 'bx-brain',          color: '#f472b6' },
 ]

@@ -11,7 +11,7 @@
 **A modern, scalable, and responsive web portfolio designed to showcase my experience in full-stack development.**
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Website-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://siratim-portfolio.vercel.app/)
-[![Email](https://img.shields.io/badge/Email-Contact%20Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:chowdhurysiratimmustakim@gmail.com)
+[![Email](https://img.shields.io/badge/Email-Contact%20Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:chysiratimmustakim@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/siratim-mustakim-chowdhury)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SiratimMChy)
 
@@ -218,7 +218,7 @@ vercel --prod
 *Full Stack Web & Android Developer | MERN Stack Specialist*
 
 Feel free to reach out for collaborations or inquiries:
-- 📧 chowdhurysiratimmustakim@gmail.com
+- 📧 chysiratimmustakim@gmail.com
 - 💼 [LinkedIn](https://www.linkedin.com/in/siratim-mustakim-chowdhury)
 - 🐱 [GitHub](https://github.com/SiratimMChy)
 

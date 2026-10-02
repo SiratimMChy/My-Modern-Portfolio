@@ -19,7 +19,7 @@ function useParallax(strength = 0.012) {
   return { x: sx, y: sy }
 }
 
-const ROLES = ['Full Stack Web Developer', 'MERN Stack Developer', 'Android Developer (Java)']
+const ROLES = ['Full Stack Developer', 'MERN Stack Developer', 'Android Developer (Java)', 'AI/ML Enthusiast']
 
 const TECH = [
   { icon: 'bxl-react',      label: 'React',   color: '#38bdf8' },
@@ -33,7 +33,7 @@ const TECH = [
 const SOCIALS = [
   { icon: 'bxl-linkedin', href: 'https://www.linkedin.com/in/siratim-mustakim-chowdhury', label: 'LinkedIn' },
   { icon: 'bxl-github',   href: 'https://github.com/SiratimMChy',                         label: 'GitHub' },
-  { icon: 'bx-envelope',  href: 'mailto:chowdhurysiratimmustakim@gmail.com',               label: 'Email' },
+  { icon: 'bx-envelope',  href: 'mailto:chysiratimmustakim@gmail.com',               label: 'Email' },
 ]
 
 

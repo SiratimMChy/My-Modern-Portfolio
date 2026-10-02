@@ -51,7 +51,7 @@ export default function RelevantSubjects() {
           </div>
         </div>
 
-        <motion.div className="space-y-2.5" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }}>
+        <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }}>
           {SUBJECTS.map((s, i) => {
             const gs = gradeStyle(s.grade)
             return (

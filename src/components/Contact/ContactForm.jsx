@@ -33,7 +33,7 @@ export default function ContactForm() {
     if (!svcId || !tplId || !pubKey || svcId === 'your_service_id_here') {
       setStatus({
         type: 'error',
-        msg: 'Contact form not configured. Email me directly at chowdhurysiratimmustakim@gmail.com',
+        msg: 'Contact form not configured. Email me directly at chysiratimmustakim@gmail.com',
       })
       setLoading(false)
       return
@@ -58,7 +58,7 @@ export default function ContactForm() {
       console.error('EmailJS Error:', error)
       setStatus({
         type: 'error',
-        msg: 'Failed to send. Please email me directly at chowdhurysiratimmustakim@gmail.com',
+        msg: 'Failed to send. Please email me directly at chysiratimmustakim@gmail.com',
       })
     } finally {
       setLoading(false)

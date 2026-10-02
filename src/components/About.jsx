@@ -59,8 +59,8 @@ export default function About() {
           <h2 className="text-3xl sm:text-4xl font-black tracking-tight leading-[1.05]
             text-slate-900 dark:text-white"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            Who I{' '}
-            <span className='bg-gradient-to-r from-indigo-400 to-sky-400 bg-clip-text text-transparent'>Am</span>
+            Who Am{' '}
+            <span className='bg-gradient-to-r from-indigo-400 to-sky-400 bg-clip-text text-transparent'>I</span>
           </h2>
           <div className="mt-4 w-12 h-[3px] rounded-full"
             style={{ background: 'linear-gradient(90deg,#818cf8,#38bdf8)' }} />
@@ -156,7 +156,7 @@ export default function About() {
               className="text-xl sm:text-2xl font-extrabold text-slate-800 dark:text-slate-200"
               {...fade(0.1)}
             >
-              Full Stack Web & Android Developer
+              Full Stack & Android Developer
             </motion.h3>
 
             <motion.div className="space-y-4 text-slate-700 dark:text-slate-300 font-medium text-sm leading-[1.9] text-justify tracking-tight" {...fade(0.2)}>
