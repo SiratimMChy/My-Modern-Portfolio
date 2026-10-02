@@ -21,16 +21,15 @@
 
 ## 📌 Overview
 
-This portfolio is built to demonstrate real-world implementation of modern frontend technologies. It prioritizes user experience, accessibility, and performance while maintaining a clean and professional design aesthetic. 
+Welcome to my portfolio! I built this space not just to list my skills, but to showcase my passion for creating modern, high-performance web experiences. Every detail here—from the interactive animations to the custom AI assistant—was crafted with clean code, scalability, and an excellent user experience in mind. It's a true reflection of how I approach real-world software development.
 
-## ✨ Key Features
+## ✨ What Makes This Portfolio Special?
 
-- **Groq-Powered AI Assistant:** A custom intelligent chatbot (`gpt-oss-120b`) integrated directly into the portfolio that acts as a professional assistant to answer questions about my background, skills, and projects.
-- **Responsive & Accessible UI:** Designed with a mobile-first approach using Tailwind CSS. Fully keyboard navigable with semantic HTML and custom event handlers for interactive elements.
-- **Advanced Animations & Particles:** Features reusable particle animations (`BackgroundParticles`), floating 3D tech stack cards, and declarative component transitions using Framer Motion and GSAP.
-- **Dynamic Theming:** Seamless system-aware dark and light mode toggle with customized glassmorphism aesthetics.
-- **Interactive Project Showcase:** Includes a detailed Swiper-powered project carousel and dynamic modals for deeper case study exploration.
-- **Custom Utilities:** Features modular utilities for smooth scrolling (Lenis), custom cursor tracking, and performance monitoring.
+- **💬 Built-in AI Assistant:** I integrated a custom AI chatbot (powered by the incredibly fast **Groq API**) right into the site! You can chat with it to learn more about my background, skills, and projects in real-time.
+- **🌌 Immersive 3D & Animations:** Instead of a static page, I used **Framer Motion** and **GSAP** to add dynamic floating 3D cards, interactive particle backgrounds, and buttery-smooth scroll effects.
+- **📱 Responsive & Accessible:** Designed mobile-first using **Tailwind CSS**. It looks great on any screen size and is fully keyboard navigable because accessibility is a priority.
+- **🎨 Glassmorphism & Theming:** A sleek, modern UI with a seamless dark and light mode toggle that feels premium, polished, and easy on the eyes.
+- **🚀 Scalable Architecture:** Under the hood, the codebase is highly modular, DRY, and scalable. I’ve separated the static data from the UI components for effortless maintainability.
 
 ---
 
@@ -119,6 +118,8 @@ graph TD
     A["App.jsx (Root)"] --> Layout["Layout (Navbar & Footer)"]
     A --> Utils["Global Utils<br/>(GSAP, Lenis, Cursor)"]
     A --> Sections{"Lazy Loaded<br/>Sections"}
+    A -.-> AI["AiChatbot<br/>(Groq API)"]
+    A -.-> BG["BackgroundParticles<br/>(Global UI)"]
     
     %% Sections
     Sections --> Hero["Hero"]
@@ -155,6 +156,8 @@ graph TD
     style Data fill:#2563EB,stroke:#fff,stroke-width:2px,color:#fff
     style Config fill:#059669,stroke:#fff,stroke-width:2px,color:#fff
     style UI fill:#9333EA,stroke:#fff,stroke-width:2px,color:#fff
+    style AI fill:#0EA5E9,stroke:#fff,stroke-width:2px,color:#fff
+    style BG fill:#db2777,stroke:#fff,stroke-width:2px,color:#fff
 ```
 
 ---
