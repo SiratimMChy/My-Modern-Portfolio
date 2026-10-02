@@ -25,11 +25,11 @@ Welcome to my portfolio! I built this space not just to list my skills, but to s
 
 ## ✨ What Makes This Portfolio Special?
 
-- **💬 Built-in AI Assistant:** I integrated a custom AI chatbot (powered by the incredibly fast **Groq API**) right into the site! You can chat with it to learn more about my background, skills, and projects in real-time.
-- **🌌 Immersive 3D & Animations:** Instead of a static page, I used **Framer Motion** and **GSAP** to add dynamic floating 3D cards, interactive particle backgrounds, and buttery-smooth scroll effects.
-- **📱 Responsive & Accessible:** Designed mobile-first using **Tailwind CSS**. It looks great on any screen size and is fully keyboard navigable because accessibility is a priority.
-- **🎨 Glassmorphism & Theming:** A sleek, modern UI with a seamless dark and light mode toggle that feels premium, polished, and easy on the eyes.
-- **🚀 Scalable Architecture:** Under the hood, the codebase is highly modular, DRY, and scalable. I’ve separated the static data from the UI components for effortless maintainability.
+- **Built-in AI Assistant:** I integrated a custom AI chatbot (powered by the incredibly fast **Groq API**) right into the site! You can chat with it to learn more about my background, skills, and projects in real-time.
+- **Immersive 3D & Animations:** Instead of a static page, I used **Framer Motion** and **GSAP** to add dynamic floating 3D cards, interactive particle backgrounds, and buttery-smooth scroll effects.
+- **Responsive & Accessible:** Designed mobile-first using **Tailwind CSS**. It looks great on any screen size and is fully keyboard navigable because accessibility is a priority.
+- **Glassmorphism & Theming:** A sleek, modern UI with a seamless dark and light mode toggle that feels premium, polished, and easy on the eyes.
+- **Scalable Architecture:** Under the hood, the codebase is highly modular, DRY, and scalable. I’ve separated the static data from the UI components for effortless maintainability.
 
 ---
 
