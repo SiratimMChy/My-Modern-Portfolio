@@ -177,7 +177,7 @@ export default function About() {
                 <span className="text-sky-600 dark:text-sky-400 font-bold">Javed Paribahan</span>{' '}
                 to digitize their billing process. I have also built several full-stack projects, including{' '}
                 <span className="text-violet-600 dark:text-violet-400 font-bold">Cashnivo</span>, a personal finance tracker with a smart AI advisor;{' '}
-                <span className="text-sky-600 dark:text-sky-400 font-bold">Nevora</span>, an AI-powered travel guide; and{' '}
+                <span className="text-sky-600 dark:text-sky-400 font-bold">Navora</span>, an AI-powered travel guide; and{' '}
                 <span className="text-violet-600 dark:text-violet-400 font-bold">Hemovia</span>, a comprehensive blood donation platform. Through these experiences, I learned how to integrate AI features, handle databases securely, manage teams, and build reliable applications.
               </p>
               <p>
