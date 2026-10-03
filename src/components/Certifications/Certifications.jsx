@@ -15,7 +15,7 @@ export default function Certifications() {
           initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.6 }}>
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border border-pink-400/25 dark:border-pink-500/20 bg-pink-50 dark:bg-pink-500/5 text-pink-600 dark:text-pink-400 text-[10px] font-bold tracking-[0.18em] uppercase mb-5">
-            <i className="bx bx-certification text-sm" /> Credentials
+            <i className="bx bx-certification text-sm" /> Achievements
           </span>
           <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 dark:text-white"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
