@@ -13,6 +13,7 @@ const About = lazy(() => import('./components/About'))
 const Skills = lazy(() => import('./components/Skills/Skills'))
 const Education = lazy(() => import('./components/Education/Education'))
 const Experience = lazy(() => import('./components/Experience'))
+const Certifications = lazy(() => import('./components/Certifications/Certifications'))
 const Projects = lazy(() => import('./components/Projects/Projects'))
 const Contact = lazy(() => import('./components/Contact/Contact'))
 const Footer = lazy(() => import('./components/Footer'))
@@ -122,6 +123,10 @@ function App() {
         <section id="experience">
           <Experience />
         </section>
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSpinner />}>
+        <Certifications />
       </Suspense>
       
       <Suspense fallback={<LoadingSpinner />}>

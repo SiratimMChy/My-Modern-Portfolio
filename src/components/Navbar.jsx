@@ -68,26 +68,29 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
 
           
           <div className="hidden xl:block">
-            <div ref={menuRef} className="ml-4 lg:ml-10 flex items-baseline space-x-4 xl:space-x-8">
-              <a href="#home" className="text-blue-600 dark:text-blue-400 font-medium px-3 py-2 rounded-md text-lg transition-colors">
+            <div ref={menuRef} className="ml-4 lg:ml-8 flex items-baseline space-x-3 xl:space-x-6">
+              <a href="#home" className="text-blue-600 dark:text-blue-400 font-medium px-2 py-2 rounded-md text-sm xl:text-base transition-colors">
                 Home
               </a>
-              <a href="#about" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-lg font-medium transition-colors">
+              <a href="#about" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 py-2 rounded-md text-sm xl:text-base font-medium transition-colors">
                 About
               </a>
-              <a href="#skills" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-lg font-medium transition-colors">
+              <a href="#skills" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 py-2 rounded-md text-sm xl:text-base font-medium transition-colors">
                 Skills
               </a>
-              <a href="#education" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-lg font-medium transition-colors">
+              <a href="#education" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 py-2 rounded-md text-sm xl:text-base font-medium transition-colors">
                 Education
               </a>
-              <a href="#experience" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-lg font-medium transition-colors">
+              <a href="#experience" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 py-2 rounded-md text-sm xl:text-base font-medium transition-colors">
                 Experience
               </a>
-              <a href="#projects" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-lg font-medium transition-colors">
+              <a href="#certifications" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 py-2 rounded-md text-sm xl:text-base font-medium transition-colors">
+                Certifications
+              </a>
+              <a href="#projects" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 py-2 rounded-md text-sm xl:text-base font-medium transition-colors">
                 Projects
               </a>
-              <a href="#contact" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-lg font-medium transition-colors">
+              <a href="#contact" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 py-2 rounded-md text-sm xl:text-base font-medium transition-colors">
                 Contact
               </a>
             </div>
@@ -174,6 +177,13 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
               className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors"
             >
               Experience
+            </a>
+            <a
+              href="#certifications"
+              onClick={closeMobileMenu}
+              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+            >
+              Certifications
             </a>
             <a
               href="#projects"
