@@ -66,6 +66,8 @@ src/
 ├── components/          # UI Sections and Layout Components
 │   ├── AiChatbot.jsx    # Groq-powered AI Assistant Chatbot
 │   ├── About.jsx        # Personal introduction
+│   ├── Certifications/  # Licenses and credentials
+│   │   └── Certifications.jsx
 │   ├── Contact/         # Contact section
 │   │   ├── Contact.jsx
 │   │   └── ContactForm.jsx
@@ -88,6 +90,7 @@ src/
 │       └── BackgroundParticles.jsx
 │
 ├── data/                # Extracted static data for cleaner components
+│   ├── certificationsData.js # Static data for credentials
 │   ├── contactData.js   # Contact info & social links
 │   ├── educationData.js # Degrees & academic projects
 │   ├── experienceData.js# Work history & responsibilities
@@ -127,6 +130,7 @@ graph TD
     Sections --> Projects["Projects/"]
     Sections --> Skills["Skills/"]
     Sections --> Education["Education/"]
+    Sections --> Certifications["Certifications/"]
     Sections --> Contact["Contact/"]
     
     %% Sub-components
@@ -141,6 +145,7 @@ graph TD
     Data[("src/data/<br/>(Static Data)")] -. "Feeds Data" .-> Projects
     Data -. "Feeds Data" .-> Skills
     Data -. "Feeds Data" .-> Education
+    Data -. "Feeds Data" .-> Certifications
     Data -. "Feeds Data" .-> Contact
     
     Config["src/lib/techConfig.js"] -. "UI Config" .-> PC
