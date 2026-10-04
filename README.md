@@ -183,11 +183,12 @@ To run this project locally, ensure you have **Node.js (v18+)** installed.
    ```
 
 3. **Configure Environment Variables:**
-   Create a `.env` file in the root directory for EmailJS integration. You will need to get these keys from your EmailJS dashboard:
+   Create a `.env` file in the root directory for EmailJS and Groq AI integration. You will need to get these keys from your respective dashboards:
    ```env
    VITE_EMAILJS_SERVICE_ID=your_service_id
    VITE_EMAILJS_TEMPLATE_ID=your_template_id
    VITE_EMAILJS_PUBLIC_KEY=your_public_key
+   VITE_GROQ_API_KEY=your_groq_api_key
    ```
 
 4. **Start the development server:**
