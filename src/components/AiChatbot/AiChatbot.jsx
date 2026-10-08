@@ -3,7 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Send, Bot, User, Trash2 } from 'lucide-react';
 import { FaComments } from 'react-icons/fa';
 import ReactMarkdown from 'react-markdown';
-import { getChatResponse } from '../../lib/chatService';
+import Groq from 'groq-sdk';
+import { SYSTEM_PROMPT } from '../../lib/chatbotPrompt';
+
+const groq = new Groq({
+  apiKey: import.meta.env.VITE_GROQ_API_KEY,
+  dangerouslyAllowBrowser: true, 
+});
 
 const AiChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,16 +49,30 @@ const AiChatbot = () => {
     setIsLoading(true);
 
     try {
-      const aiResponse = await getChatResponse(newMessages);
-      
-      // Step 3: Show the AI's reply on the screen
+
+      const apiMessages = [
+        { role: 'system', content: SYSTEM_PROMPT },
+        ...newMessages.map(msg => ({
+          role: msg.role === 'assistant' ? 'assistant' : 'user',
+          content: msg.content
+        }))
+      ];
+
+      const completion = await groq.chat.completions.create({
+        messages: apiMessages,
+        model: 'openai/gpt-oss-120b',
+        temperature: 0.5,
+        max_tokens: 1024,
+      });
+
+      const aiResponse = completion.choices[0]?.message?.content || "I'm sorry, I couldn't process that. Please try again.";
       
       setMessages([...newMessages, { role: 'assistant', content: aiResponse }]);
     } catch (error) {
       console.error("Groq API Error:", error);
       setMessages([...newMessages, { 
-        role: 'assistant', 
-        content: "Oops! My brain is on a short break right now. 😅 Feel free to email Siratim directly instead!" 
+        role: 'assistant',
+        content: "Sorry, I'm experiencing some technical difficulties right now. Please reach out to Siratim directly via email." 
       }]);
     } finally {
       setIsLoading(false);
@@ -155,7 +175,7 @@ const AiChatbot = () => {
         )}
       </AnimatePresence>
 
-      {/* The floating chat button at the bottom right corner of the screen */}
+
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`w-14 h-14 rounded-full flex items-center justify-center shadow-sm transition-all duration-300 hover:scale-105 active:scale-95 ${

@@ -21,7 +21,7 @@
 
 ## 📌 Overview
 
-Welcome to my portfolio! I built this space not just to list my skills, but to showcase my passion for creating modern, high-performance web experiences. Every detail here - from the interactive animations to the custom AI assistant - was crafted with clean code, scalability, and an excellent user experience in mind. It's a true reflection of how I approach real-world software development.
+Welcome to my portfolio! I built this space not just to list my skills, but to showcase my passion for creating modern, high-performance web experiences. Every detail here—from the interactive animations to the custom AI assistant—was crafted with clean code, scalability, and an excellent user experience in mind. It's a true reflection of how I approach real-world software development.
 
 ## ✨ What Makes This Portfolio Special?
 
