@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
-import { Card, CardHeader, CardTitle, CardContent } from './ui/card'
+import { Card, CardHeader, CardTitle, CardContent } from '../../ui/card'
 
-import { EXP } from '../data/experienceData'
+import { EXP } from '../../../data/experienceData'
 
 function ExperienceCard({ exp, i }) {
   return (

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
-import { Card } from '../ui/card'
+import { Card } from '../../ui/card'
 
-import { EDUCATION } from '../../data/educationData'
+import { EDUCATION } from '../../../data/educationData'
 import AcademicProjects from './AcademicProjects'
 import RelevantSubjects from './RelevantSubjects'
 

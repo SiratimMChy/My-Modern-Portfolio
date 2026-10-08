@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import emailjs from '@emailjs/browser'
-import { ModernButton } from '../ui/modern-button'
+import { ModernButton } from '../../ui/modern-button'
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })

@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
-import { Card } from '../ui/card'
-import { Button } from '../ui/button'
+import { Card } from '../../ui/card'
+import { Button } from '../../ui/button'
 import ContactForm from './ContactForm'
-import { CONTACT_INFO, SOCIALS } from '../../data/contactData'
-import BackgroundParticles from '../ui/BackgroundParticles'
+import { CONTACT_INFO, SOCIALS } from '../../../data/contactData'
+import BackgroundParticles from '../../ui/BackgroundParticles'
 
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },

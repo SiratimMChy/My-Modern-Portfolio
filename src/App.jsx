@@ -1,5 +1,5 @@
 import { useState, useEffect, Suspense, lazy } from 'react'
-import Navbar from './components/Navbar'
+import Navbar from './components/layout/Navbar'
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
 import gsap from 'gsap'
@@ -8,16 +8,16 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 
-const Hero = lazy(() => import('./components/Hero'))
-const About = lazy(() => import('./components/About'))
-const Skills = lazy(() => import('./components/Skills/Skills'))
-const Education = lazy(() => import('./components/Education/Education'))
-const Experience = lazy(() => import('./components/Experience'))
-const Certifications = lazy(() => import('./components/Certifications/Certifications'))
-const Projects = lazy(() => import('./components/Projects/Projects'))
-const Contact = lazy(() => import('./components/Contact/Contact'))
-const Footer = lazy(() => import('./components/Footer'))
-const AiChatbot = lazy(() => import('./components/AiChatbot'))
+const Hero = lazy(() => import('./components/sections/Hero/Hero'))
+const About = lazy(() => import('./components/sections/About/About'))
+const Skills = lazy(() => import('./components/sections/Skills/Skills'))
+const Education = lazy(() => import('./components/sections/Education/Education'))
+const Experience = lazy(() => import('./components/sections/Experience/Experience'))
+const Certifications = lazy(() => import('./components/sections/Certifications/Certifications'))
+const Projects = lazy(() => import('./components/sections/Projects/Projects'))
+const Contact = lazy(() => import('./components/sections/Contact/Contact'))
+const Footer = lazy(() => import('./components/layout/Footer'))
+const AiChatbot = lazy(() => import('./components/AiChatbot/AiChatbot'))
 
 
 const LoadingSpinner = () => (

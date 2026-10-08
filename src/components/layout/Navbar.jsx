@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react'
 import { gsap } from 'gsap'
-import { Button } from './ui/button'
+import { Button } from '../ui/button'
 import { Moon, Sun, Menu, X, Download } from 'lucide-react'
 
 const Navbar = ({ darkMode, toggleDarkMode }) => {

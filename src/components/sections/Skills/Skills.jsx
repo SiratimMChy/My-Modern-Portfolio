@@ -1,11 +1,11 @@
 import { useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { gsap } from 'gsap'
-import { ModernButton } from '../ui/modern-button'
+import { ModernButton } from '../../ui/modern-button'
 import SkillCategoryCard from './SkillCategoryCard'
-import BackgroundParticles from '../ui/BackgroundParticles'
+import BackgroundParticles from '../../ui/BackgroundParticles'
 
-import { CATEGORIES } from '../../data/skillsData'
+import { CATEGORIES } from '../../../data/skillsData'
 
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },

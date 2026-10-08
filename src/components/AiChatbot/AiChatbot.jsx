@@ -4,7 +4,7 @@ import { X, Send, Bot, User, Trash2 } from 'lucide-react';
 import { FaComments } from 'react-icons/fa';
 import ReactMarkdown from 'react-markdown';
 import Groq from 'groq-sdk';
-import { SYSTEM_PROMPT } from '../lib/chatbotPrompt';
+import { SYSTEM_PROMPT } from '../../lib/chatbotPrompt';
 
 const groq = new Groq({
   apiKey: import.meta.env.VITE_GROQ_API_KEY,
@@ -49,7 +49,7 @@ const AiChatbot = () => {
     setIsLoading(true);
 
     try {
-      // Format messages for Groq API
+      // Preparing the chat history so the AI can understand the context
       const apiMessages = [
         { role: 'system', content: SYSTEM_PROMPT },
         ...newMessages.map(msg => ({
@@ -81,7 +81,6 @@ const AiChatbot = () => {
 
   return (
     <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end">
-      {/* Chatbot Window */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -91,7 +90,6 @@ const AiChatbot = () => {
             transition={{ duration: 0.2 }}
             className="mb-4 w-[calc(100vw-2rem)] sm:w-[400px] h-[500px] max-h-[75vh] flex flex-col bg-white dark:bg-[#0f172a] rounded-2xl shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-800"
           >
-            {/* Header */}
             <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-sky-500 to-indigo-500 text-white">
               <div className="flex items-center gap-2">
                 <Bot size={24} />
@@ -107,7 +105,6 @@ const AiChatbot = () => {
               </div>
             </div>
 
-            {/* Messages Area */}
             <div 
               className="flex-1 overflow-y-auto overflow-x-hidden min-h-0 p-4 space-y-4 bg-slate-50 dark:bg-[#07090f] custom-scrollbar overscroll-contain touch-pan-y"
               onWheel={(e) => e.stopPropagation()}
@@ -155,7 +152,6 @@ const AiChatbot = () => {
               <div ref={messagesEndRef} />
             </div>
 
-            {/* Input Area */}
             <div className="p-4 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
               <div className="flex items-center gap-2 relative bg-slate-50 dark:bg-slate-800/50 p-1.5 rounded-xl border border-slate-200 dark:border-slate-700 focus-within:border-sky-500 dark:focus-within:border-sky-500 transition-colors">
                 <input
@@ -179,7 +175,7 @@ const AiChatbot = () => {
         )}
       </AnimatePresence>
 
-      {/* Floating Action Button */}
+      {/* The floating chat button at the bottom right corner of the screen */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`w-14 h-14 rounded-full flex items-center justify-center shadow-sm transition-all duration-300 hover:scale-105 active:scale-95 ${

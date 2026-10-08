@@ -100,7 +100,10 @@ export const PROJECTS = [
     challenges: ['Multi-role dashboard management', 'Fast donor search implementation', 'Secure Stripe payment integration'],
     futureImprovements: ['Real-time emergency notifications', 'Location-based donor matching', 'Donor history & analytics'],
     liveLink: 'https://blooddonation-f6367.web.app',
-    githubLink: 'https://github.com/SiratimMChy/Hemovia-Client',
+    githubLink: {
+      frontend: 'https://github.com/SiratimMChy/Hemovia-Frontend',
+      backend: 'https://github.com/SiratimMChy/Hemovia-Backend'
+    },
     status: 'Live',
     color: '#38bdf8',
   },
@@ -145,7 +148,10 @@ export const PROJECTS = [
       'Multi-currency conversion support',
     ],
     liveLink: 'https://expensetracker-2ab95.web.app',
-    githubLink: 'https://github.com/SiratimMChy/Expense-Tracker',
+    githubLink: {
+      frontend: 'https://github.com/SiratimMChy/Cashnivo-Frontend',
+      backend: 'https://github.com/SiratimMChy/Cashnivo-Backend'
+    },
     status: 'Live',
     color: '#2563eb',
   },
@@ -161,7 +167,7 @@ export const PROJECTS = [
     challenges: ['Reliable SOS trigger implementation', 'Real-time location tracking accuracy', 'Firebase data security and permissions', 'Background service handling'],
     futureImprovements: ['Emergency service integration', 'Offline SOS support', 'AI-based risk detection', 'Multi-language accessibility'],
     liveLink: null,
-    githubLink: 'https://github.com/SiratimMChy/She-WomenSafetyApp',
+    githubLink: 'https://github.com/SiratimMChy/She',
     status: 'Development',
     color: '#38bdf8',
   },

@@ -1,32 +1,26 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   build: {
-    // Increase chunk size warning limit to 1000kb
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
-        // Manual chunking for better code splitting
         manualChunks: {
-          // Vendor chunks
           'react-vendor': ['react', 'react-dom'],
           'animation-vendor': ['framer-motion', 'gsap'],
           'ui-vendor': ['lucide-react'],
-          
-          // App chunks
           'components': [
-            './src/components/Hero.jsx',
-            './src/components/About.jsx',
-            './src/components/Skills/Skills.jsx',
-            './src/components/Projects/Projects.jsx',
-            './src/components/Education/Education.jsx',
-            './src/components/Contact/Contact.jsx',
-            './src/components/Footer.jsx',
-            './src/components/Navbar.jsx',
-            './src/components/AiChatbot.jsx'
+            './src/components/sections/Hero/Hero.jsx',
+            './src/components/sections/About/About.jsx',
+            './src/components/sections/Skills/Skills.jsx',
+            './src/components/sections/Projects/Projects.jsx',
+            './src/components/sections/Education/Education.jsx',
+            './src/components/sections/Contact/Contact.jsx',
+            './src/components/layout/Footer.jsx',
+            './src/components/layout/Navbar.jsx',
+            './src/components/AiChatbot/AiChatbot.jsx'
           ],
           'ui-components': [
             './src/components/ui/button.jsx',
@@ -35,7 +29,6 @@ export default defineConfig({
             './src/components/ui/modern-button.jsx'
           ]
         },
-        // Optimize chunk file names
         chunkFileNames: (chunkInfo) => {
           const facadeModuleId = chunkInfo.facadeModuleId
           if (facadeModuleId) {
@@ -45,14 +38,11 @@ export default defineConfig({
         }
       }
     },
-    // Enable minification with esbuild (default, faster than terser)
     minify: 'esbuild',
-    // Remove console.log and debugger in production
     esbuild: {
       drop: ['console', 'debugger']
     }
   },
-  // Optimize dependencies
   optimizeDeps: {
     include: ['react', 'react-dom', 'framer-motion', 'gsap']
   }

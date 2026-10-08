@@ -1,10 +1,14 @@
 import { motion } from 'framer-motion'
-import { Card, CardContent } from '../ui/card'
-import { Badge } from '../ui/badge'
-import { Button } from '../ui/button'
+import { useState } from 'react'
+import { Card, CardContent } from '../../ui/card'
+import { Badge } from '../../ui/badge'
+import { Button } from '../../ui/button'
 import ProjectTechTags from './ProjectTechTags'
+import SourceCodeModal from './SourceCodeModal'
 
 export default function ProjectCard({ project, onClick }) {
+  const [showSourceModal, setShowSourceModal] = useState(false)
+  
   const handleCardKeyDown = (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault()
@@ -147,15 +151,29 @@ export default function ProjectCard({ project, onClick }) {
                 disabled={!project.githubLink || project.githubLink === '#'}
               >
                 {project.githubLink && project.githubLink !== '#' ? (
-                  <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    onKeyDown={handleLinkKeyDown}
-                  >
-                    <i className="mr-1 text-xs bx bxl-github" /> Source Code
-                  </a>
+                  typeof project.githubLink === 'object' ? (
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        e.stopPropagation()
+                        setShowSourceModal(true)
+                      }}
+                      onKeyDown={handleLinkKeyDown}
+                    >
+                      <i className="mr-1 text-xs bx bxl-github" /> Source Code
+                    </button>
+                  ) : (
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      onKeyDown={handleLinkKeyDown}
+                    >
+                      <i className="mr-1 text-xs bx bxl-github" /> Source Code
+                    </a>
+                  )
                 ) : (
                   <>
                     <i className="mr-1 text-xs bx bxl-github" /> Source Code
@@ -166,6 +184,13 @@ export default function ProjectCard({ project, onClick }) {
           </div>
         </CardContent>
       </Card>
+
+      {/* A modal window that appears when you click 'Source Code', allowing you to access the GitHub repository links */}
+      <SourceCodeModal 
+        isOpen={showSourceModal} 
+        onClose={() => setShowSourceModal(false)} 
+        githubLink={project.githubLink} 
+      />
     </motion.div>
   )
 }

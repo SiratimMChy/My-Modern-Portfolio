@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { SiNextdotjs, SiExpress } from 'react-icons/si'
 
-import { getTechConfig } from '../../lib/techConfig'
+import { getTechConfig } from '../../../lib/techConfig'
 
 export default function ProjectTechTags({ tech }) {
   if (!tech || tech.length === 0) return null;

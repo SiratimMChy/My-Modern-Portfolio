@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import { Card, CardHeader, CardTitle, CardContent } from '../ui/card'
-import { Badge } from '../ui/badge'
+import { Card, CardHeader, CardTitle, CardContent } from '../../ui/card'
+import { Badge } from '../../ui/badge'
 
 const cardVariants = {
   hidden: { opacity: 0, y: 30 },

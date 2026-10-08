@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import { Card, CardContent } from '../ui/card'
-import { CERTIFICATIONS } from '../../data/certificationsData'
+import { Card, CardContent } from '../../ui/card'
+import { CERTIFICATIONS } from '../../../data/certificationsData'
 
 export default function Certifications() {
   return (
@@ -10,7 +10,6 @@ export default function Certifications() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
         
-        {/* Header */}
         <motion.div className="flex flex-col items-center text-center mb-8 sm:mb-12"
           initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.6 }}>
@@ -30,7 +29,6 @@ export default function Certifications() {
             viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} />
         </motion.div>
 
-        {/* Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
           {CERTIFICATIONS.map((cert, i) => (
             <motion.a 
