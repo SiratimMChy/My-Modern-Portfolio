@@ -3,13 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Send, Bot, User, Trash2 } from 'lucide-react';
 import { FaComments } from 'react-icons/fa';
 import ReactMarkdown from 'react-markdown';
-import Groq from 'groq-sdk';
-import { SYSTEM_PROMPT } from '../../lib/chatbotPrompt';
-
-const groq = new Groq({
-  apiKey: import.meta.env.VITE_GROQ_API_KEY,
-  dangerouslyAllowBrowser: true, 
-});
+import { getChatResponse } from '../../lib/chatService';
 
 const AiChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,30 +43,16 @@ const AiChatbot = () => {
     setIsLoading(true);
 
     try {
-      // Preparing the chat history so the AI can understand the context
-      const apiMessages = [
-        { role: 'system', content: SYSTEM_PROMPT },
-        ...newMessages.map(msg => ({
-          role: msg.role === 'assistant' ? 'assistant' : 'user',
-          content: msg.content
-        }))
-      ];
-
-      const completion = await groq.chat.completions.create({
-        messages: apiMessages,
-        model: 'openai/gpt-oss-120b',
-        temperature: 0.5,
-        max_tokens: 1024,
-      });
-
-      const aiResponse = completion.choices[0]?.message?.content || "I'm sorry, I couldn't process that. Please try again.";
+      const aiResponse = await getChatResponse(newMessages);
+      
+      // Step 3: Show the AI's reply on the screen
       
       setMessages([...newMessages, { role: 'assistant', content: aiResponse }]);
     } catch (error) {
       console.error("Groq API Error:", error);
       setMessages([...newMessages, { 
         role: 'assistant', 
-        content: "Oops! Something went wrong while connecting to my brain. Please email Siratim directly for now." 
+        content: "Oops! My brain is on a short break right now. 😅 Feel free to email Siratim directly instead!" 
       }]);
     } finally {
       setIsLoading(false);
