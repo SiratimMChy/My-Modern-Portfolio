@@ -43,25 +43,26 @@ export default function Certifications() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               whileHover={{ y: -4, transition: { duration: 0.2 } }}
             >
-              <Card className="h-full rounded-2xl bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 overflow-hidden w-full transition-colors group-hover:border-slate-300 dark:group-hover:border-slate-700">
-                <CardContent className="p-5 sm:p-6 flex items-center gap-4 h-full">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ background: cert.color + '15' }}>
-                    <i className={`bx ${cert.icon} text-2xl sm:text-3xl`} style={{ color: cert.color }} />
+              <Card className="relative h-full rounded-2xl bg-white shadow-xl shadow-slate-200/60 dark:shadow-none dark:bg-white/[0.03] border border-slate-200 dark:border-slate-800 overflow-hidden w-full transition-colors group-hover:border-slate-300 dark:group-hover:border-slate-700">
+                <span className="absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/50 dark:via-white/10 to-transparent skew-x-[-20deg] pointer-events-none z-10" />
+                <CardContent className="p-5 sm:p-6 flex items-center gap-4 h-full relative z-20">
+                  <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden">
+                    <div className="absolute inset-0 opacity-[0.25] dark:opacity-[0.12]" style={{ backgroundColor: cert.color }} />
+                    <i className={`bx ${cert.icon} text-2xl sm:text-3xl relative z-10`} style={{ color: cert.color }} />
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="text-[13px] sm:text-[15px] font-black text-slate-800 dark:text-slate-100 group-hover:text-pink-500 dark:group-hover:text-pink-400 transition-colors leading-snug">
                       {cert.title}
                     </h3>
-                    <p className="text-[11px] sm:text-xs font-semibold text-slate-600 dark:text-slate-400 mt-1 truncate">
+                    <p className="text-[11px] sm:text-xs font-semibold text-slate-700 dark:text-slate-300 mt-1 truncate">
                       {cert.issuer}
                     </p>
-                    <p className="text-[9px] sm:text-[10px] text-slate-400 dark:text-slate-500 mt-1.5 font-mono">
+                    <p className="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 mt-1.5 font-mono">
                       Issued {cert.date}
                     </p>
                   </div>
                   <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-[-10px] group-hover:translate-x-0">
-                    <i className="bx bx-link-external text-lg sm:text-xl text-slate-400 dark:text-slate-500 group-hover:text-pink-400" />
+                    <i className="bx bx-link-external text-lg sm:text-xl text-slate-500 dark:text-slate-400 group-hover:text-pink-400" />
                   </div>
                 </CardContent>
               </Card>
