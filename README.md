@@ -64,19 +64,8 @@ The repository is modularly organized for maintainability and scalability. All c
 ```text
 src/
 ├── components/          # UI Sections and Layout Components
-│   ├── AiChatbot.jsx    # Groq-powered AI Assistant Chatbot
-│   ├── About.jsx        # Personal introduction
-│   ├── Certifications/  # Licenses and credentials
-│   │   └── Certifications.jsx
-│   ├── Contact/         # Contact section
-│   │   ├── Contact.jsx
-│   │   └── ContactForm.jsx
-│   ├── Education/       # Academic timeline & subjects
-│   │   ├── Education.jsx
-│   │   ├── AcademicProjects.jsx
-│   │   └── RelevantSubjects.jsx
-│   ├── Experience.jsx   # Professional work timeline
-│   ├── Hero.jsx         # Landing section with animations
+│   ├── AiChatbot/       # Groq-powered AI Assistant Chatbot
+│   │   └── AiChatbot.jsx
 │   ├── layout/          # Global layout components
 │   │   ├── Footer/      # Modular global footer
 │   │   │   ├── Footer.jsx
@@ -89,15 +78,33 @@ src/
 │   │       ├── NavbarActions.jsx
 │   │       ├── Logo.jsx
 │   │       └── navLinks.js
-│   ├── Projects/        # Portfolio showcase
-│   │   ├── Projects.jsx
-│   │   ├── ProjectCard.jsx
-│   │   └── ProjectDetail.jsx
-│   ├── Skills/          # Technical skills
-│   │   ├── Skills.jsx
-│   │   └── SkillCategoryCard.jsx
+│   ├── sections/        # Lazy-loaded page sections
+│   │   ├── About/
+│   │   │   └── About.jsx
+│   │   ├── Certifications/
+│   │   │   └── Certifications.jsx
+│   │   ├── Contact/
+│   │   │   ├── Contact.jsx
+│   │   │   └── ContactForm.jsx
+│   │   ├── Education/
+│   │   │   ├── Education.jsx
+│   │   │   ├── AcademicProjects.jsx
+│   │   │   └── RelevantSubjects.jsx
+│   │   ├── Experience/
+│   │   │   └── Experience.jsx
+│   │   ├── Hero/
+│   │   │   ├── Hero.jsx
+│   │   │   └── HeroContent.jsx
+│   │   ├── Projects/
+│   │   │   ├── Projects.jsx
+│   │   │   ├── ProjectCard.jsx
+│   │   │   └── ProjectDetail.jsx
+│   │   └── Skills/
+│   │       ├── Skills.jsx
+│   │       └── SkillCategoryCard.jsx
 │   └── ui/              # Reusable UI primitives
-│       └── BackgroundParticles.jsx
+│       ├── BackgroundParticles.jsx
+│       └── ... (buttons, cards, badges)
 │
 ├── data/                # Extracted static data for cleaner components
 │   ├── certificationsData.js # Static data for credentials
@@ -245,7 +252,8 @@ This project is actively maintained to ensure it remains cutting-edge and highly
 ## 👨‍💻 Author
 
 **Siratim Mustakim Chowdhury**  
-*Full Stack Web & Android Developer | MERN Stack Specialist*
+*Full Stack Web & Android Developer | MERN Stack Specialist*  
+🎓 *BSc in Computer Science & Engineering, Leading University, Sylhet*
 
 Feel free to reach out for collaborations or inquiries:
 
