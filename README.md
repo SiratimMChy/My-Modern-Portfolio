@@ -221,6 +221,18 @@ vercel --prod
 
 ---
 
+## 🔄 Recent Architectural Improvements & UI Polish
+
+This project is actively maintained to ensure it remains cutting-edge and highly performant. Some recent additions and optimizations include:
+
+- **Modular Component Architecture**: The global `Navbar` and `Footer` have been fully decoupled into modular folder structures (`src/components/layout/Navbar/` and `src/components/layout/Footer/`), containing specialized files for desktop menus, mobile menus, and social links to ensure maximum code maintainability.
+- **Enhanced Micro-interactions**: The navigation active states now feature bold highlights, and CTA buttons (like "View Resume") have been polished with a custom sweep/shine CSS hover animation for a premium feel.
+- **GSAP & CSS Synergy**: Resolved animation conflicts to ensure GSAP's scroll timelines and Tailwind's CSS transitions work in perfect harmony.
+- **Optimized Lazy Loading**: Consolidated React `Suspense` boundaries in the main `App.jsx` orchestration layer to prevent jarring multiple loading spinners, providing a seamless initial load experience.
+- **Build Optimization**: Vite and Rollup configurations have been tuned with custom manual chunking for lightning-fast Vercel production deployments.
+
+---
+
 ## 👨‍💻 Author
 
 **Siratim Mustakim Chowdhury**  
