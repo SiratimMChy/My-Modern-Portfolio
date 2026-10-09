@@ -1,4 +1,4 @@
-# 🚀 Siratim Mustakim Chowdhury - Professional Portfolio
+# Siratim Mustakim Chowdhury - Professional Portfolio
 
 <div align="center">
 
@@ -19,11 +19,11 @@
 
 ---
 
-## 📌 Overview
+## **Overview**
 
 Welcome to my portfolio! I built this space not just to list my skills, but to showcase my passion for creating modern, high-performance web experiences. Every detail here—from the interactive animations to the custom AI assistant—was crafted with clean code, scalability, and an excellent user experience in mind. It's a true reflection of how I approach real-world software development.
 
-## ✨ What Makes This Portfolio Special?
+## **What Makes This Portfolio Special?**
 
 - **Built-in AI Assistant:** I integrated a custom AI chatbot (powered by the incredibly fast **Groq API**) right into the site! You can chat with it to learn more about my background, skills, and projects in real-time.
 - **Immersive 3D & Animations:** Instead of a static page, I used **Framer Motion** and **GSAP** to add dynamic floating 3D cards, interactive particle backgrounds, and buttery-smooth scroll effects.
@@ -33,31 +33,31 @@ Welcome to my portfolio! I built this space not just to list my skills, but to s
 
 ---
 
-## 🛠️ Technology Stack
+## **Technology Stack**
 
-### Frontend & Build Tools
+### **Frontend & Build Tools**
 - **React 18** (Functional Components & Hooks)
 - **Vite 5** (Fast HMR & Optimized Build)
 - **Tailwind CSS 3.4** (Utility-first Styling & Glassmorphism)
 
-### AI & Integrations
+### **AI & Integrations**
 - **Groq API (`groq-sdk`)** (Ultra-fast LLM inference)
 - **React Markdown** (Rendering AI responses)
 - **EmailJS** (`@emailjs/browser` for form submissions)
 
-### State Management & Animation
+### **State Management & Animation**
 - **Framer Motion 12** (Micro-interactions & page transitions)
 - **GSAP 3** (ScrollTrigger & complex timelines)
 - **Swiper** (Modern touch-slider for project galleries)
 - **Lenis** (Smooth Scrolling)
 
-### Utilities & Packages
+### **Utilities & Packages**
 - **Radix UI** / **Lucide React** / **Boxicons** (Icons & accessible primitives)
 - **clsx & tailwind-merge** (Dynamic class handling)
 
 ---
 
-## 📂 Project Architecture
+## **Project Architecture**
 
 The repository is modularly organized for maintainability and scalability. All core components are separated logically:
 
@@ -130,7 +130,7 @@ src/
 └── index.css            # Global styles and Tailwind configuration
 ```
 
-### ⚙️ Component Flow & Architecture
+### **Component Flow & Architecture**
 
 ```mermaid
 graph TD
@@ -184,7 +184,7 @@ graph TD
 
 ---
 
-## 🚀 Getting Started
+## **Getting Started**
 
 To run this project locally, ensure you have **Node.js (v18+)** installed.
 
@@ -216,7 +216,7 @@ To run this project locally, ensure you have **Node.js (v18+)** installed.
 
 ---
 
-## 📦 Available Scripts
+## **Available Scripts**
 
 - `npm run dev` - Starts the local development server with HMR.
 - `npm run build` - Compiles and minifies the application for production.
@@ -225,7 +225,7 @@ To run this project locally, ensure you have **Node.js (v18+)** installed.
 
 ---
 
-## 🌐 Deployment
+## **Deployment**
 
 The application is configured and ready for modern hosting platforms like **Vercel** and **Firebase Hosting**.
 
@@ -238,7 +238,7 @@ vercel --prod
 
 ---
 
-## 🔄 Recent Updates
+## **Recent Updates**
 
 This project is actively maintained to ensure it remains cutting-edge and highly performant. Some recent additions and optimizations include:
 
@@ -249,7 +249,7 @@ This project is actively maintained to ensure it remains cutting-edge and highly
 
 ---
 
-## 👨‍💻 Author
+## **Author**
 
 **Siratim Mustakim Chowdhury**  
 *Full Stack Web & Android Developer | MERN Stack Specialist*  
