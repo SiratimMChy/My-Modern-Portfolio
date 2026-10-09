@@ -86,10 +86,11 @@ export default function HeroContent() {
           </a>
         </ModernButton>
 
-        <ModernButton variant="outline" asChild>
+        <ModernButton variant="outline" className="group relative overflow-hidden hover:bg-transparent dark:hover:bg-transparent" asChild>
           <a href="/SIRATIM MUSTAKIM CHOWDHURY_MERN Stack Developer.pdf" target="_blank" rel="noopener noreferrer" className="gap-2">
-            <i className="bx bx-file text-base" />
-            View Resume
+            <span className="absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />
+            <i className="bx bx-file text-base relative z-10" />
+            <span className="relative z-10">View Resume</span>
           </a>
         </ModernButton>
       </motion.div>

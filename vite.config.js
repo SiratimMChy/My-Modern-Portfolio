@@ -18,8 +18,8 @@ export default defineConfig({
             './src/components/sections/Projects/Projects.jsx',
             './src/components/sections/Education/Education.jsx',
             './src/components/sections/Contact/Contact.jsx',
-            './src/components/layout/Footer.jsx',
-            './src/components/layout/Navbar.jsx',
+            './src/components/layout/Footer/Footer.jsx',
+            './src/components/layout/Navbar/Navbar.jsx',
             './src/components/AiChatbot/AiChatbot.jsx'
           ],
           'ui-components': [

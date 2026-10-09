@@ -1,5 +1,5 @@
 import { useState, useEffect, Suspense, lazy } from 'react'
-import Navbar from './components/layout/Navbar'
+import Navbar from './components/layout/Navbar/Navbar'
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
 import gsap from 'gsap'
@@ -16,7 +16,7 @@ const Experience = lazy(() => import('./components/sections/Experience/Experienc
 const Certifications = lazy(() => import('./components/sections/Certifications/Certifications'))
 const Projects = lazy(() => import('./components/sections/Projects/Projects'))
 const Contact = lazy(() => import('./components/sections/Contact/Contact'))
-const Footer = lazy(() => import('./components/layout/Footer'))
+const Footer = lazy(() => import('./components/layout/Footer/Footer'))
 const AiChatbot = lazy(() => import('./components/AiChatbot/AiChatbot'))
 
 
@@ -99,49 +99,35 @@ function App() {
         <section id="home">
           <Hero />
         </section>
-      </Suspense>
-      
-      <Suspense fallback={<LoadingSpinner />}>
+        
         <section id="about">
           <About />
         </section>
-      </Suspense>
-      
-      <Suspense fallback={<LoadingSpinner />}>
+        
         <section id="skills">
           <Skills />
         </section>
-      </Suspense>
-      
-      <Suspense fallback={<LoadingSpinner />}>
+        
         <section id="education">
           <Education />
         </section>
-      </Suspense>
-      
-      <Suspense fallback={<LoadingSpinner />}>
+        
         <section id="experience">
           <Experience />
         </section>
-      </Suspense>
-      
-      <Suspense fallback={<LoadingSpinner />}>
-        <Certifications />
-      </Suspense>
-      
-      <Suspense fallback={<LoadingSpinner />}>
+        
+        <section id="certifications">
+          <Certifications />
+        </section>
+        
         <section id="projects">
           <Projects />
         </section>
-      </Suspense>
-      
-      <Suspense fallback={<LoadingSpinner />}>
+        
         <section id="contact">
           <Contact />
         </section>
-      </Suspense>
-      
-      <Suspense fallback={<LoadingSpinner />}>
+        
         <Footer />
       </Suspense>
 
