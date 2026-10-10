@@ -114,8 +114,7 @@ export default function SkillCategoryCard({ cat }) {
                   bg-gradient-to-br from-sky-500/10 to-violet-500/10 pointer-events-none" />
 
                 <motion.div 
-                  className="w-9 h-9 rounded-lg flex items-center justify-center relative z-10"
-                  style={{ background: `${skill.color}18` }}
+                  className="w-9 h-9 rounded-lg flex items-center justify-center relative z-10 overflow-hidden"
                   variants={{
                     hover: {
                       scale: 1.15,
@@ -125,17 +124,18 @@ export default function SkillCategoryCard({ cat }) {
                     }
                   }}
                 >
+                  <div className="absolute inset-0 opacity-[0.25] dark:opacity-[0.12]" style={{ backgroundColor: skill.color }} />
                   {skill.svg ? (
-                    <svg viewBox="0 0 180 180" className="w-5 h-5" fill="currentColor" style={{ color: skill.color }}>
-                      <mask id={`m${cat.title}${si}`} maskUnits="userSpaceOnUse">
+                    <svg viewBox="0 0 180 180" className="w-5 h-5 relative z-10" fill="currentColor" style={{ color: skill.color }}>
+                      <mask id={`m${cat.title.replace(/ /g, "")}${si}`} maskUnits="userSpaceOnUse">
                         <circle cx="90" cy="90" r="90" fill="white" />
                         <path d="M149 154L69.5 54H54v72.5h13V71l73 95.5a90.3 90.3 0 0 0 9-12.5z" fill="black" />
                         <rect x="107" y="54" width="13" height="72" fill="black" />
                       </mask>
-                      <circle cx="90" cy="90" r="90" fill={skill.color} mask={`url(#m${cat.title}${si})`} />
+                      <circle cx="90" cy="90" r="90" fill={skill.color} mask={`url(#m${cat.title.replace(/ /g, "")}${si})`} />
                     </svg>
                   ) : (
-                    <i className={`bx ${skill.icon} text-xl`} style={{ color: skill.color }} />
+                    <i className={`bx ${skill.icon} text-xl relative z-10`} style={{ color: skill.color }} />
                   )}
                 </motion.div>
                 <span className="text-[10px] font-semibold text-slate-600 dark:text-slate-400 text-center leading-tight px-1 relative z-10">
