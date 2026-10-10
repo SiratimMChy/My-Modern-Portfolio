@@ -114,7 +114,7 @@ export default function SkillCategoryCard({ cat }) {
                   bg-gradient-to-br from-sky-500/10 to-violet-500/10 pointer-events-none" />
 
                 <motion.div 
-                  className="w-9 h-9 rounded-lg flex items-center justify-center relative z-10 overflow-hidden"
+                  className="w-9 h-9 rounded-lg flex items-center justify-center relative z-10 overflow-hidden bg-slate-100 dark:bg-transparent"
                   variants={{
                     hover: {
                       scale: 1.15,
@@ -124,7 +124,7 @@ export default function SkillCategoryCard({ cat }) {
                     }
                   }}
                 >
-                  <div className="absolute inset-0 opacity-[0.25] dark:opacity-[0.12]" style={{ backgroundColor: skill.color }} />
+                  <div className="absolute inset-0 hidden dark:block opacity-[0.12]" style={{ backgroundColor: skill.color }} />
                   {skill.svg ? (
                     <svg viewBox="0 0 180 180" className="w-5 h-5 relative z-10" fill="currentColor" style={{ color: skill.color }}>
                       <mask id={`m${cat.title.replace(/ /g, "")}${si}`} maskUnits="userSpaceOnUse">
