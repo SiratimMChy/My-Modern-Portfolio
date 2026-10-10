@@ -80,12 +80,19 @@ export default function AboutContent() {
           Interests & Hobbies
         </p>
         <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-          {HOBBIES.map(h => (
-            <span key={h.label}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold shadow-sm shadow-slate-200/60 dark:shadow-none bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400">
+          {HOBBIES.map((h, i) => (
+            <motion.span 
+              key={h.label}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 + i * 0.1, duration: 0.4, type: "spring", stiffness: 100 }}
+              whileHover={{ scale: 1.05, y: -2 }}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold shadow-sm shadow-slate-200/60 dark:shadow-none bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 cursor-default hover:border-violet-400 dark:hover:border-violet-500 hover:text-violet-600 dark:hover:text-violet-300 hover:bg-violet-50 dark:hover:bg-violet-500/10 transition-colors"
+            >
               <i className={`bx ${h.icon} text-sm text-violet-500 dark:text-violet-400`} />
               {h.label}
-            </span>
+            </motion.span>
           ))}
         </div>
       </motion.div>

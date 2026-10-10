@@ -56,13 +56,9 @@ export default function SkillCategoryCard({ cat }) {
           bg-gradient-to-br from-sky-500/5 to-violet-500/5 pointer-events-none" />
 
         <CardHeader className="flex flex-row items-center gap-3 relative z-10 p-6 pb-2 space-y-0">
-          <motion.div 
-            className="flex-shrink-0"
-            whileHover={{ scale: 1.08 }}
-            transition={{ duration: 0.3 }}
-          >
+          <div className="flex-shrink-0">
             <Badge 
-              className="category-badge-icon w-10 h-10 rounded-xl flex items-center justify-center p-0 border-2 cursor-pointer"
+              className="category-badge-icon shadow-none w-10 h-10 rounded-xl flex items-center justify-center p-0 border-2 cursor-default"
               style={{ 
                 borderColor: cat.color,
                 background: `${cat.color}15`,
@@ -71,7 +67,7 @@ export default function SkillCategoryCard({ cat }) {
             >
               <i className={`bx ${cat.icon} text-lg`} style={{ color: cat.color }} />
             </Badge>
-          </motion.div>
+          </div>
           <div className="flex-1 min-w-0">
             <CardTitle className="text-sm font-bold text-slate-800 dark:text-slate-200 leading-tight">
               {cat.title}
@@ -120,8 +116,14 @@ export default function SkillCategoryCard({ cat }) {
                 <motion.div 
                   className="w-9 h-9 rounded-lg flex items-center justify-center relative z-10"
                   style={{ background: `${skill.color}18` }}
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.2 }}
+                  variants={{
+                    hover: {
+                      scale: 1.15,
+                      rotate: -10,
+                      y: -4,
+                      transition: { type: "spring", stiffness: 300, damping: 15 }
+                    }
+                  }}
                 >
                   {skill.svg ? (
                     <svg viewBox="0 0 180 180" className="w-5 h-5" fill="currentColor" style={{ color: skill.color }}>
