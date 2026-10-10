@@ -33,27 +33,48 @@ Welcome to my portfolio! I built this space not just to list my skills, but to s
 
 ---
 
+## **Core Features**
+
+- **Theme Support:** Clean Dark and Light modes built with Tailwind CSS and glassmorphism.
+- **AI Assistant:** A built-in chatbot powered by the Groq API that can answer questions about my background and projects.
+- **Smooth Scrolling:** Uses Lenis to make page scrolling feel fluid and natural.
+- **Contact Form:** Working contact form built with EmailJS so messages go straight to my inbox without a custom backend.
+- **Animations:** Subtle scroll triggers and hover effects built with GSAP and Framer Motion.
+- **Responsive Design:** Mobile-first layouts that adapt well to any screen size.
+
+---
+
 ## **Technology Stack**
 
 ### **Frontend & Build Tools**
-- **React 18** (Functional Components & Hooks)
-- **Vite 5** (Fast HMR & Optimized Build)
-- **Tailwind CSS 3.4** (Utility-first Styling & Glassmorphism)
+- **React 18**
+- **Vite 5**
+- **Tailwind CSS 3.4**
 
 ### **AI & Integrations**
-- **Groq API (`groq-sdk`)** (Ultra-fast LLM inference)
-- **React Markdown** (Rendering AI responses)
-- **EmailJS** (`@emailjs/browser` for form submissions)
+- **Groq API (`groq-sdk`)**
+- **React Markdown**
+- **EmailJS (`@emailjs/browser`)**
 
 ### **State Management & Animation**
-- **Framer Motion 12** (Micro-interactions & page transitions)
-- **GSAP 3** (ScrollTrigger & complex timelines)
-- **Swiper** (Modern touch-slider for project galleries)
-- **Lenis** (Smooth Scrolling)
+- **Framer Motion 12**
+- **GSAP 3**
+- **Swiper**
+- **Lenis**
 
 ### **Utilities & Packages**
-- **Radix UI** / **Lucide React** / **Boxicons** (Icons & accessible primitives)
-- **clsx & tailwind-merge** (Dynamic class handling)
+- **Radix UI / Lucide React / Boxicons**
+- **clsx & tailwind-merge**
+
+---
+
+## **Why I Chose This Stack**
+
+When planning this portfolio, I wanted it to be fast, interactive, and easy to maintain. I went with **React** and **Vite** as the core foundation because of the great developer experience and fast build times. For styling, **Tailwind CSS** was the obvious choice to handle the glassmorphism and theme toggling without writing messy custom CSS files.
+
+Since I wanted the site to feel alive, I brought in **Framer Motion** for micro-interactions (like the hover effects on the skill cards) and **GSAP** for the heavier scroll animations. To make sure those scroll animations didn't feel janky, I hooked up **Lenis** to give the entire page a smooth, native-feeling scroll experience.
+
+Finally, I wanted a few interactive features without spinning up a heavy backend. I used the **Groq API** for the AI chatbot because its response time is ridiculously fast, and **EmailJS** to handle the contact form submissions securely from the frontend.
 
 ---
 
@@ -200,13 +221,14 @@ To run this project locally, ensure you have **Node.js (v18+)** installed.
    ```
 
 3. **Configure Environment Variables:**
-   Create a `.env` file in the root directory for EmailJS and Groq AI integration. You will need to get these keys from your respective dashboards:
-   ```env
-   VITE_EMAILJS_SERVICE_ID=your_service_id
-   VITE_EMAILJS_TEMPLATE_ID=your_template_id
-   VITE_EMAILJS_PUBLIC_KEY=your_public_key
-   VITE_GROQ_API_KEY=your_groq_api_key
-   ```
+   Create a `.env` file in the root directory and add the following keys. You will need to obtain these from your respective EmailJS and Groq dashboards:
+
+   | Variable | Description |
+   |----------|-------------|
+   | `VITE_EMAILJS_SERVICE_ID` | Your EmailJS Service ID for the contact form |
+   | `VITE_EMAILJS_TEMPLATE_ID` | Your EmailJS Template ID for routing messages |
+   | `VITE_EMAILJS_PUBLIC_KEY` | Your EmailJS Public Key for authentication |
+   | `VITE_GROQ_API_KEY` | Your Groq Cloud API Key for the AI Chatbot |
 
 4. **Start the development server:**
    ```bash
@@ -246,6 +268,12 @@ This project is actively maintained to ensure it remains cutting-edge and highly
 - **GSAP & CSS Synergy**: Resolved animation conflicts to ensure GSAP's scroll timelines and Tailwind's CSS transitions work in perfect harmony.
 - **Optimized Lazy Loading**: Consolidated React `Suspense` boundaries in the main `App.jsx` orchestration layer to prevent jarring multiple loading spinners, providing a seamless initial load experience.
 - **Build Optimization**: Vite and Rollup configurations have been tuned with custom manual chunking for lightning-fast Vercel production deployments.
+
+---
+
+## **License**
+
+This project is strictly **NOT open source**. Please refer to the [LICENSE](./LICENSE) file for more details. Copying, reproducing, or distributing any part of this project's code, design, or assets for personal or commercial purposes is strictly prohibited.
 
 ---
 
