@@ -125,18 +125,31 @@ export default function SkillCategoryCard({ cat }) {
                   }}
                 >
                   <div className="absolute inset-0 hidden dark:block opacity-[0.12]" style={{ backgroundColor: skill.color }} />
-                  {skill.svg ? (
-                    <svg viewBox="0 0 180 180" className="w-5 h-5 relative z-10" fill="currentColor" style={{ color: skill.color }}>
-                      <mask id={`m${cat.title.replace(/ /g, "")}${si}`} maskUnits="userSpaceOnUse">
-                        <circle cx="90" cy="90" r="90" fill="white" />
-                        <path d="M149 154L69.5 54H54v72.5h13V71l73 95.5a90.3 90.3 0 0 0 9-12.5z" fill="black" />
-                        <rect x="107" y="54" width="13" height="72" fill="black" />
-                      </mask>
-                      <circle cx="90" cy="90" r="90" fill={skill.color} mask={`url(#m${cat.title.replace(/ /g, "")}${si})`} />
-                    </svg>
-                  ) : (
-                    <i className={`bx ${skill.icon} text-xl relative z-10`} style={{ color: skill.color }} />
-                  )}
+                  {(() => {
+                    let iconStyle = { color: skill.color };
+                    let iconClass = '';
+                    if (skill.color === '#d1d5db') {
+                      iconStyle = {};
+                      iconClass = 'text-slate-800 dark:text-[#d1d5db]';
+                    } else if (skill.color === '#ffffff') {
+                      iconStyle = {};
+                      iconClass = 'text-slate-800 dark:text-white';
+                    }
+                    const isLightColor = !!iconClass;
+                    
+                    return skill.svg ? (
+                      <svg viewBox="0 0 180 180" className={`w-5 h-5 relative z-10 ${iconClass}`} fill="currentColor" style={iconStyle}>
+                        <mask id={`m${cat.title.replace(/ /g, "")}${si}`} maskUnits="userSpaceOnUse">
+                          <circle cx="90" cy="90" r="90" fill="white" />
+                          <path d="M149 154L69.5 54H54v72.5h13V71l73 95.5a90.3 90.3 0 0 0 9-12.5z" fill="black" />
+                          <rect x="107" y="54" width="13" height="72" fill="black" />
+                        </mask>
+                        <circle cx="90" cy="90" r="90" fill={isLightColor ? "currentColor" : skill.color} mask={`url(#m${cat.title.replace(/ /g, "")}${si})`} />
+                      </svg>
+                    ) : (
+                      <i className={`bx ${skill.icon} text-xl relative z-10 ${iconClass}`} style={iconStyle} />
+                    );
+                  })()}
                 </motion.div>
                 <span className="text-[10px] font-semibold text-slate-600 dark:text-slate-400 text-center leading-tight px-1 relative z-10">
                   {skill.name}
