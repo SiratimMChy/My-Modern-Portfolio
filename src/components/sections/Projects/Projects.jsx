@@ -116,9 +116,9 @@ export default function Projects() {
               style={{
                 '--swiper-pagination-color': '#38bdf8',
                 '--swiper-navigation-color': '#38bdf8',
-                '--swiper-navigation-size': '20px',
+                '--swiper-navigation-size': '16px',
               }}
-              className="px-2 pt-6 pb-6 [&_.swiper-wrapper]:items-stretch [&_.swiper-pagination]:!relative [&_.swiper-pagination]:!mt-6 sm:[&_.swiper-pagination]:!mt-8 [&_.swiper-button-next]:!right-0 [&_.swiper-button-prev]:!left-0"
+              className="px-2 pt-6 pb-6 [&_.swiper-wrapper]:items-stretch [&_.swiper-pagination]:!relative [&_.swiper-pagination]:!mt-6 sm:[&_.swiper-pagination]:!mt-8 [&_.swiper-button-next]:!right-3 sm:[&_.swiper-button-next]:!right-0 [&_.swiper-button-prev]:!left-3 sm:[&_.swiper-button-prev]:!left-0"
             >
               {filtered.map((project) => (
                 <SwiperSlide key={project.id} className="h-auto flex">
